@@ -1,0 +1,161 @@
+.testimonials-section {
+  padding: 120px 0;
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: 30;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonials-wrap {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.testimonials-left {
+  flex: 1;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  min-height: 500px;
+}
+
+.testimonials-left-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.testimonials-left-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonials-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+  z-index: 2;
+}
+
+.testimonials-left-content {
+  position: relative;
+  z-index: 10;
+  color: var(--white);
+}
+
+.testimonials-rating-huge {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.rating-num {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rating-max {
+  font-size: 24px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.testimonials-stars-huge {
+  display: flex;
+  gap: 4px;
+  margin: 16px 0;
+}
+
+.testimonials-left-desc {
+  font-size: 18px;
+  margin: 0;
+}
+
+.testimonials-right {
+  flex: 2;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.author-position {
+  font-size: 14px;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .testimonials-wrap {
+    flex-direction: column;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

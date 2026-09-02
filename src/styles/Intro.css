@@ -1,0 +1,31 @@
+.intro-section {
+  padding: 120px 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--dark);
+  max-width: 900px;
+  margin: 0;
+}
+
+.text-highlight {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,217 @@
+.why-us-section {
+  padding: 120px 0;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: visible;
+  width: 100%;
+}
+
+.why-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.why-us-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.why-us-heading {
+  font-size: 48px;
+  line-height: 1.15;
+  margin: 12px 0 0 0;
+  letter-spacing: -0.025em;
+  color: var(--dark);
+}
+
+.why-us-content-grid {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.why-us-media-col {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+}
+
+.why-us-image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 640px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.why-us-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.why-us-image-wrapper:hover .why-us-img {
+  transform: scale(1.03);
+}
+
+.why-us-img-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 22px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.badge-highlight {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.badge-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+/* Stacking Cards Column */
+.why-us-cards-stack-col {
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.why-us-stack-card {
+  position: sticky;
+  background-color: var(--white);
+  border-radius: 22px;
+  border: 1px solid var(--border-color);
+  padding: 36px 40px;
+  min-height: 260px;
+  box-sizing: border-box;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+  transform-origin: center top;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.why-us-stack-card:hover {
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
+  border-color: rgba(124, 215, 18, 0.6);
+}
+
+.why-us-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.why-us-card-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(124, 215, 18, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.why-us-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.why-us-tag-pill {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--bg-color);
+  color: var(--dark-gray);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+}
+
+.why-us-number-badge {
+  font-size: 13px;
+  font-weight: 800;
+  background-color: var(--primary);
+  color: var(--dark);
+  padding: 5px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+}
+
+.why-us-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.why-us-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  letter-spacing: -0.015em;
+}
+
+.why-us-card-desc {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .why-us-section {
+    padding: 80px 0;
+  }
+  
+  .why-us-heading {
+    font-size: 34px;
+  }
+  
+  .why-us-content-grid {
+    flex-direction: column;
+  }
+  
+  .why-us-media-col {
+    position: static;
+    width: 100%;
+  }
+  
+  .why-us-image-wrapper {
+    height: 380px;
+  }
+  
+  .why-us-stack-card {
+    position: relative;
+    top: 0 !important;
+    min-height: auto;
+    padding: 28px 24px;
+  }
+}

@@ -1,0 +1,153 @@
+:root {
+  --primary: #7cd712;
+  --primary-hover: #6ec20e;
+  --primary-light: #c5f47d;
+  --primary-bg: #eafad1;
+  --dark: rgb(27, 47, 4);
+  --dark-gray: rgb(66, 66, 66);
+  --white: rgb(255, 255, 255);
+  --bg-color: rgb(247, 247, 247);
+  --border-color: rgb(234, 234, 234);
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--dark);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--dark);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--dark);
+}
+.btn-white:hover {
+  background-color: #f1f1f1;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+.btn .icon-box {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+.btn-primary .icon-box {
+  background-color: var(--dark);
+  color: var(--primary);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.label-square {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.label-square.light {
+  background-color: var(--primary-light);
+}
+
+.logo-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.logo-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-accent {
+  color: var(--primary);
+  font-weight: 600;
+}
