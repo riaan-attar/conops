@@ -94,10 +94,26 @@ const Services: React.FC = () => {
         );
       }
 
-      // Entrance reveal on cards/stage has been removed as requested.
-      // Cards and stage remain naturally solid and fully visible with zero flicker or black screen.
+      // 2. Initial Entrance Reveal for Cards Stage (Clean, No Card Transform Glitch)
+      if (stage) {
+        gsap.fromTo(
+          stage,
+          { y: 36, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 80%',
+              toggleActions: 'play reverse play reverse',
+            },
+          }
+        );
+      }
 
-      // 2. Smooth Horizontal Parallax Stacking Timeline
+      // 3. Smooth Horizontal Parallax Stacking Timeline
       const cards = stage.querySelectorAll<HTMLElement>('.service-horizontal-card');
       if (cards.length === 0) return;
 
@@ -122,20 +138,20 @@ const Services: React.FC = () => {
         },
       });
 
-      // Initialize starting positions: Card 0 is solid, cards 1+ start off-screen to the right
+      // Initialize starting positions - all cards remain 100% solid & visible
       cards.forEach((card, i) => {
         if (i > 0) {
           gsap.set(card, {
             xPercent: 100,
             scale: 1,
-            autoAlpha: 0,
+            opacity: 1,
             zIndex: i + 10,
           });
         } else {
           gsap.set(card, {
             xPercent: 0,
             scale: 1,
-            autoAlpha: 1,
+            opacity: 1,
             zIndex: 1,
           });
         }
@@ -147,49 +163,34 @@ const Services: React.FC = () => {
         const incomingImg = incomingCard.querySelector('.service-parallax-img');
         const timeStart = i - 1;
 
-        // Reveal incoming card and slide it cleanly at 100% solid opacity (no black screen or semi-transparent bleed)
+        // Incoming card slides into position from the right cleanly
         tl.to(
           incomingCard,
           {
-            autoAlpha: 1,
-            duration: 0.01,
-            ease: 'none',
-          },
-          timeStart
-        );
-
-        tl.fromTo(
-          incomingCard,
-          {
-            xPercent: 100,
-            scale: 1,
-          },
-          {
             xPercent: 0,
-            scale: 1,
             ease: 'none',
             duration: 1,
           },
           timeStart
         );
 
-        // Internal image subtle counter-parallax
+        // Internal image counter-parallax
         if (incomingImg) {
           tl.fromTo(
             incomingImg,
-            { xPercent: 10 },
+            { xPercent: 8 },
             { xPercent: 0, ease: 'none', duration: 1 },
             timeStart
           );
         }
 
-        // All preceding cards stack underneath, shifting slightly left with depth scaling
-        // NO CSS filters or brightness manipulation to prevent GPU black composite flashes
+        // Preceding cards stack underneath, staying 100% visible and bright (no black screen or filter)
         for (let prev = 0; prev < i; prev++) {
           const prevCard = cards[prev];
+          const prevImg = prevCard.querySelector('.service-parallax-img');
           const depth = i - prev;
-          const targetX = -Math.min(depth * 4, 12);
-          const targetScale = Math.max(0.94, 1 - depth * 0.025);
+          const targetX = -Math.min(depth * 5, 16);
+          const targetScale = Math.max(0.94, 1 - depth * 0.02);
 
           tl.to(
             prevCard,
@@ -201,6 +202,18 @@ const Services: React.FC = () => {
             },
             timeStart
           );
+
+          if (prevImg) {
+            tl.to(
+              prevImg,
+              {
+                xPercent: -depth * 3,
+                ease: 'none',
+                duration: 1,
+              },
+              timeStart
+            );
+          }
         }
       }
     }, section);

@@ -156,7 +156,6 @@
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -174,9 +173,9 @@
   background: linear-gradient(135deg, #123C3A 0%, #0d2c2a 100%);
   border: 1px solid rgba(196, 154, 90, 0.25);
   box-shadow: 
-    0 24px 60px rgba(18, 60, 58, 0.35),
+    0 30px 80px rgba(18, 60, 58, 0.4),
     0 0 0 1px rgba(196, 154, 90, 0.15),
-    -18px 0 45px rgba(0, 0, 0, 0.28);
+    -20px 0 40px rgba(0, 0, 0, 0.35);
   display: flex;
   overflow: hidden;
   color: var(--white);
