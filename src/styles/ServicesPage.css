@@ -1,0 +1,581 @@
+/* ==========================================================================
+   SERVICES PAGE STYLES
+   ========================================================================== */
+
+:root {
+  --text-dark: var(--dark);
+  --text-light: var(--dark-gray);
+}
+
+.services-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+
+/* ==========================================================================
+   1. SERVICES HERO SECTION
+   ========================================================================== */
+.sp-hero {
+  position: relative;
+  min-height: 520px;
+  height: clamp(520px, 72vh, 680px);
+  display: flex;
+  align-items: center;
+  margin: 12px clamp(12px, 2vw, 24px);
+  border-radius: 24px;
+  overflow: hidden;
+  padding-top: 60px; /* Offset fixed/sticky navbar */
+  box-sizing: border-box;
+}
+
+.sp-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sp-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.sp-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 60, 58, 0.92) 0%,
+    rgba(18, 60, 58, 0.65) 55%,
+    rgba(18, 60, 58, 0.25) 100%
+  );
+}
+
+.sp-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.sp-hero-content {
+  max-width: 640px;
+  color: var(--white);
+}
+
+.sp-hero-content .label {
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+}
+
+.sp-hero-content .label-square {
+  background-color: var(--primary);
+}
+
+.sp-hero-title {
+  font-size: clamp(2.2rem, 4.2vw, 4rem);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.25rem 0;
+  color: var(--white);
+}
+
+.sp-hero-desc {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 2rem 0;
+  max-width: 540px;
+}
+
+.sp-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sp-hero-btn {
+  font-size: 15px;
+  padding: 12px 24px;
+}
+
+.sp-hero-secondary-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.sp-hero-secondary-link:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   2. WHAT WE OFFER SECTION
+   ========================================================================== */
+.sp-offer-section {
+  padding: clamp(60px, 8vh, 100px) 0;
+  background-color: var(--bg-color);
+}
+
+.sp-section-header {
+  text-align: center;
+  margin-bottom: clamp(32px, 5vh, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sp-section-header .center-label {
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.sp-section-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.sp-section-subtitle {
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--dark-gray);
+  max-width: 620px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sp-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.sp-offer-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.sp-offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.sp-offer-img-wrapper {
+  width: 100%;
+  height: clamp(220px, 28vh, 280px);
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-offer-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sp-offer-card:hover .sp-offer-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.sp-offer-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.sp-offer-num-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.sp-offer-cat-pill {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: var(--primary);
+  color: #122105;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.sp-offer-card-content {
+  padding: clamp(20px, 2.5vh, 28px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  background: var(--white);
+  flex: 1;
+}
+
+.sp-offer-card-text {
+  max-width: 82%;
+}
+
+.sp-offer-card-title {
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--dark);
+  line-height: 1.25;
+}
+
+.sp-offer-card-desc {
+  color: var(--dark-gray);
+  font-size: clamp(13.5px, 1.05vw, 15px);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sp-offer-btn {
+  background: var(--primary);
+  color: #122105;
+  border: none;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.sp-offer-btn:hover {
+  background: var(--primary-hover);
+  transform: rotate(45deg) scale(1.05);
+}
+
+/* ==========================================================================
+   3. FAQS SECTION
+   ========================================================================== */
+.sp-faq-section {
+  padding: clamp(60px, 8vh, 100px) 0;
+  background-color: var(--bg-color);
+}
+
+.sp-faq-container {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(32px, 4.5vw, 64px);
+  align-items: flex-start;
+}
+
+.sp-faq-left {
+  position: sticky;
+  top: 110px;
+}
+
+.sp-faq-left .label {
+  margin-bottom: 0.75rem;
+}
+
+.sp-faq-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: var(--dark);
+}
+
+.sp-faq-desc {
+  font-size: 15px;
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+.sp-faq-btn {
+  font-size: 14px;
+  padding: 11px 22px;
+}
+
+.sp-faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sp-faq-item {
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.sp-faq-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  border-color: rgba(196, 154, 90, 0.35);
+}
+
+.sp-faq-question {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: clamp(16px, 2vh, 22px) clamp(18px, 2vw, 26px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sp-faq-question h4 {
+  font-size: clamp(14.5px, 1.1vw, 16px);
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.sp-faq-icon {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(196, 154, 90, 0.12);
+  flex-shrink: 0;
+}
+
+/* Fluid Smooth Grid-Accordion */
+.sp-faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sp-faq-item.open .sp-faq-answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.sp-faq-answer {
+  overflow: hidden;
+  padding: 0 clamp(18px, 2vw, 26px);
+}
+
+.sp-faq-item.open .sp-faq-answer {
+  padding-bottom: clamp(16px, 2vh, 22px);
+}
+
+.sp-faq-answer p {
+  padding-top: 0.5rem;
+  margin: 0;
+  color: var(--dark-gray);
+  font-size: 14.5px;
+  line-height: 1.65;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   4. CTA SECTION
+   ========================================================================== */
+.sp-cta-section {
+  position: relative;
+  margin: 12px clamp(12px, 2vw, 24px) 36px clamp(12px, 2vw, 24px);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: clamp(60px, 8vh, 100px) 0;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+}
+
+.sp-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sp-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sp-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 60, 58, 0.92) 0%,
+    rgba(18, 60, 58, 0.7) 50%,
+    rgba(18, 60, 58, 0.3) 100%
+  );
+}
+
+.sp-cta-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.sp-cta-content {
+  max-width: 540px;
+  color: var(--white);
+}
+
+.sp-cta-content .label {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.sp-cta-content .label-square {
+  background-color: var(--primary);
+}
+
+.sp-cta-title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.sp-cta-desc {
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.sp-cta-btn {
+  font-size: 15px;
+  padding: 12px 24px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 991px) {
+  .sp-offer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .sp-faq-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sp-faq-left {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-hero {
+    min-height: 460px;
+    height: auto;
+    padding: 90px 0 48px 0;
+    margin: 8px;
+    border-radius: 18px;
+  }
+
+  .sp-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .sp-offer-section,
+  .sp-faq-section {
+    padding: 48px 0;
+  }
+
+  .sp-section-title {
+    font-size: 1.85rem;
+  }
+
+  .sp-offer-card-content {
+    padding: 18px;
+  }
+
+  .sp-offer-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sp-cta-section {
+    margin: 8px 8px 24px 8px;
+    border-radius: 18px;
+    padding: 48px 0;
+    min-height: 360px;
+  }
+
+  .sp-cta-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .sp-hero-desc {
+    font-size: 14px;
+  }
+
+  .sp-offer-img-wrapper {
+    height: 200px;
+  }
+
+  .sp-offer-card-title {
+    font-size: 1.2rem;
+  }
+
+  .sp-faq-question h4 {
+    font-size: 14px;
+  }
+}

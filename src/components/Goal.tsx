@@ -27,7 +27,7 @@ const Goal: React.FC = () => {
             scrollTrigger: {
               trigger: el,
               start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );
@@ -46,7 +46,7 @@ const Goal: React.FC = () => {
             scrollTrigger: {
               trigger: videoRef.current,
               start: 'top 85%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );

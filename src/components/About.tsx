@@ -36,7 +36,7 @@ const teamMembers: TeamMember[] = [
     name: 'Elena Rostova',
     role: 'Director of Operations',
     category: 'Staffing Solutions',
-    bio: 'Delivering agile workforce scaling, contract staffing, and interim HR leadership.',
+    bio: 'Delivering agile workforce scaling, contract staffing, and interim talent leadership.',
     image: 'https://framerusercontent.com/images/OEpDygq6wqOFQSOyllADSOuI50.jpg?width=800&height=800'
   },
   {
@@ -71,7 +71,7 @@ const About: React.FC = () => {
             scrollTrigger: {
               trigger: el,
               start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );
@@ -91,7 +91,7 @@ const About: React.FC = () => {
             scrollTrigger: {
               trigger: gridRef.current,
               start: 'top 85%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );

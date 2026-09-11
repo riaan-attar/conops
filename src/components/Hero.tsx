@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="label">
             <div className="label-square"></div>
-            <span>Hr Agency</span>
+            <span>People Consultancy</span>
           </div>
           
           <h1 className="hero-title">

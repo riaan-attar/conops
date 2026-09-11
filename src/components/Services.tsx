@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/Services.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ServiceItem {
   id: string;
   number: string;
+  category: string;
   title: string;
-  desc: string;
+  tagline: string;
   details: string;
-  tags: string[];
   image: string;
   link: string;
 }
@@ -16,124 +20,259 @@ const servicesData: ServiceItem[] = [
   {
     id: 'executive-search',
     number: '01',
+    category: 'Executive Search',
     title: 'Executive Search',
-    desc: "Find leaders who shape your company's future.",
-    details: 'Targeted headhunting for C-suite and VP-level executives with precision culture matching.',
-    tags: ['C-Suite', 'VP Roles', 'Confidential'],
+    tagline: "Find leaders who shape your company's future.",
+    details: 'Targeted headhunting for C-suite and VP-level executives with precision culture matching and rigorous leadership assessment.',
     image: 'https://framerusercontent.com/images/yzE85ebgJh3YuomISMRuqz2Yiw4.jpg?width=2000&height=1333',
     link: '/services/executive-search'
   },
   {
     id: 'professional-recruitment',
     number: '02',
+    category: 'Recruitment',
     title: 'Professional Recruitment',
-    desc: 'From entry-level talent to seasoned experts.',
-    details: 'End-to-end recruitment for high-impact specialized roles across tech, operations, and finance.',
-    tags: ['Tech & Product', 'Operations', 'Finance'],
+    tagline: 'From entry-level talent to seasoned experts.',
+    details: 'End-to-end recruitment for high-impact specialized roles across tech, operations, product, and finance.',
     image: 'https://framerusercontent.com/images/WebNxmpxaoNoZwSGnWFLjHmBKM.jpg?width=2000&height=1333',
     link: '/services/professional-recruitment'
   },
   {
     id: 'contract-staffing',
     number: '03',
+    category: 'Staffing Solutions',
     title: 'Contract Staffing',
-    desc: 'Flexible HR solutions—exactly when you need them.',
-    details: 'Agile workforce scaling with pre-vetted contractors, interim leaders, and project teams.',
-    tags: ['Agile Teams', 'Interim Roles', 'Rapid Scale'],
+    tagline: 'Flexible people solutions—exactly when you need them.',
+    details: 'Agile workforce scaling with pre-vetted contractors, interim leaders, and specialized project teams ready to deliver.',
     image: 'https://framerusercontent.com/images/TuJ1CJwRxAmL4iXoabS1ZZr57h0.jpg?width=2000&height=1333',
     link: '/services/contract-staffing'
   },
   {
     id: 'talent-strategy-consulting',
     number: '04',
+    category: 'Consulting',
     title: 'Talent Strategy Consulting',
-    desc: 'Optimize your hiring process with proven methods.',
-    details: 'Data-backed organizational design, employer branding, compensation benchmarking, and retention.',
-    tags: ['Retention', 'Comp Analysis', 'Process Audit'],
+    tagline: 'Optimize your hiring process with proven methods.',
+    details: 'Data-backed organizational design, employer branding, compensation benchmarking, and talent retention strategies.',
     image: 'https://framerusercontent.com/images/hYQ2qYxLPoQ1o0LzB7Sl6gTKFhE.jpg?width=2000&height=1333',
     link: '/services/talent-strategy-consulting'
   }
 ];
 
 const Services: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const progressThumbRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const container = containerRef.current;
-      const track = trackRef.current;
-      if (!container || !track) return;
+    const section = sectionRef.current;
+    const header = headerRef.current;
+    const stage = stageRef.current;
+    if (!section || !header || !stage) return;
 
-      const rect = container.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const totalScrollable = container.offsetHeight - windowH;
+    const ctx = gsap.context(() => {
+      // 1. Scroll Reveal Animation for Header elements
+      const revealItems = header.querySelectorAll('.reveal-item');
+      if (revealItems.length > 0) {
+        gsap.fromTo(
+          revealItems,
+          { y: 32, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 80%',
+              toggleActions: 'play reverse play reverse',
+            },
+          }
+        );
+      }
 
-      if (totalScrollable <= 0) return;
+      // 2. Initial Entrance Reveal for Cards Stage (Clean, No Card Transform Glitch)
+      if (stage) {
+        gsap.fromTo(
+          stage,
+          { y: 36, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 80%',
+              toggleActions: 'play reverse play reverse',
+            },
+          }
+        );
+      }
 
-      const scrolled = -rect.top;
-      const rawProgress = scrolled / totalScrollable;
-      const clampedProgress = Math.min(Math.max(rawProgress, 0), 1);
-      setProgress(clampedProgress);
+      // 3. Smooth Horizontal Parallax Stacking Timeline
+      const cards = stage.querySelectorAll<HTMLElement>('.service-horizontal-card');
+      if (cards.length === 0) return;
 
-      const trackWidth = track.scrollWidth;
-      const windowW = window.innerWidth;
-      // Calculate how far track should translate so all cards are viewable
-      const maxTranslate = Math.max(0, trackWidth - windowW + 96);
-      const newTranslateX = clampedProgress * maxTranslate;
-      setTranslateX(newTranslateX);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          id: 'services-scroll',
+          trigger: section,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.6, // Silky smooth scrubbing with physics momentum
+          onUpdate: (self) => {
+            const idx = Math.min(
+              servicesData.length - 1,
+              Math.max(0, Math.round(self.progress * (servicesData.length - 1)))
+            );
+            setCurrentIndex(idx);
 
-      // Determine active index
-      const activeIdx = Math.min(
-        servicesData.length - 1,
-        Math.floor(clampedProgress * servicesData.length)
-      );
-      setCurrentIndex(activeIdx);
-    };
+            if (progressThumbRef.current) {
+              progressThumbRef.current.style.width = `${Math.max(8, self.progress * 100)}%`;
+            }
+          },
+        },
+      });
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    handleScroll();
+      // Initialize starting positions
+      cards.forEach((card, i) => {
+        if (i > 0) {
+          gsap.set(card, {
+            xPercent: 105,
+            scale: 0.96,
+            opacity: 0,
+            zIndex: i + 10,
+          });
+        } else {
+          gsap.set(card, {
+            xPercent: 0,
+            scale: 1,
+            opacity: 1,
+            zIndex: 1,
+          });
+        }
+      });
+
+      // Build sequential transitions between cards
+      for (let i = 1; i < cards.length; i++) {
+        const incomingCard = cards[i];
+        const incomingImg = incomingCard.querySelector('.service-parallax-img');
+        const timeStart = i - 1;
+
+        // Incoming card slides into position from the right
+        tl.to(
+          incomingCard,
+          {
+            xPercent: 0,
+            scale: 1,
+            opacity: 1,
+            ease: 'none',
+            duration: 1,
+          },
+          timeStart
+        );
+
+        // Internal image counter-parallax
+        if (incomingImg) {
+          tl.fromTo(
+            incomingImg,
+            { xPercent: 12 },
+            { xPercent: 0, ease: 'none', duration: 1 },
+            timeStart
+          );
+        }
+
+        // All preceding cards stack underneath, shifting slightly left with parallax
+        for (let prev = 0; prev < i; prev++) {
+          const prevCard = cards[prev];
+          const prevImg = prevCard.querySelector('.service-parallax-img');
+          const depth = i - prev;
+          const targetX = -Math.min(depth * 8, 22);
+          const targetScale = Math.max(0.88, 1 - depth * 0.035);
+          const targetBrightness = Math.max(0.55, 1 - depth * 0.18);
+
+          tl.to(
+            prevCard,
+            {
+              xPercent: targetX,
+              scale: targetScale,
+              filter: `brightness(${targetBrightness})`,
+              ease: 'none',
+              duration: 1,
+            },
+            timeStart
+          );
+
+          if (prevImg) {
+            tl.to(
+              prevImg,
+              {
+                xPercent: -depth * 5,
+                ease: 'none',
+                duration: 1,
+              },
+              timeStart
+            );
+          }
+        }
+      }
+    }, section);
+
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      clearTimeout(refreshTimer);
+      ctx.revert();
     };
   }, []);
 
   const scrollToCard = (index: number) => {
-    const container = containerRef.current;
-    if (!container) return;
-    const totalScrollable = container.offsetHeight - window.innerHeight;
-    const targetProgress = index / (servicesData.length - 1);
-    const containerTop = container.getBoundingClientRect().top + window.scrollY;
-    const targetScrollY = containerTop + targetProgress * totalScrollable;
-    window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top + scrollTop;
+    const scrollDistance = section.offsetHeight - window.innerHeight;
+    const targetScrollY = sectionTop + (index / (servicesData.length - 1)) * scrollDistance;
+
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(targetScrollY, {
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    } else {
+      window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
+    }
   };
 
   return (
-    <section ref={containerRef} className="services-parallax-section">
+    <section id="services" ref={sectionRef} className="services-parallax-section">
       <div className="services-sticky-wrapper">
-        <div className="services-header-bar">
+        {/* Top Header Bar with Scroll Reveal */}
+        <div ref={headerRef} className="services-header-bar">
           <div className="container services-header-inner">
             <div className="services-title-col">
-              <div className="label">
+              <div className="label reveal-item">
                 <div className="label-square"></div>
                 <span>Our Services</span>
               </div>
-              <h2 className="section-title services-heading">
+              <h2 className="section-title services-heading reveal-item">
                 Smart Hiring Solutions Built for Growth
               </h2>
             </div>
 
             <div className="services-controls-col">
-              <p className="section-desc services-sub">
+              <p className="section-desc services-sub reveal-item">
                 At ConOps Global, we provide end-to-end recruitment solutions designed to help companies scale with confidence.
               </p>
-              <div className="services-nav-actions">
+              <div className="services-nav-actions reveal-item">
                 <a href="/contact" className="btn btn-primary services-btn">
                   Start Work with Us
                   <div className="icon-box">
@@ -150,6 +289,7 @@ const Services: React.FC = () => {
                     disabled={currentIndex === 0}
                     className="nav-arrow-btn"
                     aria-label="Previous service"
+                    title="Previous service"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -164,6 +304,7 @@ const Services: React.FC = () => {
                     disabled={currentIndex === servicesData.length - 1}
                     className="nav-arrow-btn"
                     aria-label="Next service"
+                    title="Next service"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -176,69 +317,73 @@ const Services: React.FC = () => {
           </div>
         </div>
 
-        <div className="services-track-container">
-          <div 
-            ref={trackRef} 
-            className="services-horizontal-track"
-            style={{ transform: `translate3d(-${translateX}px, 0, 0)` }}
-          >
-            {servicesData.map((service, index) => {
-              const cardOffset = index / (servicesData.length - 1);
-              const parallaxShift = (progress - cardOffset) * 60;
+        {/* Flat Horizontal Cards Parallax Stacking Stage */}
+        <div className="services-stage-container">
+          <div ref={stageRef} className="services-cards-stage">
+            {servicesData.map((service, index) => (
+              <div 
+                key={service.id} 
+                className={`service-horizontal-card ${index === currentIndex ? 'active-card' : ''}`}
+              >
+                {/* Left Content Column */}
+                <div className="service-card-left">
+                  <div className="service-card-meta">
+                    <div className="service-badge-group">
+                      <span className="service-num-badge">{service.number}</span>
+                      <span className="service-category-badge">{service.category}</span>
+                    </div>
+                    <span className="service-status-pill">
+                      <span className="pulsing-green-dot"></span>
+                      Consultancy Solution
+                    </span>
+                  </div>
 
-              return (
-                <a 
-                  key={service.id} 
-                  href={service.link} 
-                  className={`service-parallax-card ${index === currentIndex ? 'active-card' : ''}`}
-                >
-                  <div className="service-card-media">
+                  <div className="service-card-main">
+                    <h3 className="service-card-title">{service.title}</h3>
+                    <p className="service-card-tagline">{service.tagline}</p>
+                    <p className="service-card-details">{service.details}</p>
+                  </div>
+
+                  <div className="service-card-footer">
+                    <a href={service.link} className="service-cta-btn">
+                      <span>Explore Solution</span>
+                      <div className="cta-arrow-circle">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </div>
+                    </a>
+                    <span className="service-step-label">Service 0{index + 1} of 0{servicesData.length}</span>
+                  </div>
+                </div>
+
+                {/* Right Media Column */}
+                <div className="service-card-right">
+                  <div className="service-img-wrapper">
                     <img 
                       src={service.image} 
                       alt={service.title} 
-                      className="parallax-img"
-                      style={{
-                        transform: `scale(1.15) translateX(${parallaxShift}px)`
-                      }}
+                      className="service-parallax-img"
                     />
-                    <div className="service-card-scrim"></div>
+                    <div className="service-img-scrim"></div>
                   </div>
-
-                  <div className="service-card-top">
-                    <span className="service-card-badge">{service.number}</span>
-                    <div className="service-tag-pill">{service.tags[0]}</div>
-                  </div>
-
-                  <div className="service-card-bottom">
-                    <div className="service-card-info">
-                      <div className="service-tags-row">
-                        {service.tags.map((t, idx) => (
-                          <span key={idx} className="service-mini-tag">{t}</span>
-                        ))}
-                      </div>
-                      <h3 className="service-card-title">{service.title}</h3>
-                      <p className="service-card-desc">{service.desc}</p>
-                    </div>
-
-                    <div className="service-card-arrow">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="services-progress-wrapper">
-          <div className="services-progress-track">
-            <div 
-              className="services-progress-thumb"
-              style={{ width: `${Math.max(10, progress * 100)}%` }}
-            />
+        {/* Bottom Scroll Progress Bar */}
+        <div className="services-bottom-controls">
+          <div className="container services-bottom-inner">
+            <div className="services-progress-track">
+              <div 
+                ref={progressThumbRef}
+                className="services-progress-thumb"
+                style={{ width: '8%' }}
+              />
+            </div>
           </div>
         </div>
       </div>

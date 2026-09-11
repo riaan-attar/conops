@@ -1,0 +1,1092 @@
+/* ==========================================================================
+   ABOUT US PAGE STYLES
+   ========================================================================== */
+
+:root {
+  --text-dark: var(--dark);
+  --text-light: var(--dark-gray);
+}
+
+.about-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.ap-hero {
+  position: relative;
+  min-height: 520px;
+  height: clamp(520px, 72vh, 680px);
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+  margin: 12px clamp(12px, 2vw, 24px);
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ap-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ap-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.ap-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 60, 58, 0.92) 0%,
+    rgba(18, 60, 58, 0.65) 55%,
+    rgba(18, 60, 58, 0.2) 100%
+  );
+}
+
+.ap-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  color: var(--white);
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+
+.ap-hero-content .label {
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+}
+
+.ap-hero-content .label-square {
+  background-color: var(--primary);
+}
+
+.ap-hero-title {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+  color: var(--white);
+}
+
+.ap-hero-desc {
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 540px;
+}
+
+/* ==========================================================================
+   2. FOUNDER SHOWCASE SECTION (DIRECTLY AFTER WHO WE ARE)
+   ========================================================================== */
+.ap-founder-showcase-section {
+  position: relative;
+  background: linear-gradient(180deg, #0d2c2a 0%, #123C3A 50%, #0d2c2a 100%);
+  padding: clamp(80px, 10vh, 130px) 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(196, 154, 90, 0.18);
+  border-bottom: 1px solid rgba(196, 154, 90, 0.12);
+  color: var(--white);
+}
+
+/* Ambient Radial Glow Meshes */
+.ap-founder-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.ap-glow-1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(196, 154, 90, 0.14) 0%, rgba(196, 154, 90, 0) 70%);
+}
+
+.ap-glow-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(196, 154, 90, 0.09) 0%, rgba(196, 154, 90, 0) 70%);
+}
+
+.ap-founder-showcase-container {
+  position: relative;
+  z-index: 1;
+}
+
+.ap-founder-showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(360px, 440px) 1.25fr;
+  gap: clamp(40px, 5.5vw, 84px);
+  align-items: center;
+}
+
+/* -------------------------------------------------------------
+   LEFT COLUMN: SCULPTED EXECUTIVE PORTRAIT MONOLITH
+   ------------------------------------------------------------- */
+.ap-founder-portrait-col {
+  position: relative;
+}
+
+.ap-founder-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  height: clamp(520px, 66vh, 620px);
+  box-shadow: 
+    0 24px 60px -15px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(196, 154, 90, 0.22);
+  background: #123C3A;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.ap-founder-card:hover {
+  box-shadow: 
+    0 32px 70px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(196, 154, 90, 0.45),
+    0 0 35px rgba(196, 154, 90, 0.12);
+}
+
+.ap-founder-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ap-founder-img {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  filter: contrast(1.03) brightness(0.96);
+  will-change: transform;
+}
+
+.ap-founder-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 44, 42, 0.15) 0%,
+    rgba(13, 44, 42, 0.05) 30%,
+    rgba(13, 44, 42, 0.6) 70%,
+    rgba(13, 44, 42, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Status Pill */
+.ap-founder-top-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 60, 58, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 154, 90, 0.32);
+  padding: 7px 15px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.ap-founder-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+  animation: founderPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes founderPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+/* Floating Executive Monolith Badge */
+.ap-founder-bottom-card {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  z-index: 3;
+  background: rgba(18, 60, 58, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.ap-founder-monogram-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.ap-founder-monogram {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, #b38b4d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: #0d2c2a;
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 12px rgba(196, 154, 90, 0.35);
+  flex-shrink: 0;
+}
+
+.ap-founder-name-tag {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.ap-founder-subtag {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.ap-founder-highlight-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  letter-spacing: 0.01em;
+}
+
+.ap-founder-check-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(196, 154, 90, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------
+   RIGHT COLUMN: EDITORIAL MANIFESTO & BENTO PHILOSOPHY
+   ------------------------------------------------------------- */
+.ap-founder-manifesto-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-founder-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 1.25rem;
+}
+
+.ap-founder-eyebrow .label {
+  color: var(--primary);
+  margin-bottom: 0;
+}
+
+.ap-founder-eyebrow .label-square {
+  background: var(--primary);
+}
+
+.ap-founder-id-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ap-founder-manifesto-title {
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin: 0 0 1.25rem 0;
+}
+
+.ap-founder-lead {
+  font-size: clamp(1.02rem, 1.15vw, 1.18rem);
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.75rem 0;
+  max-width: 680px;
+}
+
+/* Signature Block Artifact */
+.ap-founder-signature-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 22px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.founder-signature-svg {
+  filter: drop-shadow(0 2px 8px rgba(196, 154, 90, 0.35));
+  flex-shrink: 0;
+}
+
+.ap-signature-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 18px;
+}
+
+.ap-signature-meta strong {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ap-signature-meta span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12.5px;
+}
+
+/* Bento Principles Cards */
+.ap-founder-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.ap-pillar-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 22px 18px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.ap-pillar-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(196, 154, 90, 0.35);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.ap-pillar-num {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.ap-pillar-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.ap-pillar-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+}
+
+/* Executive Milestones Strip */
+.ap-founder-milestones-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 2.25rem;
+}
+
+.ap-milestone-pill {
+  background: rgba(18, 60, 58, 0.7);
+  border: 1px solid rgba(196, 154, 90, 0.22);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ap-milestone-pill strong {
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.ap-milestone-pill span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Actions Row */
+.ap-founder-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.ap-founder-btn {
+  font-size: 14.5px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ap-founder-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.ap-founder-social-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. MISSION SECTION
+   ========================================================================== */
+.ap-mission-section {
+  padding: clamp(60px, 8vh, 100px) 0;
+  background-color: var(--bg-color);
+}
+
+.ap-mission-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ap-mission-logo {
+  margin-bottom: 2rem;
+}
+
+.ap-mission-text {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--dark);
+  margin: 0;
+}
+
+.highlight-green {
+  color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   4. OUR STORY SECTION
+   ========================================================================== */
+.ap-story-section {
+  padding: clamp(50px, 7vh, 90px) 0;
+}
+
+.ap-story-content-wrapper {
+  background: var(--white);
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(32px, 4vw, 56px);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-color);
+  padding: clamp(32px, 4vw, 56px);
+  align-items: center;
+}
+
+.ap-story-img {
+  width: 100%;
+  height: clamp(320px, 45vh, 460px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.ap-story-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ap-story-text .label {
+  margin-bottom: 1rem;
+}
+
+.ap-story-text h2 {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+
+.ap-story-text p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+
+.ap-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   5. STATS SECTION
+   ========================================================================== */
+.ap-stats-section {
+  padding: clamp(60px, 8vh, 100px) 0;
+  background-color: var(--bg-color);
+}
+
+.ap-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.ap-stat-item {
+  text-align: center;
+  background: var(--white);
+  padding: clamp(32px, 4vh, 48px) 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ap-stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.ap-counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.ap-stat-item h3 {
+  font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+  color: var(--primary-hover);
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.ap-stat-item p {
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   6. LEADERSHIP TEAM SECTION
+   ========================================================================== */
+.ap-team-section {
+  padding: clamp(60px, 8vh, 100px) 0;
+}
+
+.ap-section-header {
+  text-align: center;
+  margin-bottom: clamp(36px, 5vh, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ap-section-header .center-label {
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.ap-section-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ap-team-desc {
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--dark-gray);
+  max-width: 580px;
+  margin: 0.75rem 0 0 0;
+  line-height: 1.55;
+}
+
+.ap-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.ap-team-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  background: var(--white);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.ap-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
+}
+
+.ap-team-img-wrapper {
+  width: 100%;
+  height: clamp(300px, 38vh, 380px);
+  position: relative;
+  overflow: hidden;
+}
+
+.ap-team-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ap-team-card:hover .ap-team-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.ap-team-category-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 60, 58, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(196, 154, 90, 0.3);
+}
+
+.ap-team-card-info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: var(--white);
+  padding: 16px 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ap-team-card-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 0.25rem 0;
+}
+
+.ap-team-card-info p {
+  font-size: 0.88rem;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+/* ==========================================================================
+   7. CREDENTIALS SECTION
+   ========================================================================== */
+.ap-credentials-section {
+  padding: clamp(60px, 8vh, 100px) 0;
+  background-color: var(--bg-color);
+}
+
+.ap-credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.ap-credential-box {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--dark);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ap-credential-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.ap-credential-box svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   8. CTA SECTION
+   ========================================================================== */
+.ap-cta-section {
+  position: relative;
+  margin: 12px clamp(12px, 2vw, 24px) 36px clamp(12px, 2vw, 24px);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: clamp(60px, 8vh, 100px) 0;
+  display: flex;
+  align-items: center;
+  min-height: 440px;
+}
+
+.ap-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ap-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ap-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 60, 58, 0.92) 0%,
+    rgba(18, 60, 58, 0.7) 50%,
+    rgba(18, 60, 58, 0.25) 100%
+  );
+}
+
+.ap-cta-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.ap-cta-content {
+  max-width: 560px;
+  color: var(--white);
+}
+
+.ap-cta-content .label {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.ap-cta-content .label-square {
+  background-color: var(--primary);
+}
+
+.ap-cta-title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.ap-cta-desc {
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 2rem 0;
+}
+
+.ap-cta-btn {
+  font-size: 15px;
+  padding: 12px 24px;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .ap-story-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ap-founder-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .ap-founder-card {
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+    height: 490px;
+  }
+
+  .ap-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ap-stats-grid,
+  .ap-credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ap-hero {
+    min-height: 460px;
+    height: auto;
+    padding: 90px 0 48px 0;
+    margin: 8px;
+    border-radius: 18px;
+  }
+
+  .ap-hero-title {
+    font-size: 2.3rem;
+  }
+
+  .ap-founder-showcase-section {
+    padding: 60px 0;
+  }
+
+  .ap-mission-section,
+  .ap-story-section,
+  .ap-stats-section,
+  .ap-team-section,
+  .ap-credentials-section {
+    padding: 48px 0;
+  }
+
+  .ap-founder-card {
+    height: 430px;
+  }
+
+  .ap-founder-manifesto-title {
+    font-size: 1.85rem;
+  }
+
+  .ap-founder-signature-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .ap-signature-meta {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  .ap-founder-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ap-founder-milestones-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .ap-founder-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .ap-founder-btn,
+  .ap-founder-social-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ap-mission-text {
+    font-size: 1.45rem;
+  }
+
+  .ap-story-content-wrapper {
+    padding: 24px 20px;
+  }
+
+  .ap-stats-grid,
+  .ap-credentials-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ap-team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ap-team-img-wrapper {
+    height: 320px;
+  }
+
+  .ap-cta-section {
+    margin: 8px 8px 24px 8px;
+    border-radius: 18px;
+    padding: 48px 0;
+    min-height: 360px;
+  }
+
+  .ap-cta-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ap-hero-title {
+    font-size: 1.95rem;
+  }
+
+  .ap-hero-desc {
+    font-size: 14px;
+  }
+
+  .ap-founder-card {
+    height: 380px;
+    border-radius: 20px;
+  }
+
+  .ap-founder-bottom-card {
+    padding: 14px;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    border-radius: 16px;
+  }
+
+  .ap-founder-name-tag {
+    font-size: 18px;
+  }
+
+  .ap-milestone-pill {
+    padding: 12px 14px;
+  }
+
+  .ap-milestone-pill strong {
+    font-size: 22px;
+  }
+}

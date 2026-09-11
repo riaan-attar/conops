@@ -118,7 +118,7 @@
 
 .why-us-stack-card:hover {
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
-  border-color: rgba(124, 215, 18, 0.6);
+  border-color: rgba(196, 154, 90, 0.6);
 }
 
 .why-us-card-top-row {
@@ -131,7 +131,7 @@
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(124, 215, 18, 0.14);
+  background: rgba(196, 154, 90, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;

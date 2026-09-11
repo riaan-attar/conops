@@ -16,7 +16,7 @@ const Testimonials: React.FC = () => {
       image: "https://framerusercontent.com/images/OEpDygq6wqOFQSOyllADSOuI50.jpg?width=800&height=800"
     },
     {
-      text: "“We've partnered with many recruitment agencies, but none delivered the consistency and quality that ConOps Global provides. They're our go-to for every critical hire.”",
+      text: "“We've partnered with many talent consultancies, but none delivered the consistency and quality that ConOps Global provides. They're our go-to for every critical hire.”",
       name: "Alicia T.",
       position: "Founder & CEO",
       image: "https://framerusercontent.com/images/n7E1GT1fpTfsMwiUH2ptPcj60Cw.jpg?width=800&height=800"

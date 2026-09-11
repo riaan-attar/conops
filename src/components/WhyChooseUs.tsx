@@ -25,7 +25,7 @@ const features: FeatureItem[] = [
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L14.5 4.5L18 4L18.5 7.5L21.5 9L20.5 12.5L22 15.5L19 17.5L18 21L14.5 20.5L12 23L9.5 20.5L6 21L5 17.5L2 15.5L3.5 12.5L2.5 9L5.5 7.5L6 4L9.5 4.5L12 2Z" fill="var(--primary)" />
-        <path d="M8.5 12L11 14.5L15.5 9.5" stroke="#1b2f04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8.5 12L11 14.5L15.5 9.5" stroke="var(--dark)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
   },
@@ -39,7 +39,7 @@ const features: FeatureItem[] = [
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M4.5 16.5C3.5 14.5 3 13 3 13L7 9L11 13L7 17C7 17 5.5 17.5 4.5 16.5Z" fill="var(--primary)" />
         <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" fill="var(--primary)" />
-        <circle cx="15" cy="9" r="1.5" fill="#1b2f04" />
+        <circle cx="15" cy="9" r="1.5" fill="var(--dark)" />
       </svg>
     )
   },
@@ -52,7 +52,7 @@ const features: FeatureItem[] = [
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="var(--primary)" />
-        <path d="M9 12l2 2 4-4" stroke="#1b2f04" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 12l2 2 4-4" stroke="var(--dark)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
   },
@@ -65,9 +65,9 @@ const features: FeatureItem[] = [
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" fill="var(--primary)" />
-        <path d="M9 19h6M10 22h4" stroke="#1b2f04" strokeWidth="2" strokeLinecap="round" />
-        <line x1="12" y1="6" x2="12" y2="12" stroke="#1b2f04" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="12" cy="14" r="1" fill="#1b2f04" />
+        <path d="M9 19h6M10 22h4" stroke="var(--dark)" strokeWidth="2" strokeLinecap="round" />
+        <line x1="12" y1="6" x2="12" y2="12" stroke="var(--dark)" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="12" cy="14" r="1" fill="var(--dark)" />
       </svg>
     )
   },
@@ -80,9 +80,9 @@ const features: FeatureItem[] = [
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="var(--primary)" />
-        <circle cx="8" cy="11.5" r="1.2" fill="#1b2f04" />
-        <circle cx="12" cy="11.5" r="1.2" fill="#1b2f04" />
-        <circle cx="16" cy="11.5" r="1.2" fill="#1b2f04" />
+        <circle cx="8" cy="11.5" r="1.2" fill="var(--dark)" />
+        <circle cx="12" cy="11.5" r="1.2" fill="var(--dark)" />
+        <circle cx="16" cy="11.5" r="1.2" fill="var(--dark)" />
       </svg>
     )
   }
@@ -111,7 +111,7 @@ const WhyChooseUs: React.FC = () => {
             scrollTrigger: {
               trigger: el,
               start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );
@@ -129,7 +129,7 @@ const WhyChooseUs: React.FC = () => {
             scrollTrigger: {
               trigger: imageRef.current,
               start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );
