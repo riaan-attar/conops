@@ -52,6 +52,15 @@ const servicesData: ServiceOfferItem[] = [
     desc: 'Organizational design, compensation benchmarking, and retention strategies to optimize growth.',
     image: 'https://framerusercontent.com/images/hYQ2qYxLPoQ1o0LzB7Sl6gTKFhE.jpg?width=2000&height=1333',
     link: '/contact?service=talent-strategy-consulting'
+  },
+  {
+    id: 'global-workforce-solutions',
+    number: '05',
+    category: 'Global Solutions',
+    title: 'Global Workforce Solutions',
+    desc: 'International recruitment, employer of record navigation, global talent mobility, and cross-border workforce integration.',
+    image: 'https://framerusercontent.com/images/RA0jh2y68ywQWHWWQpomMWQ9E.jpg?width=1200&height=1260',
+    link: '/contact?service=global-workforce-solutions'
   }
 ];
 

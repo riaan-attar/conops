@@ -5,7 +5,7 @@
 /* Section Runway - provides scroll duration for the GSAP pinning */
 .services-parallax-section {
   position: relative;
-  height: 380vh;
+  height: 480vh;
   background-color: var(--white);
   border-bottom: 1px solid var(--border-color);
 }
@@ -156,6 +156,7 @@
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* ==========================================================================
