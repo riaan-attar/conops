@@ -156,6 +156,7 @@
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -170,16 +171,16 @@
   height: 100%;
   margin: auto;
   border-radius: 30px;
-  background: linear-gradient(135deg, #182c07 0%, #0d2c2a 100%);
+  background: linear-gradient(135deg, #123C3A 0%, #0d2c2a 100%);
   border: 1px solid rgba(196, 154, 90, 0.25);
   box-shadow: 
-    0 30px 80px rgba(13, 23, 4, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    -20px 0 40px rgba(0, 0, 0, 0.4);
+    0 24px 60px rgba(18, 60, 58, 0.35),
+    0 0 0 1px rgba(196, 154, 90, 0.15),
+    -18px 0 45px rgba(0, 0, 0, 0.28);
   display: flex;
   overflow: hidden;
   color: var(--white);
-  will-change: transform, filter;
+  will-change: transform;
   box-sizing: border-box;
 }
 

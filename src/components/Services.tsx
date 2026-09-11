@@ -94,26 +94,10 @@ const Services: React.FC = () => {
         );
       }
 
-      // 2. Initial Entrance Reveal for Cards Stage (Clean, No Card Transform Glitch)
-      if (stage) {
-        gsap.fromTo(
-          stage,
-          { y: 36, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.85,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: section,
-              start: 'top 80%',
-              toggleActions: 'play reverse play reverse',
-            },
-          }
-        );
-      }
+      // Entrance reveal on cards/stage has been removed as requested.
+      // Cards and stage remain naturally solid and fully visible with zero flicker or black screen.
 
-      // 3. Smooth Horizontal Parallax Stacking Timeline
+      // 2. Smooth Horizontal Parallax Stacking Timeline
       const cards = stage.querySelectorAll<HTMLElement>('.service-horizontal-card');
       if (cards.length === 0) return;
 
@@ -138,20 +122,20 @@ const Services: React.FC = () => {
         },
       });
 
-      // Initialize starting positions
+      // Initialize starting positions: Card 0 is solid, cards 1+ start off-screen to the right
       cards.forEach((card, i) => {
         if (i > 0) {
           gsap.set(card, {
-            xPercent: 105,
-            scale: 0.96,
-            opacity: 0,
+            xPercent: 100,
+            scale: 1,
+            autoAlpha: 0,
             zIndex: i + 10,
           });
         } else {
           gsap.set(card, {
             xPercent: 0,
             scale: 1,
-            opacity: 1,
+            autoAlpha: 1,
             zIndex: 1,
           });
         }
@@ -163,61 +147,60 @@ const Services: React.FC = () => {
         const incomingImg = incomingCard.querySelector('.service-parallax-img');
         const timeStart = i - 1;
 
-        // Incoming card slides into position from the right
+        // Reveal incoming card and slide it cleanly at 100% solid opacity (no black screen or semi-transparent bleed)
         tl.to(
           incomingCard,
           {
+            autoAlpha: 1,
+            duration: 0.01,
+            ease: 'none',
+          },
+          timeStart
+        );
+
+        tl.fromTo(
+          incomingCard,
+          {
+            xPercent: 100,
+            scale: 1,
+          },
+          {
             xPercent: 0,
             scale: 1,
-            opacity: 1,
             ease: 'none',
             duration: 1,
           },
           timeStart
         );
 
-        // Internal image counter-parallax
+        // Internal image subtle counter-parallax
         if (incomingImg) {
           tl.fromTo(
             incomingImg,
-            { xPercent: 12 },
+            { xPercent: 10 },
             { xPercent: 0, ease: 'none', duration: 1 },
             timeStart
           );
         }
 
-        // All preceding cards stack underneath, shifting slightly left with parallax
+        // All preceding cards stack underneath, shifting slightly left with depth scaling
+        // NO CSS filters or brightness manipulation to prevent GPU black composite flashes
         for (let prev = 0; prev < i; prev++) {
           const prevCard = cards[prev];
-          const prevImg = prevCard.querySelector('.service-parallax-img');
           const depth = i - prev;
-          const targetX = -Math.min(depth * 8, 22);
-          const targetScale = Math.max(0.88, 1 - depth * 0.035);
-          const targetBrightness = Math.max(0.55, 1 - depth * 0.18);
+          const targetX = -Math.min(depth * 4, 12);
+          const targetScale = Math.max(0.94, 1 - depth * 0.025);
 
           tl.to(
             prevCard,
             {
               xPercent: targetX,
               scale: targetScale,
-              filter: `brightness(${targetBrightness})`,
               ease: 'none',
               duration: 1,
             },
             timeStart
           );
-
-          if (prevImg) {
-            tl.to(
-              prevImg,
-              {
-                xPercent: -depth * 5,
-                ease: 'none',
-                duration: 1,
-              },
-              timeStart
-            );
-          }
         }
       }
     }, section);
