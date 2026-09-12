@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/ServicesPage.css';
@@ -12,90 +12,81 @@ interface ServiceOfferItem {
   category: string;
   title: string;
   desc: string;
+  features: string[];
   image: string;
   link: string;
 }
 
 const servicesData: ServiceOfferItem[] = [
   {
-    id: 'executive-search',
+    id: 'operations-optimization',
     number: '01',
-    category: 'Executive Search',
-    title: 'Executive Search',
-    desc: "Targeted headhunting for C-suite and VP-level leaders who shape your organization's future.",
+    category: 'Operations',
+    title: 'Operations & Crew Optimization',
+    desc: "Strategic workforce planning to maximize equipment utilization and crew efficiency on asphalt and concrete jobsites.",
+    features: [
+      'Fleet & equipment utilization analysis',
+      'Labor productivity tracking & routing',
+      'Bottleneck identification & workflow optimization'
+    ],
     image: 'https://framerusercontent.com/images/yzE85ebgJh3YuomISMRuqz2Yiw4.jpg?width=2000&height=1333',
-    link: '/contact?service=executive-search'
+    link: '/contact?service=operations-optimization'
   },
   {
-    id: 'professional-recruitment',
+    id: 'bidding-estimating',
     number: '02',
-    category: 'Recruitment',
-    title: 'Professional Recruitment',
-    desc: 'End-to-end recruitment for high-impact specialized talent across tech, operations, and finance.',
+    category: 'Estimating',
+    title: 'Bidding & Estimating Consultation',
+    desc: 'Refining your estimating processes and project costing models to win more profitable paving and concrete contracts.',
+    features: [
+      'Takeoff accuracy review & coaching',
+      'Cost margin structuring for competitive markets',
+      'Strategic bid pipeline management'
+    ],
     image: 'https://framerusercontent.com/images/WebNxmpxaoNoZwSGnWFLjHmBKM.jpg?width=2000&height=1333',
-    link: '/contact?service=professional-recruitment'
+    link: '/contact?service=bidding-estimating'
   },
   {
-    id: 'contract-staffing',
+    id: 'leadership-advisory',
     number: '03',
-    category: 'Staffing Solutions',
-    title: 'Contract Staffing',
-    desc: 'Flexible people solutions—agile workforce scaling with pre-vetted contractors and interim leaders.',
+    category: 'Advisory',
+    title: 'Leadership & Executive Advisory',
+    desc: 'Targeted executive guidance and succession planning to build resilient leadership within your contracting firm.',
+    features: [
+      'Executive succession & transition planning',
+      'C-Suite talent mapping & acquisition',
+      'Organizational restructuring & scaling strategy'
+    ],
     image: 'https://framerusercontent.com/images/TuJ1CJwRxAmL4iXoabS1ZZr57h0.jpg?width=2000&height=1333',
-    link: '/contact?service=contract-staffing'
+    link: '/contact?service=leadership-advisory'
   },
   {
-    id: 'talent-strategy-consulting',
+    id: 'safety-compliance',
     number: '04',
-    category: 'Consulting',
-    title: 'Talent Strategy Consulting',
-    desc: 'Organizational design, compensation benchmarking, and retention strategies to optimize growth.',
+    category: 'Safety',
+    title: 'Safety & Compliance Programs',
+    desc: 'Developing comprehensive safety architectures to ensure compliance with OSHA and industry-specific site regulations.',
+    features: [
+      'Comprehensive OSHA audit preparation',
+      'Custom site-specific safety program development',
+      'Risk mitigation & hazard communication training'
+    ],
     image: 'https://framerusercontent.com/images/hYQ2qYxLPoQ1o0LzB7Sl6gTKFhE.jpg?width=2000&height=1333',
-    link: '/contact?service=talent-strategy-consulting'
+    link: '/contact?service=safety-compliance'
   },
   {
-    id: 'global-workforce-solutions',
+    id: 'specialized-resourcing',
     number: '05',
-    category: 'Global Solutions',
-    title: 'Global Workforce Solutions',
-    desc: 'International recruitment, employer of record navigation, global talent mobility, and cross-border workforce integration.',
+    category: 'Resourcing',
+    title: 'Specialized Project Resourcing',
+    desc: 'Agile resource planning and workforce deployment strategies tailored for large-scale concrete and asphalt infrastructure projects.',
+    features: [
+      'Rapid workforce mobilization planning',
+      'Specialized skill gap analysis',
+      'Interim project management deployment'
+    ],
     image: 'https://framerusercontent.com/images/RA0jh2y68ywQWHWWQpomMWQ9E.jpg?width=1200&height=1260',
-    link: '/contact?service=global-workforce-solutions'
-  }
-];
-
-const faqsData = [
-  {
-    question: 'What industries does ConOps Global specialize in?',
-    answer: 'We specialize in Tech & Product, Operations, Finance, Executive Leadership, and Specialized Engineering across high-growth sectors.'
-  },
-  {
-    question: 'How long does the typical candidate placement cycle take?',
-    answer: 'Our streamlined search methodology typically delivers a curated shortlist within 5 to 10 days, with final placements completed in 3 to 5 weeks.'
-  },
-  {
-    question: 'Do you work with startups as well as larger enterprise companies?',
-    answer: 'Yes. We partner with seed-stage startups, rapidly scaling scale-ups, and established global enterprises requiring specialized people solutions.'
-  },
-  {
-    question: 'What makes ConOps Global different from traditional recruitment firms?',
-    answer: 'We operate strictly as a People & Talent Consultancy. Rather than mass-resuming, we offer consultative workforce design, rigorous vetting, and culture-matched placement.'
-  },
-  {
-    question: 'Do you offer contract, fractional, or interim staffing solutions?',
-    answer: 'Yes. Our Contract Staffing practice provides pre-vetted, immediate-impact professionals, fractional executives, and dedicated project squads.'
-  },
-  {
-    question: 'Can you help audit and improve our internal hiring process?',
-    answer: 'Absolutely. Through our Talent Strategy Consulting service, we audit recruitment pipelines, optimize employer branding, and design competitive compensation frameworks.'
-  },
-  {
-    question: 'How rigorous is your candidate vetting process?',
-    answer: 'Every candidate undergoes deep behavioral profiling, technical assessment, reference benchmarking, and alignment checks with your company values.'
-  },
-  {
-    question: 'What geographic locations and time zones do you support?',
-    answer: 'We operate internationally, supporting on-site placements in major global hubs as well as distributed, remote-first teams across North America, Europe, and Asia.'
+    link: '/contact?service=specialized-resourcing'
   }
 ];
 
@@ -103,14 +94,7 @@ const ServicesPage: React.FC = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const offerRef = useRef<HTMLElement>(null);
-  const faqRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
-
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
 
   useEffect(() => {
     const page = pageRef.current;
@@ -131,7 +115,7 @@ const ServicesPage: React.FC = () => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: heroRef.current,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse',
             },
           }
@@ -153,8 +137,8 @@ const ServicesPage: React.FC = () => {
               duration: 0.8,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: offerRef.current,
-                start: 'top 80%',
+                trigger: offerHeader,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -162,85 +146,43 @@ const ServicesPage: React.FC = () => {
         }
 
         if (offerCards.length > 0) {
-          gsap.fromTo(
-            offerCards,
-            { y: 50, opacity: 0, scale: 0.97 },
-            {
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 0.85,
-              stagger: 0.12,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: offerRef.current,
-                start: 'top 75%',
-                toggleActions: 'play reverse play reverse',
-              },
-            }
-          );
+          offerCards.forEach((card) => {
+            gsap.fromTo(
+              card,
+              { y: 40, opacity: 0, scale: 0.97 },
+              {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.85,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: card,
+                  start: 'top 85%',
+                  toggleActions: 'play reverse play reverse',
+                },
+              }
+            );
+          });
         }
       }
 
-      // 3. FAQs Section Reveal
-      if (faqRef.current) {
-        const faqLeft = faqRef.current.querySelector('.sp-faq-left');
-        const faqItems = faqRef.current.querySelectorAll('.sp-faq-item');
-
-        if (faqLeft) {
-          gsap.fromTo(
-            faqLeft,
-            { y: 35, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.85,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: faqRef.current,
-                start: 'top 80%',
-                toggleActions: 'play reverse play reverse',
-              },
-            }
-          );
-        }
-
-        if (faqItems.length > 0) {
-          gsap.fromTo(
-            faqItems,
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.7,
-              stagger: 0.08,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: faqRef.current,
-                start: 'top 75%',
-                toggleActions: 'play reverse play reverse',
-              },
-            }
-          );
-        }
-      }
-
-      // 4. CTA Section Reveal
+      // 3. CTA Section Reveal
       if (ctaRef.current) {
         const ctaBox = ctaRef.current.querySelector('.sp-cta-container');
         if (ctaBox) {
           gsap.fromTo(
             ctaBox,
-            { y: 40, opacity: 0, scale: 0.97 },
+            { y: 35, opacity: 0, scale: 0.97 },
             {
               y: 0,
               opacity: 1,
               scale: 1,
-              duration: 0.9,
+              duration: 0.85,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: ctaRef.current,
-                start: 'top 85%',
+                trigger: ctaBox,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -275,29 +217,26 @@ const ServicesPage: React.FC = () => {
           <div className="sp-hero-content">
             <div className="label reveal-hero">
               <div className="label-square"></div>
-              <span>PEOPLE CONSULTANCY</span>
+              <span>INDUSTRY CONSULTANCY</span>
             </div>
             
             <h1 className="sp-hero-title reveal-hero">
-              Smart Hiring Solutions for Every Stage of Growth
+              Strategic Consultancy for Concrete & Asphalt Contractors
             </h1>
             
             <p className="sp-hero-desc reveal-hero">
-              Discover consultative people solutions tailored to your organization—strategic, agile, and human-centered.
+              Discover specialized consulting solutions designed to optimize operations, improve estimating, and build resilient leadership for the US paving and concrete industry.
             </p>
 
             <div className="sp-hero-actions reveal-hero">
               <a href="/contact" className="btn btn-primary sp-hero-btn">
-                Start Hiring With Us
+                Consult With Us
                 <div className="icon-box">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </div>
-              </a>
-              <a href="#faqs" className="sp-hero-secondary-link">
-                View Frequently Asked Questions ↓
               </a>
             </div>
           </div>
@@ -312,9 +251,9 @@ const ServicesPage: React.FC = () => {
               <div className="label-square"></div>
               <span>OUR EXPERTISE</span>
             </div>
-            <h2 className="sp-section-title">Comprehensive People Solutions</h2>
+            <h2 className="sp-section-title">Comprehensive Industry Solutions</h2>
             <p className="sp-section-subtitle">
-              We provide end-to-end talent acquisition and workforce consulting designed to scale your business with speed and integrity.
+              We provide end-to-end consulting designed to scale your contracting business with speed, safety, and operational excellence.
             </p>
           </div>
           
@@ -332,6 +271,16 @@ const ServicesPage: React.FC = () => {
                   <div className="sp-offer-card-text">
                     <h3 className="sp-offer-card-title">{item.title}</h3>
                     <p className="sp-offer-card-desc">{item.desc}</p>
+                    <ul className="sp-offer-features">
+                      {item.features.map((feat, i) => (
+                        <li key={i}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   
                   <a href={item.link} className="sp-offer-btn" aria-label={`Learn more about ${item.title}`}>
@@ -343,76 +292,6 @@ const ServicesPage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs Section */}
-      <section ref={faqRef} className="sp-faq-section" id="faqs">
-        <div className="container sp-faq-container">
-          <div className="sp-faq-left">
-            <div className="label">
-              <div className="label-square"></div>
-              <span>FAQS</span>
-            </div>
-            <h2 className="sp-section-title sp-faq-title">Everything You Need to Know</h2>
-            <p className="sp-faq-desc">
-              Have specific requirements? Our consultancy team is available to structure customized talent and staffing solutions.
-            </p>
-            <a href="/contact" className="btn btn-primary sp-faq-btn">
-              Consult With Our Team
-              <div className="icon-box">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </div>
-            </a>
-          </div>
-          
-          <div className="sp-faq-right">
-            {faqsData.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div 
-                  key={idx} 
-                  className={`sp-faq-item ${isOpen ? 'open' : ''}`}
-                >
-                  <button 
-                    className="sp-faq-question"
-                    onClick={() => toggleFaq(idx)}
-                    aria-expanded={isOpen}
-                  >
-                    <h4>{faq.question}</h4>
-                    <div className="sp-faq-icon">
-                      <svg 
-                        width="18" 
-                        height="18" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2.5" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                        style={{
-                          transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-                          transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-                        }}
-                      >
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </div>
-                  </button>
-                  
-                  <div className="sp-faq-answer-wrapper">
-                    <div className="sp-faq-answer">
-                      <p>{faq.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -437,10 +316,10 @@ const ServicesPage: React.FC = () => {
               <span>GET STARTED</span>
             </div>
             <h2 className="sp-cta-title">
-              Let's Build Your Next Great Team Together
+              Elevate Your Contracting Business
             </h2>
             <p className="sp-cta-desc">
-              Partner with a consultancy that connects your organization with exceptional, vetted talent from day one.
+              Partner with a specialized consultancy dedicated to the growth, safety, and operational excellence of US concrete and asphalt contractors.
             </p>
             <a href="/contact" className="btn btn-primary sp-cta-btn">
               Get Started Today

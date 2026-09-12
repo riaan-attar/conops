@@ -70,7 +70,7 @@ const About: React.FC = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: el,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse'
             }
           }
@@ -90,7 +90,7 @@ const About: React.FC = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: gridRef.current,
-              start: 'top 85%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse'
             }
           }

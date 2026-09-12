@@ -6,6 +6,7 @@ import 'lenis/dist/lenis.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
@@ -131,6 +132,7 @@ function App() {
       <Navbar />
       {renderPage()}
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

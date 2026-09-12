@@ -102,6 +102,13 @@
   .footer-top-row {
     flex-direction: column;
     gap: 3rem;
+    align-items: center;
+  }
+
+  .footer-logo {
+    max-width: 220px;
+    margin: 0 auto;
+    text-align: center;
   }
   
   .footer-links-grid {

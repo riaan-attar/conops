@@ -64,7 +64,7 @@ const servicesData: ServiceItem[] = [
     title: 'Global Workforce Solutions',
     tagline: 'Scale borderless teams with agility and compliance.',
     details: 'International recruitment, employer of record navigation, global talent mobility, and cross-border workforce integration built for rapid expansion.',
-    image: 'https://framerusercontent.com/images/RA0jh2y68ywQWHWWQpomMWQ9E.jpg?width=1200&height=1260',
+    image: 'https://framerusercontent.com/images/yzE85ebgJh3YuomISMRuqz2Yiw4.jpg?width=2000&height=1333',
     link: '/services/global-workforce-solutions'
   }
 ];
@@ -97,7 +97,7 @@ const Services: React.FC = () => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: section,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse',
             },
           }
@@ -116,7 +116,7 @@ const Services: React.FC = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: section,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse',
             },
           }
@@ -129,7 +129,8 @@ const Services: React.FC = () => {
 
       const numCards = cards.length;
       const transitionsCount = numCards - 1;
-      const dwellDuration = 1.0; // Generous hold duration so the 5th card remains fully visible and pinned
+      const dwellDuration = 0.2; // Snappy hold: 5th card settles nicely without lingering or causing a long scroll
+      const totalUnits = transitionsCount + dwellDuration;
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -140,10 +141,10 @@ const Services: React.FC = () => {
           scrub: 0.6, // Silky smooth scrubbing with physics momentum
           onUpdate: (self) => {
             const rawProgress = self.progress;
-            // Map progress evenly across all 5 cards
+            const currentUnit = rawProgress * totalUnits;
             const idx = Math.min(
               numCards - 1,
-              Math.max(0, Math.floor(rawProgress * numCards))
+              Math.max(0, Math.floor(currentUnit + 0.5))
             );
             setCurrentIndex(idx);
 
@@ -164,6 +165,7 @@ const Services: React.FC = () => {
             scale: 1,
             opacity: 1,
             zIndex: 10 + i * 5,
+            height: '100%',
           });
         } else {
           gsap.set(card, {
@@ -171,6 +173,7 @@ const Services: React.FC = () => {
             scale: 1,
             opacity: 1,
             zIndex: 10,
+            height: '100%',
           });
         }
       });
@@ -202,36 +205,18 @@ const Services: React.FC = () => {
           );
         }
 
-        // Preceding cards stack underneath, staying 100% visible and bright (no black screen or filter)
+        // Preceding cards stay stationary at full size directly beneath incoming card
+        // No scale-down or negative x-shift so no edges peak out like a shadow
         for (let prev = 0; prev < i; prev++) {
           const prevCard = cards[prev];
-          const prevImg = prevCard.querySelector('.service-parallax-img');
-          const depth = i - prev;
-          const targetX = -Math.min(depth * 4, 16);
-          const targetScale = Math.max(0.93, 1 - depth * 0.02);
-
-          tl.to(
+          tl.set(
             prevCard,
             {
-              xPercent: targetX,
-              scale: targetScale,
-              ease: 'none',
-              duration: 1,
+              xPercent: 0,
+              scale: 1,
             },
             timeStart
           );
-
-          if (prevImg) {
-            tl.to(
-              prevImg,
-              {
-                xPercent: -depth * 3,
-                ease: 'none',
-                duration: 1,
-              },
-              timeStart
-            );
-          }
         }
       }
 
@@ -259,11 +244,12 @@ const Services: React.FC = () => {
     const scrollDistance = section.offsetHeight - window.innerHeight;
 
     // Distribute targets so clicking arrow/card scrolls directly to that card
+    const totalUnits = (servicesData.length - 1) + 0.2;
     const targetProgress = index === 0 
       ? 0 
       : index === servicesData.length - 1 
-        ? 0.95 
-        : (index + 0.3) / servicesData.length;
+        ? 0.98 
+        : index / totalUnits;
     const targetScrollY = sectionTop + targetProgress * scrollDistance;
 
     if ((window as any).lenis) {

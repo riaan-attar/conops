@@ -4,12 +4,12 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer-section">
       <div className="container footer-container">
-        
+
         <div className="footer-top-row">
           <div className="footer-logo">
             <img src="/logo.png" alt="ConOps Global Logo" className="footer-logo-img" />
           </div>
-          
+
           <div className="footer-links-grid">
             <div className="footer-col">
               <h4>GET IN TOUCH</h4>
@@ -26,9 +26,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="footer-divider"></div>
-        
+
         <div className="footer-bottom-row">
           <div className="footer-legal">
             &copy; {new Date().getFullYear()} ConOps Global
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         </div>
 
       </div>
-      
+
       <div className="footer-massive-text">
         CONOPS
       </div>

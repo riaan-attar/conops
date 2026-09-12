@@ -53,9 +53,9 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(18, 60, 58, 0.92) 0%,
-    rgba(18, 60, 58, 0.65) 55%,
-    rgba(18, 60, 58, 0.2) 100%
+    rgba(0, 0, 0, 0.68) 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0.08) 100%
   );
 }
 
@@ -99,7 +99,7 @@
 .ap-founder-showcase-section {
   position: relative;
   background: linear-gradient(180deg, #0d2c2a 0%, #123C3A 50%, #0d2c2a 100%);
-  padding: clamp(80px, 10vh, 130px) 0;
+  padding: clamp(40px, 5vh, 70px) 0;
   overflow: hidden;
   border-top: 1px solid rgba(196, 154, 90, 0.18);
   border-bottom: 1px solid rgba(196, 154, 90, 0.12);
@@ -538,7 +538,7 @@
    3. MISSION SECTION
    ========================================================================== */
 .ap-mission-section {
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(36px, 5vh, 60px) 0;
   background-color: var(--bg-color);
 }
 
@@ -572,7 +572,7 @@
    4. OUR STORY SECTION
    ========================================================================== */
 .ap-story-section {
-  padding: clamp(50px, 7vh, 90px) 0;
+  padding: clamp(32px, 4vh, 56px) 0;
 }
 
 .ap-story-content-wrapper {
@@ -630,7 +630,7 @@
    5. STATS SECTION
    ========================================================================== */
 .ap-stats-section {
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(36px, 5vh, 60px) 0;
   background-color: var(--bg-color);
 }
 
@@ -682,7 +682,7 @@
    6. LEADERSHIP TEAM SECTION
    ========================================================================== */
 .ap-team-section {
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(20px, 3vh, 36px) 0;
 }
 
 .ap-section-header {
@@ -800,7 +800,7 @@
    7. CREDENTIALS SECTION
    ========================================================================== */
 .ap-credentials-section {
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(36px, 5vh, 60px) 0;
   background-color: var(--bg-color);
 }
 
@@ -842,7 +842,7 @@
   margin: 12px clamp(12px, 2vw, 24px) 36px clamp(12px, 2vw, 24px);
   border-radius: 24px;
   overflow: hidden;
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(36px, 5vh, 60px) 0;
   display: flex;
   align-items: center;
   min-height: 440px;
@@ -954,9 +954,17 @@
   .ap-hero {
     min-height: 460px;
     height: auto;
-    padding: 90px 0 48px 0;
+    padding: 56px 0 36px 0;
     margin: 8px;
     border-radius: 18px;
+  }
+
+  .ap-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
   }
 
   .ap-hero-title {
@@ -964,7 +972,7 @@
   }
 
   .ap-founder-showcase-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .ap-mission-section,
@@ -972,7 +980,7 @@
   .ap-stats-section,
   .ap-team-section,
   .ap-credentials-section {
-    padding: 48px 0;
+    padding: 16px 0;
   }
 
   .ap-founder-card {
@@ -1047,7 +1055,7 @@
   .ap-cta-section {
     margin: 8px 8px 24px 8px;
     border-radius: 18px;
-    padding: 48px 0;
+    padding: 32px 0;
     min-height: 360px;
   }
 

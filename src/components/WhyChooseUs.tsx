@@ -110,7 +110,7 @@ const WhyChooseUs: React.FC = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: el,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse'
             }
           }
@@ -128,7 +128,7 @@ const WhyChooseUs: React.FC = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: imageRef.current,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse'
             }
           }
@@ -157,7 +157,14 @@ const WhyChooseUs: React.FC = () => {
       }
     }, el);
 
-    return () => ctx.revert();
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+
+    return () => {
+      clearTimeout(timer);
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -195,7 +202,6 @@ const WhyChooseUs: React.FC = () => {
                 className="why-us-stack-card"
                 style={{
                   '--card-index': index,
-                  top: `calc(120px + ${index * 24}px)`,
                   zIndex: index + 1
                 } as React.CSSProperties}
               >

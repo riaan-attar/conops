@@ -53,9 +53,9 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(18, 60, 58, 0.92) 0%,
-    rgba(18, 60, 58, 0.65) 55%,
-    rgba(18, 60, 58, 0.25) 100%
+    rgba(0, 0, 0, 0.68) 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0.08) 100%
   );
 }
 
@@ -125,7 +125,7 @@
    2. WHAT WE OFFER SECTION
    ========================================================================== */
 .sp-offer-section {
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(36px, 5vh, 60px) 0;
   background-color: var(--bg-color);
 }
 
@@ -160,20 +160,26 @@
 }
 
 .sp-offer-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(20px, 2.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 48px);
 }
 
 .sp-offer-card {
   background: var(--white);
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--border-color);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 380px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.sp-offer-card:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .sp-offer-card:hover {
@@ -182,8 +188,9 @@
 }
 
 .sp-offer-img-wrapper {
-  width: 100%;
-  height: clamp(220px, 28vh, 280px);
+  width: 45%;
+  height: auto;
+  min-height: 300px;
   position: relative;
   overflow: hidden;
 }
@@ -207,61 +214,85 @@
 
 .sp-offer-num-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 24px;
+  left: 24px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.35);
   color: var(--white);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
   letter-spacing: 0.05em;
 }
 
 .sp-offer-cat-pill {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 24px;
+  left: 24px;
   background: var(--primary);
   color: #122105;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
 }
 
 .sp-offer-card-content {
-  padding: clamp(20px, 2.5vh, 28px);
+  width: 55%;
+  padding: clamp(32px, 4vw, 48px);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 16px;
+  gap: 24px;
   background: var(--white);
-  flex: 1;
 }
 
 .sp-offer-card-text {
-  max-width: 82%;
+  max-width: 90%;
 }
 
 .sp-offer-card-title {
-  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: 700;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
   color: var(--dark);
   line-height: 1.25;
 }
 
 .sp-offer-card-desc {
   color: var(--dark-gray);
-  font-size: clamp(13.5px, 1.05vw, 15px);
-  line-height: 1.55;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
   margin: 0;
+}
+
+.sp-offer-features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sp-offer-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(13.5px, 1.05vw, 15px);
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.sp-offer-features li svg {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .sp-offer-btn {
@@ -269,8 +300,8 @@
   color: #122105;
   border: none;
   border-radius: 12px;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,131 +316,6 @@
   transform: rotate(45deg) scale(1.05);
 }
 
-/* ==========================================================================
-   3. FAQS SECTION
-   ========================================================================== */
-.sp-faq-section {
-  padding: clamp(60px, 8vh, 100px) 0;
-  background-color: var(--bg-color);
-}
-
-.sp-faq-container {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: clamp(32px, 4.5vw, 64px);
-  align-items: flex-start;
-}
-
-.sp-faq-left {
-  position: sticky;
-  top: 110px;
-}
-
-.sp-faq-left .label {
-  margin-bottom: 0.75rem;
-}
-
-.sp-faq-title {
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
-  color: var(--dark);
-}
-
-.sp-faq-desc {
-  font-size: 15px;
-  color: var(--dark-gray);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  max-width: 440px;
-}
-
-.sp-faq-btn {
-  font-size: 14px;
-  padding: 11px 22px;
-}
-
-.sp-faq-right {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.sp-faq-item {
-  background: var(--white);
-  border-radius: 14px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  overflow: hidden;
-}
-
-.sp-faq-item:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-  border-color: rgba(196, 154, 90, 0.35);
-}
-
-.sp-faq-question {
-  width: 100%;
-  border: none;
-  background: transparent;
-  padding: clamp(16px, 2vh, 22px) clamp(18px, 2vw, 26px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.sp-faq-question h4 {
-  font-size: clamp(14.5px, 1.1vw, 16px);
-  font-weight: 600;
-  color: var(--dark);
-  margin: 0;
-  line-height: 1.35;
-}
-
-.sp-faq-icon {
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(196, 154, 90, 0.12);
-  flex-shrink: 0;
-}
-
-/* Fluid Smooth Grid-Accordion */
-.sp-faq-answer-wrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.sp-faq-item.open .sp-faq-answer-wrapper {
-  grid-template-rows: 1fr;
-}
-
-.sp-faq-answer {
-  overflow: hidden;
-  padding: 0 clamp(18px, 2vw, 26px);
-}
-
-.sp-faq-item.open .sp-faq-answer {
-  padding-bottom: clamp(16px, 2vh, 22px);
-}
-
-.sp-faq-answer p {
-  padding-top: 0.5rem;
-  margin: 0;
-  color: var(--dark-gray);
-  font-size: 14.5px;
-  line-height: 1.65;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
 
 /* ==========================================================================
    4. CTA SECTION
@@ -419,7 +325,7 @@
   margin: 12px clamp(12px, 2vw, 24px) 36px clamp(12px, 2vw, 24px);
   border-radius: 24px;
   overflow: hidden;
-  padding: clamp(60px, 8vh, 100px) 0;
+  padding: clamp(36px, 5vh, 60px) 0;
   display: flex;
   align-items: center;
   min-height: 420px;
@@ -449,9 +355,9 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(18, 60, 58, 0.92) 0%,
-    rgba(18, 60, 58, 0.7) 50%,
-    rgba(18, 60, 58, 0.3) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.2) 100%
   );
 }
 
@@ -500,18 +406,21 @@
    5. RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 991px) {
-  .sp-offer-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .sp-offer-card, .sp-offer-card:nth-child(even) {
+    flex-direction: column;
   }
   
-  .sp-faq-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .sp-offer-img-wrapper {
+    width: 100%;
+    height: 320px;
+    min-height: auto;
   }
   
-  .sp-faq-left {
-    position: static;
+  .sp-offer-card-content {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
   }
 }
 
@@ -519,37 +428,50 @@
   .sp-hero {
     min-height: 460px;
     height: auto;
-    padding: 90px 0 48px 0;
+    padding: 56px 0 36px 0;
     margin: 8px;
     border-radius: 18px;
+  }
+
+  .sp-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
   }
 
   .sp-hero-title {
     font-size: 2.2rem;
   }
 
-  .sp-offer-section,
-  .sp-faq-section {
-    padding: 48px 0;
+  .sp-offer-section {
+    padding: 32px 0;
   }
 
   .sp-section-title {
     font-size: 1.85rem;
   }
+  
+  .sp-offer-img-wrapper {
+    height: 260px;
+  }
 
   .sp-offer-card-content {
-    padding: 18px;
+    padding: 24px;
+    gap: 20px;
   }
 
   .sp-offer-btn {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
+    align-self: flex-start;
   }
 
   .sp-cta-section {
     margin: 8px 8px 24px 8px;
     border-radius: 18px;
-    padding: 48px 0;
+    padding: 32px 0;
     min-height: 360px;
   }
 
@@ -568,14 +490,14 @@
   }
 
   .sp-offer-img-wrapper {
-    height: 200px;
+    height: 220px;
   }
 
   .sp-offer-card-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
-
-  .sp-faq-question h4 {
-    font-size: 14px;
+  
+  .sp-offer-features li {
+    font-size: 13.5px;
   }
 }

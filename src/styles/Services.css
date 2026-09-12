@@ -5,7 +5,7 @@
 /* Section Runway - provides scroll duration for the GSAP pinning */
 .services-parallax-section {
   position: relative;
-  height: 480vh;
+  height: 400vh;
   background-color: var(--white);
   border-bottom: 1px solid var(--border-color);
 }
@@ -103,7 +103,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: none;
   transition: all 0.2s ease;
 }
 
@@ -173,10 +173,7 @@
   border-radius: 30px;
   background: linear-gradient(135deg, #123C3A 0%, #0d2c2a 100%);
   border: 1px solid rgba(196, 154, 90, 0.25);
-  box-shadow: 
-    0 30px 80px rgba(18, 60, 58, 0.4),
-    0 0 0 1px rgba(196, 154, 90, 0.15),
-    -20px 0 40px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   display: flex;
   overflow: hidden;
   color: var(--white);
@@ -496,18 +493,22 @@
 
 /* Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
+  .services-parallax-section {
+    height: 330vh; /* Snappier scroll runway tailored for touch scrolling */
+  }
+
   .services-sticky-wrapper {
-    padding: 16px 0 12px 0;
+    padding: 10px 0 6px 0;
   }
 
   .services-header-inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
 
   .services-heading {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .services-sub {
@@ -519,63 +520,88 @@
     justify-content: space-between;
   }
 
+  .services-stage-container {
+    padding: 2px 0;
+    align-items: stretch;
+  }
+
   .services-cards-stage {
-    height: clamp(480px, 68vh, 560px);
-    padding: 0 16px;
+    height: 100%;
+    max-height: calc(100dvh - 165px);
+    min-height: 560px;
+    padding: 0 14px;
   }
 
   .service-horizontal-card {
-    left: 16px;
-    right: 16px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: auto;
     height: 100%;
+    margin: 0;
+    border-radius: 22px;
     flex-direction: column-reverse;
   }
 
   .service-card-right {
     flex: none;
-    height: clamp(160px, 24vh, 210px);
+    width: 100%;
+    aspect-ratio: 4 / 3.5;
     padding: 10px 10px 0 10px;
+  }
+
+  .service-img-wrapper {
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
   }
 
   .service-card-left {
     flex: 1;
-    padding: 18px 20px;
+    min-height: 0;
+    padding: 12px 16px 10px 16px;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
   .service-card-meta {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .service-status-pill {
     display: none;
   }
 
+  .service-card-main {
+    margin: 4px 0;
+  }
+
   .service-card-title {
-    font-size: 22px;
-    margin-bottom: 4px;
+    font-size: 20px;
+    margin-bottom: 2px;
   }
 
   .service-card-tagline {
-    font-size: 13.5px;
-    margin-bottom: 6px;
+    font-size: 13px;
+    margin-bottom: 4px;
   }
 
   .service-card-details {
-    font-size: 13px;
-    line-height: 1.48;
+    font-size: 12.5px;
+    line-height: 1.45;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
   .service-card-footer {
-    padding-top: 10px;
+    padding-top: 8px;
   }
 
   .service-cta-btn {
-    padding: 9px 16px;
-    font-size: 13px;
+    padding: 8px 14px;
+    font-size: 12.5px;
   }
 
   .service-step-label {
@@ -586,27 +612,24 @@
 /* Small Mobile Screens (<= 480px) */
 @media (max-width: 480px) {
   .services-heading {
-    font-size: 21px;
-  }
-
-  .services-btn {
-    padding: 8px 14px;
-    font-size: 12px;
-  }
-
-  .services-cards-stage {
-    height: clamp(460px, 66vh, 520px);
-  }
-
-  .service-card-left {
-    padding: 14px 16px;
-  }
-
-  .service-card-title {
     font-size: 20px;
   }
 
-  .service-card-details {
-    -webkit-line-clamp: 2;
+  .services-btn {
+    padding: 7px 12px;
+    font-size: 11.5px;
+  }
+
+  .services-cards-stage {
+    padding: 0 10px;
+    min-height: 520px;
+  }
+
+  .service-card-left {
+    padding: 10px 14px 8px 14px;
+  }
+
+  .service-card-title {
+    font-size: 18.5px;
   }
 }

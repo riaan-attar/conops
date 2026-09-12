@@ -113,7 +113,7 @@ const AboutPage: React.FC = () => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: heroRef.current,
-              start: 'top 80%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse',
             },
           }
@@ -131,16 +131,16 @@ const AboutPage: React.FC = () => {
         if (card) {
           gsap.fromTo(
             card,
-            { y: 60, opacity: 0, scale: 0.94 },
+            { y: 50, opacity: 0, scale: 0.96 },
             {
               y: 0,
               opacity: 1,
               scale: 1,
-              duration: 1.0,
+              duration: 0.9,
               ease: 'power3.out',
               scrollTrigger: {
-                trigger: founderRef.current,
-                start: 'top 75%',
+                trigger: card,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -155,7 +155,7 @@ const AboutPage: React.FC = () => {
                 yPercent: 6,
                 ease: 'none',
                 scrollTrigger: {
-                  trigger: founderRef.current,
+                  trigger: card,
                   start: 'top bottom',
                   end: 'bottom top',
                   scrub: 0.5,
@@ -168,16 +168,16 @@ const AboutPage: React.FC = () => {
         if (contentItems.length > 0) {
           gsap.fromTo(
             contentItems,
-            { y: 35, opacity: 0 },
+            { y: 30, opacity: 0 },
             {
               y: 0,
               opacity: 1,
-              duration: 0.85,
+              duration: 0.8,
               stagger: 0.08,
               ease: 'power3.out',
               scrollTrigger: {
-                trigger: founderRef.current,
-                start: 'top 75%',
+                trigger: contentItems[0],
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -196,8 +196,8 @@ const AboutPage: React.FC = () => {
               stagger: 0.1,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: founderRef.current,
-                start: 'top 65%',
+                trigger: pillarCards[0],
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -216,8 +216,8 @@ const AboutPage: React.FC = () => {
               stagger: 0.08,
               ease: 'back.out(1.5)',
               scrollTrigger: {
-                trigger: founderRef.current,
-                start: 'top 60%',
+                trigger: milestonePills[0],
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -241,7 +241,7 @@ const AboutPage: React.FC = () => {
               ease: 'power2.out',
               scrollTrigger: {
                 trigger: missionRef.current,
-                start: 'top 80%',
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -251,15 +251,15 @@ const AboutPage: React.FC = () => {
         if (text) {
           gsap.fromTo(
             text,
-            { y: 35, opacity: 0 },
+            { y: 30, opacity: 0 },
             {
               y: 0,
               opacity: 1,
-              duration: 0.9,
+              duration: 0.85,
               ease: 'power3.out',
               scrollTrigger: {
-                trigger: missionRef.current,
-                start: 'top 75%',
+                trigger: text,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -282,8 +282,8 @@ const AboutPage: React.FC = () => {
               duration: 0.9,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: storyRef.current,
-                start: 'top 75%',
+                trigger: img,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -293,16 +293,16 @@ const AboutPage: React.FC = () => {
         if (text) {
           gsap.fromTo(
             text.children,
-            { y: 30, opacity: 0 },
+            { y: 25, opacity: 0 },
             {
               y: 0,
               opacity: 1,
               duration: 0.8,
-              stagger: 0.1,
+              stagger: 0.08,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: storyRef.current,
-                start: 'top 75%',
+                trigger: text,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -316,7 +316,7 @@ const AboutPage: React.FC = () => {
         if (statItems.length > 0) {
           gsap.fromTo(
             statItems,
-            { y: 40, opacity: 0, scale: 0.96 },
+            { y: 35, opacity: 0, scale: 0.96 },
             {
               y: 0,
               opacity: 1,
@@ -325,8 +325,8 @@ const AboutPage: React.FC = () => {
               stagger: 0.1,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: statsRef.current,
-                start: 'top 80%',
+                trigger: statItems[0],
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -349,8 +349,8 @@ const AboutPage: React.FC = () => {
               duration: 0.8,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: teamRef.current,
-                start: 'top 80%',
+                trigger: teamHeader,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -360,7 +360,7 @@ const AboutPage: React.FC = () => {
         if (teamCards.length > 0) {
           gsap.fromTo(
             teamCards,
-            { y: 45, opacity: 0, scale: 0.96 },
+            { y: 40, opacity: 0, scale: 0.96 },
             {
               y: 0,
               opacity: 1,
@@ -369,8 +369,8 @@ const AboutPage: React.FC = () => {
               stagger: 0.1,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: teamRef.current,
-                start: 'top 75%',
+                trigger: teamCards[0],
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -393,7 +393,7 @@ const AboutPage: React.FC = () => {
               ease: 'power2.out',
               scrollTrigger: {
                 trigger: credentialsRef.current,
-                start: 'top 85%',
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -407,16 +407,16 @@ const AboutPage: React.FC = () => {
         if (ctaContainer) {
           gsap.fromTo(
             ctaContainer,
-            { y: 40, opacity: 0, scale: 0.97 },
+            { y: 35, opacity: 0, scale: 0.97 },
             {
               y: 0,
               opacity: 1,
               scale: 1,
-              duration: 0.9,
+              duration: 0.85,
               ease: 'power2.out',
               scrollTrigger: {
-                trigger: ctaRef.current,
-                start: 'top 85%',
+                trigger: ctaContainer,
+                start: 'top 92%',
                 toggleActions: 'play reverse play reverse',
               },
             }
@@ -456,7 +456,7 @@ const AboutPage: React.FC = () => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: triggerEl,
-              start: 'top 85%',
+              start: 'top 92%',
               toggleActions: 'play reverse play reverse',
             },
             onUpdate: () => {

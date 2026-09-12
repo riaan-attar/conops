@@ -1,5 +1,5 @@
 .goal-section {
-  padding: 120px 0;
+  padding: 70px 0;
   background-color: var(--white);
   border-bottom: 1px solid var(--border-color);
   position: relative;
@@ -140,7 +140,7 @@
 
 @media (max-width: 992px) {
   .goal-section {
-    padding: 80px 0;
+    padding: 48px 0;
   }
   
   .goal-top {
