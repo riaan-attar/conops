@@ -21,50 +21,50 @@ const servicesData: ServiceItem[] = [
     id: 'executive-search',
     number: '01',
     category: 'Executive Search',
-    title: 'Executive Search',
-    tagline: "Find leaders who shape your company's future.",
-    details: 'Targeted headhunting for C-suite and VP-level executives with precision culture matching and rigorous leadership assessment.',
-    image: 'https://framerusercontent.com/images/yzE85ebgJh3YuomISMRuqz2Yiw4.jpg?width=2000&height=1333',
+    title: 'Executive & Leadership Search',
+    tagline: 'Find leaders who master heavy civil and infrastructure operations.',
+    details: 'Targeted executive search for Vice Presidents, General Managers, and Operations Directors with deep US asphalt, concrete, and heavy civil contracting experience.',
+    image: '/images/service_recruiting.jpg',
     link: '/services/executive-search'
   },
   {
     id: 'professional-recruitment',
     number: '02',
     category: 'Recruitment',
-    title: 'Professional Recruitment',
-    tagline: 'From entry-level talent to seasoned experts.',
-    details: 'End-to-end recruitment for high-impact specialized roles across tech, operations, product, and finance.',
-    image: 'https://framerusercontent.com/images/WebNxmpxaoNoZwSGnWFLjHmBKM.jpg?width=2000&height=1333',
+    title: 'Asphalt & Concrete Specialist Hiring',
+    tagline: 'Superintendents, Estimators & Plant Managers.',
+    details: 'End-to-end recruitment for specialized civil engineering roles including Hot Mix Asphalt plant managers, Superpave quality control leads, and concrete batch superintendents.',
+    image: '/images/service_operations.jpg',
     link: '/services/professional-recruitment'
   },
   {
     id: 'contract-staffing',
     number: '03',
     category: 'Staffing Solutions',
-    title: 'Contract Staffing',
-    tagline: 'Flexible people solutions—exactly when you need them.',
-    details: 'Agile workforce scaling with pre-vetted contractors, interim leaders, and specialized project teams ready to deliver.',
-    image: 'https://framerusercontent.com/images/TuJ1CJwRxAmL4iXoabS1ZZr57h0.jpg?width=2000&height=1333',
+    title: 'Project Crew & Contract Resourcing',
+    tagline: 'Flexible workforce scaling for peak paving seasons.',
+    details: 'Agile workforce mobilization delivering pre-vetted field engineers, quality control technicians, and site supervisors ready for immediate deployment.',
+    image: '/images/service_equipment.jpg',
     link: '/services/contract-staffing'
   },
   {
     id: 'talent-strategy-consulting',
     number: '04',
     category: 'Consulting',
-    title: 'Talent Strategy Consulting',
-    tagline: 'Optimize your hiring process with proven methods.',
-    details: 'Data-backed organizational design, employer branding, compensation benchmarking, and talent retention strategies.',
-    image: 'https://framerusercontent.com/images/hYQ2qYxLPoQ1o0LzB7Sl6gTKFhE.jpg?width=2000&height=1333',
+    title: 'Operations & Bidding Consultancy',
+    tagline: 'Optimize estimating workflows and jobsite productivity.',
+    details: 'Consultative guidance from US firm veterans to streamline bid estimation, crew routing, equipment utilization, and OSHA/DOT compliance.',
+    image: '/images/service_safety.jpg',
     link: '/services/talent-strategy-consulting'
   },
   {
     id: 'global-workforce-solutions',
     number: '05',
     category: 'Global Solutions',
-    title: 'Global Workforce Solutions',
-    tagline: 'Scale borderless teams with agility and compliance.',
-    details: 'International recruitment, employer of record navigation, global talent mobility, and cross-border workforce integration built for rapid expansion.',
-    image: 'https://framerusercontent.com/images/yzE85ebgJh3YuomISMRuqz2Yiw4.jpg?width=2000&height=1333',
+    title: 'Civil Infrastructure Talent Mobility',
+    tagline: 'Connecting US contractors with world-class engineering talent.',
+    details: 'Specialized cross-border talent acquisition bringing experienced material engineers and heavy civil project leaders to top US infrastructure firms.',
+    image: '/images/service_tech.jpg',
     link: '/services/global-workforce-solutions'
   }
 ];
@@ -274,7 +274,7 @@ const Services: React.FC = () => {
                 <span>Our Services</span>
               </div>
               <h2 className="section-title services-heading reveal-item">
-                Smart Hiring Solutions Built for Growth
+                Smart Solutions Built for Growth
               </h2>
             </div>
 

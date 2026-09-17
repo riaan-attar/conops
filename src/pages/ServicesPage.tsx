@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ServiceSectors from '../components/ServiceSectors';
 import '../styles/ServicesPage.css';
-import Testimonials from '../components/Testimonials';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +29,7 @@ const servicesData: ServiceOfferItem[] = [
       'Labor productivity tracking & routing',
       'Bottleneck identification & workflow optimization'
     ],
-    image: 'https://framerusercontent.com/images/yzE85ebgJh3YuomISMRuqz2Yiw4.jpg?width=2000&height=1333',
+    image: '/images/service_operations.jpg',
     link: '/contact?service=operations-optimization'
   },
   {
@@ -43,7 +43,7 @@ const servicesData: ServiceOfferItem[] = [
       'Cost margin structuring for competitive markets',
       'Strategic bid pipeline management'
     ],
-    image: 'https://framerusercontent.com/images/WebNxmpxaoNoZwSGnWFLjHmBKM.jpg?width=2000&height=1333',
+    image: '/images/service_recruiting.jpg',
     link: '/contact?service=bidding-estimating'
   },
   {
@@ -57,7 +57,7 @@ const servicesData: ServiceOfferItem[] = [
       'C-Suite talent mapping & acquisition',
       'Organizational restructuring & scaling strategy'
     ],
-    image: 'https://framerusercontent.com/images/TuJ1CJwRxAmL4iXoabS1ZZr57h0.jpg?width=2000&height=1333',
+    image: '/images/service_equipment.jpg',
     link: '/contact?service=leadership-advisory'
   },
   {
@@ -71,22 +71,18 @@ const servicesData: ServiceOfferItem[] = [
       'Custom site-specific safety program development',
       'Risk mitigation & hazard communication training'
     ],
-    image: 'https://framerusercontent.com/images/hYQ2qYxLPoQ1o0LzB7Sl6gTKFhE.jpg?width=2000&height=1333',
+    image: '/images/service_safety.jpg',
     link: '/contact?service=safety-compliance'
   },
   {
     id: 'specialized-resourcing',
     number: '05',
-    category: 'Resourcing',
-    title: 'Specialized Project Resourcing',
-    desc: 'Agile resource planning and workforce deployment strategies tailored for large-scale concrete and asphalt infrastructure projects.',
-    features: [
-      'Rapid workforce mobilization planning',
-      'Specialized skill gap analysis',
-      'Interim project management deployment'
-    ],
-    image: 'https://framerusercontent.com/images/RA0jh2y68ywQWHWWQpomMWQ9E.jpg?width=1200&height=1260',
-    link: '/contact?service=specialized-resourcing'
+    title: 'BIM & Field Technology Integration',
+    category: 'Construction Tech',
+    desc: 'Deploying GPS machine control, 3D modeling, and real-time field tracking to eliminate jobsite rework.',
+    image: '/images/service_tech.jpg',
+    features: ['3D machine control setup', 'Drone site surveying', 'Real-time job cost tracking'],
+    link: '/services/tech'
   }
 ];
 
@@ -207,7 +203,7 @@ const ServicesPage: React.FC = () => {
       <section ref={heroRef} className="sp-hero">
         <div className="sp-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80" 
+            src="/images/services_hero.jpg" 
             alt="Consultancy Team" 
           />
           <div className="sp-hero-overlay"></div>
@@ -242,6 +238,9 @@ const ServicesPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Industry Verticals / Service Sectors */}
+      <ServiceSectors />
 
       {/* What We Offer Section */}
       <section ref={offerRef} className="sp-offer-section">
@@ -296,15 +295,12 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials />
-
       {/* CTA Section */}
       <section ref={ctaRef} className="sp-cta-section">
         <div className="sp-cta-bg">
           <img 
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80" 
-            alt="Business Consultation" 
+            src="/images/services_hero.jpg" 
+            alt="ConOps Services Operations" 
           />
           <div className="sp-cta-overlay"></div>
         </div>

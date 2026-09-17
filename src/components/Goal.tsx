@@ -74,10 +74,10 @@ const Goal: React.FC = () => {
           <div className="goal-trust-block">
             <div className="trust-card-box">
               <div className="trust-photos">
-                <img src="https://framerusercontent.com/images/2E0VB3mgztkUdCsR4DAzOD4L40.jpg?width=800&height=800" alt="Review Photo" className="trust-photo" />
-                <img src="https://framerusercontent.com/images/ikJJNzBxUsdQNngyBBTvD2iPAiE.jpg?width=800&height=800" alt="Review Photo" className="trust-photo" />
-                <img src="https://framerusercontent.com/images/SJ1eCcpkvIx54lO3gB9XVUiE.jpg?width=800&height=800" alt="Review Photo" className="trust-photo" />
-                <img src="https://framerusercontent.com/images/rTmZwHqt7djv0hU8J9osP1JgvYM.jpg?width=800&height=800" alt="Review Photo" className="trust-photo" />
+                <img src="/images/team_1.jpg" alt="Consultant Photo" className="trust-photo" />
+                <img src="/images/team_2.jpg" alt="Site Photo" className="trust-photo" />
+                <img src="/images/team_3.jpg" alt="Engineer Photo" className="trust-photo" />
+                <img src="/images/team_4.jpg" alt="Project Photo" className="trust-photo" />
               </div>
 
               <div className="trust-stats">
@@ -89,7 +89,7 @@ const Goal: React.FC = () => {
                   ))}
                 </div>
                 <div className="trust-score"><strong>4.9/5</strong></div>
-                <div className="trust-text">500+ Satisfied Clients</div>
+                <div className="trust-text">200+ Contracting Partners</div>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ const Goal: React.FC = () => {
               <path d="M 44.799 83.276 L 85.097 60 L 44.799 36.724 Z" fill="var(--primary)" />
             </svg>
           </div>
-          <img src="https://framerusercontent.com/images/Xg9bAZxtIGW7AhNts6WYu8Mi5o.jpg?width=1920&height=1208" alt="Video Cover" className="video-cover" />
+          <img src="/images/service_operations.jpg" alt="Asphalt & Concrete Operations Video" className="video-cover" />
         </div>
       </div>
     </section>

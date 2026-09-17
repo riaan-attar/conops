@@ -52,34 +52,34 @@
   max-width: 480px;
 }
 
-.about-team-grid {
+/* Trust Showcase Grid Layout */
+.trust-showcase-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 36px;
+  align-items: stretch;
 }
 
-.team-card {
+/* Left Column: Amit's Executive Profile Monolith */
+.trust-leader-col {
+  display: flex;
+}
+
+.trust-leader-card {
   position: relative;
-  height: 500px;
-  border-radius: 22px;
+  background: var(--dark);
+  border-radius: 24px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 24px;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: var(--white);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  justify-content: flex-end;
+  padding: 32px;
+  width: 100%;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
-}
-
-.team-card-media {
+.trust-leader-media {
   position: absolute;
   top: 0;
   left: 0;
@@ -88,18 +88,14 @@
   z-index: 1;
 }
 
-.team-img {
+.trust-leader-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: contrast(1.05) brightness(0.9);
 }
 
-.team-card:hover .team-img {
-  transform: scale(1.06);
-}
-
-.team-card-overlay {
+.trust-leader-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -107,94 +103,256 @@
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(18, 60, 58, 0.2) 0%,
-    rgba(18, 60, 58, 0.05) 35%,
-    rgba(18, 60, 58, 0.8) 75%,
-    rgba(18, 60, 58, 0.96) 100%
+    rgba(18, 60, 58, 0.3) 0%,
+    rgba(18, 60, 58, 0.75) 45%,
+    rgba(12, 38, 37, 0.96) 100%
   );
-  z-index: 2;
 }
 
-.team-card-top {
-  position: relative;
+.trust-leader-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
   z-index: 5;
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
-}
-
-.team-badge {
-  font-size: 11.5px;
+  gap: 8px;
+  background: rgba(18, 60, 58, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--primary);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background-color: var(--primary);
-  color: var(--dark);
-  padding: 5px 12px;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
   border-radius: 999px;
+  text-transform: uppercase;
 }
 
-.team-card-bottom {
+.live-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.trust-leader-content {
   position: relative;
   z-index: 5;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 18px 20px;
-  border-radius: 16px;
+  gap: 16px;
 }
 
-.team-name {
-  font-size: 20px;
+.trust-leader-name {
+  font-size: 32px;
   font-weight: 700;
-  margin: 0 0 2px 0;
   color: var(--white);
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
-.team-role {
-  font-size: 13px;
+.trust-leader-title {
+  font-size: 14px;
   font-weight: 600;
   color: var(--primary);
-  margin: 0 0 4px 0;
+  margin: 2px 0 0 0;
 }
 
-.team-bio {
+.trust-credentials-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.95);
   font-size: 12.5px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.trust-leader-bio {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
   margin: 0;
 }
 
-.team-social-row {
+.trust-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.trust-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-metric-item strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.trust-metric-item span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+/* Right Column: 4 Technical Domain Pillars */
+.trust-pillars-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.trust-domain-card {
+  background: #f8faf9;
+  border: 1px solid rgba(18, 60, 58, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trust-domain-card:hover {
+  background: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(18, 60, 58, 0.08);
+  border-color: var(--primary);
+}
+
+.trust-domain-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(18, 60, 58, 0.08);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin-top: 2px;
+  justify-content: center;
 }
 
-.team-social-link {
-  font-size: 12px;
-  font-weight: 600;
+.trust-domain-card:hover .trust-domain-icon {
+  background: var(--dark);
+}
+
+.trust-domain-card:hover .trust-domain-icon svg {
+  stroke: var(--primary);
+}
+
+.trust-domain-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trust-domain-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark, #0e4846);
+  text-transform: uppercase;
+}
+
+.trust-domain-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.trust-domain-desc {
+  font-size: 13px;
+  color: var(--dark-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Founder Quote Banner */
+.trust-quote-banner {
+  background: linear-gradient(135deg, var(--dark) 0%, #0d2e2d 100%);
+  border-radius: 24px;
+  padding: 36px 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.trust-quote-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(163, 230, 53, 0.15) 0%, rgba(163, 230, 53, 0) 70%);
+  pointer-events: none;
+}
+
+.trust-quote-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+}
+
+.quote-mark-icon {
+  margin-bottom: -6px;
+}
+
+.trust-quote-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
   color: var(--white);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s ease;
+  margin: 0;
+  font-style: italic;
+  letter-spacing: -0.01em;
 }
 
-.team-card:hover .team-social-link {
+.trust-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.trust-quote-author strong {
+  font-size: 16px;
+  font-weight: 700;
   color: var(--primary);
 }
 
-@media (max-width: 1200px) {
-  .about-team-grid {
-    grid-template-columns: repeat(2, 1fr);
+.trust-quote-author span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .trust-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-leader-card {
+    min-height: 460px;
   }
 }
 
@@ -217,14 +375,29 @@
   .about-heading {
     font-size: 32px;
   }
+
+  .trust-quote-banner {
+    padding: 28px 32px;
+  }
+
+  .trust-quote-text {
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 640px) {
-  .about-team-grid {
+  .trust-pillars-col {
     grid-template-columns: 1fr;
   }
-  
-  .team-card {
-    height: 420px;
+
+  .trust-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .trust-quote-author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
 }

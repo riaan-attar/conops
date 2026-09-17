@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import handshakeImg from '../assets/why_choose_us.jpg';
 import '../styles/WhyChooseUs.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -184,8 +183,8 @@ const WhyChooseUs: React.FC = () => {
           <div ref={imageRef} className="why-us-media-col">
             <div className="why-us-image-wrapper">
               <img 
-                src={handshakeImg} 
-                alt="Partnership Handshake" 
+                src="/images/service_recruiting.jpg" 
+                alt="Civil Infrastructure Project Excellence" 
                 className="why-us-img"
               />
               <div className="why-us-img-badge">

@@ -16,45 +16,45 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: '1',
-    name: 'David Chen',
-    role: 'Head of Talent Strategy',
-    category: 'Consulting',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'
+    name: 'Amit Gole',
+    role: 'Managing Director & Founder',
+    category: 'US Infrastructure Lead',
+    image: '/images/team_1.jpg'
   },
   {
     id: '2',
-    name: 'Maya Thompson',
-    role: 'Director of Executive Search',
-    category: 'Leadership',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80'
+    name: 'Sarah J. Thompson',
+    role: 'VP of Operations Advisory',
+    category: 'Asphalt & Civil Ops',
+    image: '/images/team_2.jpg'
   },
   {
     id: '3',
-    name: 'Elena Rostova',
-    role: 'Director of Staffing Solutions',
-    category: 'Workforce',
-    image: 'https://framerusercontent.com/images/OEpDygq6wqOFQSOyllADSOuI50.jpg?width=800&height=800'
+    name: 'David Mitchell',
+    role: 'Chief Safety & Compliance Officer',
+    category: 'OSHA & DOT Safety',
+    image: '/images/team_3.jpg'
   },
   {
     id: '4',
-    name: 'Marcus Vance',
-    role: 'Principal People Partner',
-    category: 'Advisory',
-    image: 'https://framerusercontent.com/images/2E0VB3mgztkUdCsR4DAzOD4L40.jpg?width=800&height=800'
+    name: 'Elena Rostova',
+    role: 'Director of Talent Acquisition',
+    category: 'Technical Recruiting',
+    image: '/images/team_4.jpg'
   },
   {
     id: '5',
-    name: 'Noah Kim',
-    role: 'Market Intelligence Lead',
-    category: 'Analytics',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'
+    name: 'Marcus Vance',
+    role: 'Fleet & Asset Optimization Lead',
+    category: 'Heavy Equipment',
+    image: '/images/service_equipment.jpg'
   },
   {
     id: '6',
-    name: 'Chris Bennett',
-    role: 'Head of Technical Search',
-    category: 'Technology',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80'
+    name: 'Rachel Chen',
+    role: 'Strategic Technology Lead',
+    category: 'BIM & Field Tech',
+    image: '/images/service_tech.jpg'
   }
 ];
 
@@ -487,7 +487,7 @@ const AboutPage: React.FC = () => {
       <section ref={heroRef} className="ap-hero">
         <div className="ap-hero-bg">
           <img 
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80" 
+            src="/images/about_hero.jpg" 
             alt="ConOps Global Executive Team" 
           />
           <div className="ap-hero-overlay"></div>
@@ -517,12 +517,13 @@ const AboutPage: React.FC = () => {
         <div className="container ap-founder-showcase-container">
           <div className="ap-founder-showcase-grid">
             {/* Left: Sculpted Executive Portrait Monolith */}
+            {/* Left: Sculpted Executive Portrait Monolith */}
             <div className="ap-founder-portrait-col">
               <div className="ap-founder-card">
                 <div className="ap-founder-media">
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" 
-                    alt="Emma Carter, Founder & Managing Partner" 
+                    src="/images/team_1.jpg" 
+                    alt="Amit, Founder & Managing Partner" 
                     className="ap-founder-img"
                   />
                   <div className="ap-founder-scrim"></div>
@@ -537,15 +538,15 @@ const AboutPage: React.FC = () => {
                 {/* Floating Bottom Monolith Card */}
                 <div className="ap-founder-bottom-card">
                   <div className="ap-founder-monogram-row">
-                    <div className="ap-founder-monogram">EC</div>
+                    <div className="ap-founder-monogram">A</div>
                     <div>
-                      <h4 className="ap-founder-name-tag">Emma Carter</h4>
+                      <h4 className="ap-founder-name-tag">Amit</h4>
                       <p className="ap-founder-subtag">Founder, ConOps Global</p>
                     </div>
                   </div>
                   <div className="ap-founder-highlight-line">
                     <span className="ap-founder-check-icon">✓</span>
-                    <span><strong className="ap-counter" data-target="15" data-suffix="+">15+</strong> Years Directing High-Stakes Leadership Search</span>
+                    <span><strong className="ap-counter" data-target="15" data-suffix="+">15+</strong> Years US Civil Engineering & Material Operations</span>
                   </div>
                 </div>
               </div>
@@ -556,17 +557,17 @@ const AboutPage: React.FC = () => {
               <div className="ap-founder-eyebrow reveal-founder">
                 <div className="label">
                   <div className="label-square"></div>
-                  <span>EXECUTIVE LEADERSHIP & PHILOSOPHY</span>
+                  <span>LEADERSHIP & US DOMAIN EXPERIENCE</span>
                 </div>
                 <span className="ap-founder-id-tag">EST. <span className="ap-counter" data-target="2018" data-start="2000" data-duration="1.4">2018</span></span>
               </div>
 
               <h2 className="ap-founder-manifesto-title reveal-founder">
-                "True talent consultancy is an art of human alignment, not an automated algorithm."
+                "In heavy civil infrastructure and material operations, generic recruiting fails. Real experience makes the difference."
               </h2>
 
               <p className="ap-founder-lead reveal-founder">
-                We founded ConOps Global with a singular conviction: high-growth companies do not need another transactional recruitment broker. They need a strategic, consultative partner who treats human capital as the definitive driver of enterprise valuation.
+                With a proven background working directly inside US-based civil engineering and heavy infrastructure firms, Amit founded ConOps Global to deliver true domain authority in talent consultancy. Specializing in asphalt paving operations, concrete mix engineering, and heavy civil estimating, Amit ensures every engagement is backed by technical rigor.
               </p>
 
               {/* Founder Handwritten Signature Artifact */}
@@ -577,8 +578,8 @@ const AboutPage: React.FC = () => {
                   <circle cx="212" cy="20" r="2" fill="var(--primary)" />
                 </svg>
                 <div className="ap-signature-meta">
-                  <strong>Emma Carter</strong>
-                  <span>Founder & Chief Executive Officer</span>
+                  <strong>Amit</strong>
+                  <span>Founder & Principal Civil Infrastructure Consultant</span>
                 </div>
               </div>
 
@@ -586,25 +587,25 @@ const AboutPage: React.FC = () => {
               <div className="ap-founder-pillars-grid">
                 <div className="ap-pillar-card">
                   <div className="ap-pillar-num">01</div>
-                  <h4 className="ap-pillar-title">Direct Partner Search</h4>
+                  <h4 className="ap-pillar-title">US Firm Experience</h4>
                   <p className="ap-pillar-desc">
-                    No delegation to junior sourcers. Every critical hire is led directly by veteran partners.
+                    Direct hands-on experience working inside US civil contracting and asphalt/concrete operations.
                   </p>
                 </div>
 
                 <div className="ap-pillar-card">
                   <div className="ap-pillar-num">02</div>
-                  <h4 className="ap-pillar-title">Rigorous Culture Fit</h4>
+                  <h4 className="ap-pillar-title">Material & Crew Mastery</h4>
                   <p className="ap-pillar-desc">
-                    We evaluate leadership temperament, cognitive agility, and long-term values alignment.
+                    Deep expertise in Hot Mix Asphalt, Superpave specs, ready-mix concrete, and crew logistics.
                   </p>
                 </div>
 
                 <div className="ap-pillar-card">
                   <div className="ap-pillar-num">03</div>
-                  <h4 className="ap-pillar-title">Compounding Value</h4>
+                  <h4 className="ap-pillar-title">DOT & OSHA Rigor</h4>
                   <p className="ap-pillar-desc">
-                    98% of placements surpass their 24-month milestones, driving lasting operational momentum.
+                    Uncompromising alignment with State DOT regulations, AASHTO standards, and site safety.
                   </p>
                 </div>
               </div>
@@ -675,8 +676,9 @@ const AboutPage: React.FC = () => {
           <div className="ap-story-content-wrapper">
             <div className="ap-story-img">
               <img 
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1000&q=80" 
-                alt="Our Story" 
+                src="/images/about_story.jpg" 
+                alt="ConOps Global Executive Team" 
+                className="ab-story-img"
               />
             </div>
             <div className="ap-story-text">
@@ -793,8 +795,8 @@ const AboutPage: React.FC = () => {
       <section ref={ctaRef} className="ap-cta-section">
         <div className="ap-cta-bg">
           <img 
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2000&q=80" 
-            alt="Grow Together with ConOps Global" 
+            src="/images/about_hero.jpg" 
+            alt="ConOps Infrastructure Growth" 
           />
           <div className="ap-cta-overlay"></div>
         </div>

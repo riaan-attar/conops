@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
             <div className="footer-col">
               <h4>COMPANY</h4>
               <a href="/about">About</a>
-              <a href="/uses">Uses</a>
-              <a href="/stewardship">Stewardship</a>
-              <a href="/technology">Technology</a>
+              <a href="/faq">FAQ</a>
+              <a href="/services">Services</a>
+              <a href="/construction">Construction</a>
             </div>
           </div>
         </div>

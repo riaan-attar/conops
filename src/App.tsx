@@ -10,6 +10,9 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
+import ConstructionPage from './pages/ConstructionPage';
+import FaqPage from './pages/FaqPage';
+import ContactPage from './pages/ContactPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -122,6 +125,14 @@ function App() {
         return <ServicesPage />;
       case '/about':
         return <AboutPage />;
+      case '/construction':
+      case '/services/construction':
+        return <ConstructionPage />;
+      case '/faq':
+      case '/faqs':
+        return <FaqPage />;
+      case '/contact':
+        return <ContactPage />;
       default:
         return <HomePage />;
     }
