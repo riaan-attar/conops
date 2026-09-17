@@ -118,7 +118,7 @@ const ConstructionPage: React.FC = () => {
 
     const ctx = gsap.context(() => {
       if (heroRef.current) {
-        const items = heroRef.current.querySelectorAll('.reveal-cp');
+        const items = heroRef.current.querySelectorAll('.reveal-csp');
         gsap.fromTo(
           items,
           { y: 30, opacity: 0 },
@@ -138,7 +138,7 @@ const ConstructionPage: React.FC = () => {
       }
 
       if (gridRef.current) {
-        const cards = gridRef.current.querySelectorAll('.cp-offer-card');
+        const cards = gridRef.current.querySelectorAll('.csp-offer-card');
         gsap.fromTo(
           cards,
           { y: 40, opacity: 0 },
@@ -164,42 +164,42 @@ const ConstructionPage: React.FC = () => {
   return (
     <div ref={pageRef} className="construction-page">
       {/* Hero Section */}
-      <section ref={heroRef} className="cp-hero">
-        <div className="cp-hero-bg">
+      <section ref={heroRef} className="csp-hero">
+        <div className="csp-hero-bg">
           <img 
             src="/images/services_hero.jpg" 
             alt="Construction & AEC Solutions" 
           />
-          <div className="cp-hero-overlay"></div>
+          <div className="csp-hero-overlay"></div>
         </div>
 
-        <div className="container cp-hero-container">
-          <div className="cp-hero-content">
-            <div className="label cp-hero-label reveal-cp">
+        <div className="container csp-hero-container">
+          <div className="csp-hero-content">
+            <div className="label csp-hero-label reveal-csp">
               <span className="label-square light"></span>
               CONSTRUCTION & AEC ADVISORY
             </div>
 
-            <h1 className="cp-hero-title reveal-cp">
+            <h1 className="csp-hero-title reveal-csp">
               Offshore Construction & Engineering Support
             </h1>
 
-            <p className="cp-hero-desc reveal-cp">
-              Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong className="cp-highlight-price">$375/week</strong>.
+            <p className="csp-hero-desc reveal-csp">
+              Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong className="csp-highlight-price">$375/week</strong>.
             </p>
 
-            <div className="cp-hero-stats reveal-cp">
-              <div className="cp-stat-box">
+            <div className="csp-hero-stats reveal-csp">
+              <div className="csp-stat-box">
                 <strong>85,500+</strong>
                 <span>Candidate Database</span>
               </div>
-              <div className="cp-stat-divider"></div>
-              <div className="cp-stat-box">
+              <div className="csp-stat-divider"></div>
+              <div className="csp-stat-box">
                 <strong>7-14 Days</strong>
                 <span>Delivery / Time to Hire</span>
               </div>
-              <div className="cp-stat-divider"></div>
-              <div className="cp-stat-box">
+              <div className="csp-stat-divider"></div>
+              <div className="csp-stat-box">
                 <strong>$375/wk</strong>
                 <span>Starting Rate</span>
               </div>
@@ -209,24 +209,24 @@ const ConstructionPage: React.FC = () => {
       </section>
 
       {/* Active Offerings Grid */}
-      <section ref={gridRef} className="cp-offerings-section">
+      <section ref={gridRef} className="csp-offerings-section">
         <div className="container">
-          <div className="cp-section-header">
+          <div className="csp-section-header">
             <div className="label center-label">
               <div className="label-square"></div>
               <span>CURRENTLY OFFERED SERVICES</span>
             </div>
-            <h2 className="cp-section-title">Active Construction Solutions</h2>
-            <p className="cp-section-subtitle">
+            <h2 className="csp-section-title">Active Construction Solutions</h2>
+            <p className="csp-section-subtitle">
               We currently specialize in 4 core construction support offerings designed to remove operational bottlenecks from your onshore superintendents and project executives.
             </p>
           </div>
 
-          <div className="cp-offerings-grid">
+          <div className="csp-offerings-grid">
             {activeOfferings.map((offering) => (
               <div 
                 key={offering.id} 
-                className={`cp-offer-card ${offering.isFeatured ? 'featured-offer-card' : ''}`}
+                className={`csp-offer-card ${offering.isFeatured ? 'featured-offer-card' : ''}`}
               >
                 {offering.isFeatured && (
                   <div className="featured-top-badge">
@@ -234,29 +234,29 @@ const ConstructionPage: React.FC = () => {
                   </div>
                 )}
 
-                <div className="cp-card-top">
-                  <div className="cp-card-num-row">
-                    <span className="cp-num-badge">{offering.number}</span>
-                    <span className="cp-price-tag">{offering.pricingTag}</span>
+                <div className="csp-card-top">
+                  <div className="csp-card-num-row">
+                    <span className="csp-num-badge">{offering.number}</span>
+                    <span className="csp-price-tag">{offering.pricingTag}</span>
                   </div>
-                  <div className="cp-card-title-row">
-                    <div className="cp-icon-wrapper">{offering.icon}</div>
-                    <h3 className="cp-card-title">{offering.title}</h3>
+                  <div className="csp-card-title-row">
+                    <div className="csp-icon-wrapper">{offering.icon}</div>
+                    <h3 className="csp-card-title">{offering.title}</h3>
                   </div>
-                  <p className="cp-card-tagline">{offering.tagline}</p>
+                  <p className="csp-card-tagline">{offering.tagline}</p>
                 </div>
 
-                <div className="cp-card-image-wrap">
+                <div className="csp-card-image-wrap">
                   <img src={offering.image} alt={offering.title} loading="lazy" />
-                  <div className="cp-card-img-scrim"></div>
+                  <div className="csp-card-img-scrim"></div>
                 </div>
 
-                <div className="cp-card-body">
-                  <p className="cp-card-desc">{offering.description}</p>
+                <div className="csp-card-body">
+                  <p className="csp-card-desc">{offering.description}</p>
                   
-                  <div className="cp-features-wrap">
-                    <h4 className="cp-features-heading">Scope & Capabilities:</h4>
-                    <ul className="cp-features-list">
+                  <div className="csp-features-wrap">
+                    <h4 className="csp-features-heading">Scope & Capabilities:</h4>
+                    <ul className="csp-features-list">
                       {offering.features.map((feat, idx) => (
                         <li key={idx}>
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -269,8 +269,8 @@ const ConstructionPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="cp-card-footer">
-                  <a href={`/contact?service=${offering.id}`} className="btn btn-primary cp-card-btn">
+                <div className="csp-card-footer">
+                  <a href={`/contact?service=${offering.id}`} className="btn btn-primary csp-card-btn">
                     Inquire for {offering.title}
                     <div className="icon-box">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -290,19 +290,19 @@ const ConstructionPage: React.FC = () => {
       <ServiceSectors />
 
       {/* Construction CTA Section */}
-      <section className="cp-cta-section">
+      <section className="csp-cta-section">
         <div className="container">
-          <div className="cp-cta-box">
-            <div className="cp-cta-content">
+          <div className="csp-cta-box">
+            <div className="csp-cta-content">
               <div className="label">
                 <div className="label-square"></div>
                 <span>GET STARTED THIS WEEK</span>
               </div>
-              <h2 className="cp-cta-title">Ready to Onboard Your Construction Team Extension?</h2>
-              <p className="cp-cta-desc">
+              <h2 className="csp-cta-title">Ready to Onboard Your Construction Team Extension?</h2>
+              <p className="csp-cta-desc">
                 Deploy estimators, project engineers, and Procore administrators in 7 to 14 days starting at just $375/week.
               </p>
-              <a href="/contact" className="btn btn-primary cp-cta-btn">
+              <a href="/contact" className="btn btn-primary csp-cta-btn">
                 Schedule a Construction Briefing
                 <div className="icon-box">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
