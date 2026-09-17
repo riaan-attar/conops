@@ -55,53 +55,43 @@
 }
 
 .cp-hero-content {
-  max-width: 820px;
+  max-width: 680px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  color: var(--white);
 }
 
-.cp-hero-badge-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.cp-active-indicator {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--primary-light);
-  background: rgba(196, 154, 90, 0.15);
-  border: 1px solid rgba(196, 154, 90, 0.35);
-  padding: 5px 12px;
-  border-radius: 999px;
-}
-
-.cp-category-pill {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.cp-hero-content .label {
+  margin-bottom: 1.25rem;
   color: var(--primary);
-  background: rgba(255, 255, 255, 0.12);
-  padding: 5px 12px;
-  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cp-hero-content .label-square {
+  background-color: var(--primary);
 }
 
 .cp-hero-title {
-  font-size: 48px;
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
   line-height: 1.12;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--white);
-  margin: 0;
+  margin: 0 0 1.25rem 0;
 }
 
 .cp-hero-desc {
-  font-size: 18px;
+  font-size: clamp(1.05rem, 1.2vw, 1.18rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.88);
-  margin: 0;
+  margin: 0 0 1.5rem 0;
+  max-width: 580px;
+}
+
+.cp-highlight-price {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .cp-hero-stats {

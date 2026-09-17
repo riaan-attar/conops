@@ -175,9 +175,9 @@ const ConstructionPage: React.FC = () => {
 
         <div className="container cp-hero-container">
           <div className="cp-hero-content">
-            <div className="cp-hero-badge-row reveal-cp">
-              <span className="cp-active-indicator">● ACTIVE OFFERING</span>
-              <span className="cp-category-pill">CONSTRUCTION & AEC</span>
+            <div className="label cp-hero-label reveal-cp">
+              <span className="label-square light"></span>
+              CONSTRUCTION & AEC ADVISORY
             </div>
 
             <h1 className="cp-hero-title reveal-cp">
@@ -185,7 +185,7 @@ const ConstructionPage: React.FC = () => {
             </h1>
 
             <p className="cp-hero-desc reveal-cp">
-              Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong>$375/week</strong>.
+              Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong className="cp-highlight-price">$375/week</strong>.
             </p>
 
             <div className="cp-hero-stats reveal-cp">
