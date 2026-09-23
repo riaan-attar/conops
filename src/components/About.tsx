@@ -116,10 +116,10 @@ const About: React.FC = () => {
           <div className="trust-leader-col">
             <div className="trust-leader-card">
               <div className="trust-leader-media">
-                <img 
-                  src="/images/team_1.jpg" 
-                  alt="Amit - Civil Infrastructure Leader" 
-                  className="trust-leader-img" 
+                <img
+                  src="/images/founder.jpeg"
+                  alt="Amit - Civil Infrastructure Leader"
+                  className="trust-leader-img"
                 />
                 <div className="trust-leader-overlay"></div>
               </div>

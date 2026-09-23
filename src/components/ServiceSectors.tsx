@@ -42,7 +42,7 @@ const sectors: SectorItem[] = [
     categoryType: 'dev',
     description: 'Build your team faster and cheaper - engineers, designers, and operators from India, starting at $375/week.',
     databaseTag: '85,500+ Candidate database',
-    deliveryTag: '7-14 days Time to first hire',
+    deliveryTag: '7-14 days Time to first placement',
     isActive: false
   },
   {

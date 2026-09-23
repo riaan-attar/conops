@@ -43,7 +43,7 @@ const servicesData: ServiceOfferItem[] = [
       'Cost margin structuring for competitive markets',
       'Strategic bid pipeline management'
     ],
-    image: '/images/service_recruiting.jpg',
+    image: '/images/service_estimating.jpg',
     link: '/contact?service=bidding-estimating'
   },
   {
@@ -57,7 +57,7 @@ const servicesData: ServiceOfferItem[] = [
       'C-Suite talent mapping & acquisition',
       'Organizational restructuring & scaling strategy'
     ],
-    image: '/images/service_equipment.jpg',
+    image: '/images/service_advisory.jpg',
     link: '/contact?service=leadership-advisory'
   },
   {

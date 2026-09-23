@@ -19,7 +19,7 @@ const features: FeatureItem[] = [
     id: 'expertise',
     number: '01',
     tag: 'Proven Track Record',
-    title: 'Proven Hiring Expertise',
+    title: 'Proven Recruiting Expertise',
     desc: 'Decades of combined recruiting experience ensure you get candidates who truly fit your culture and goals.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -32,8 +32,8 @@ const features: FeatureItem[] = [
     id: 'time',
     number: '02',
     tag: '45% Faster Turnaround',
-    title: 'Faster Time-to-Hire',
-    desc: 'Our streamlined process reduces hiring bottlenecks so you can fill roles quickly without sacrificing quality.',
+    title: 'Faster Time-to-Fill',
+    desc: 'Our streamlined process reduces recruiting bottlenecks so you can fill roles quickly without sacrificing quality.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M4.5 16.5C3.5 14.5 3 13 3 13L7 9L11 13L7 17C7 17 5.5 17.5 4.5 16.5Z" fill="var(--primary)" />
@@ -183,8 +183,8 @@ const WhyChooseUs: React.FC = () => {
           <div ref={imageRef} className="why-us-media-col">
             <div className="why-us-image-wrapper">
               <img 
-                src="/images/service_recruiting.jpg" 
-                alt="Civil Infrastructure Project Excellence" 
+                src="/images/why_choose_us.jpg" 
+                alt="Dedicated Remote Construction Talent & Engineering Support" 
                 className="why-us-img"
               />
               <div className="why-us-img-badge">

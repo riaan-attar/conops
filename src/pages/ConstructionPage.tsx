@@ -33,7 +33,7 @@ const activeOfferings: ConstructionOffering[] = [
       'Ready-mix concrete volume & slump mix specs',
       'Labor productivity & margin structuring for US bids'
     ],
-    image: '/images/service_recruiting.jpg',
+    image: '/images/service_estimating.jpg',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -196,7 +196,7 @@ const ConstructionPage: React.FC = () => {
               <div className="csp-stat-divider"></div>
               <div className="csp-stat-box">
                 <strong>7-14 Days</strong>
-                <span>Delivery / Time to Hire</span>
+                <span>Delivery / Time to Fill</span>
               </div>
               <div className="csp-stat-divider"></div>
               <div className="csp-stat-box">

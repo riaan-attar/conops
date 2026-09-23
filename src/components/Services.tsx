@@ -24,14 +24,14 @@ const servicesData: ServiceItem[] = [
     title: 'Executive & Leadership Search',
     tagline: 'Find leaders who master heavy civil and infrastructure operations.',
     details: 'Targeted executive search for Vice Presidents, General Managers, and Operations Directors with deep US asphalt, concrete, and heavy civil contracting experience.',
-    image: '/images/service_recruiting.jpg',
+    image: '/images/service_advisory.jpg',
     link: '/services/executive-search'
   },
   {
     id: 'professional-recruitment',
     number: '02',
     category: 'Recruitment',
-    title: 'Asphalt & Concrete Specialist Hiring',
+    title: 'Asphalt & Concrete Specialist Recruiting',
     tagline: 'Superintendents, Estimators & Plant Managers.',
     details: 'End-to-end recruitment for specialized civil engineering roles including Hot Mix Asphalt plant managers, Superpave quality control leads, and concrete batch superintendents.',
     image: '/images/service_operations.jpg',
@@ -44,7 +44,7 @@ const servicesData: ServiceItem[] = [
     title: 'Project Crew & Contract Resourcing',
     tagline: 'Flexible workforce scaling for peak paving seasons.',
     details: 'Agile workforce mobilization delivering pre-vetted field engineers, quality control technicians, and site supervisors ready for immediate deployment.',
-    image: '/images/service_equipment.jpg',
+    image: '/images/why_choose_us.jpg',
     link: '/services/contract-staffing'
   },
   {
@@ -54,7 +54,7 @@ const servicesData: ServiceItem[] = [
     title: 'Operations & Bidding Consultancy',
     tagline: 'Optimize estimating workflows and jobsite productivity.',
     details: 'Consultative guidance from US firm veterans to streamline bid estimation, crew routing, equipment utilization, and OSHA/DOT compliance.',
-    image: '/images/service_safety.jpg',
+    image: '/images/service_estimating.jpg',
     link: '/services/talent-strategy-consulting'
   },
   {

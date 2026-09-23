@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Intro from '../components/Intro';
-import Services from '../components/Services';
+import Comparison from '../components/Comparison';
 import ServiceSectors from '../components/ServiceSectors';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Goal from '../components/Goal';
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
     <>
       <Hero />
       <Intro />
-      <Services />
+      <Comparison />
       <ServiceSectors />
       <WhyChooseUs />
       <Goal />

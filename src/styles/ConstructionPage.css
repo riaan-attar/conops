@@ -1,6 +1,5 @@
 .construction-page {
   width: 100%;
-  overflow: hidden;
 }
 
 /* Hero Section */
@@ -361,12 +360,8 @@
   justify-content: center;
 }
 
-/* Construction Floating CTA Card Over Footer */
 .csp-cta-section {
-  position: relative;
-  z-index: 25;
-  padding: 0;
-  margin-bottom: -72px;
+  padding: 100px 0;
   background: transparent;
 }
 
@@ -465,7 +460,7 @@
   }
 
   .csp-cta-section {
-    margin-bottom: -50px;
+    padding: 64px 0;
   }
 
   .csp-cta-box {

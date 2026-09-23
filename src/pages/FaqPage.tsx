@@ -29,8 +29,8 @@ export const faqData: FaqItem[] = [
   {
     id: 'g3',
     category: 'general',
-    question: 'What countries does ConOps Global hire from?',
-    answer: 'We hire specialized technical talent from India (Pune, Rajkot) for civil engineering, construction, asphalt/concrete operations, software, and heavy infrastructure roles. We source from the Philippines (Manila) for customer support, virtual assistants, and business administrative operations.'
+    question: 'What countries does ConOps Global recruit from?',
+    answer: 'We recruit specialized technical talent from India (Pune, Rajkot) for civil engineering, construction, asphalt/concrete operations, software, and heavy infrastructure roles. We source from the Philippines (Manila) for customer support, virtual assistants, and business administrative operations.'
   },
   {
     id: 'g4',
@@ -81,8 +81,8 @@ export const faqData: FaqItem[] = [
   {
     id: 'pc2',
     category: 'process',
-    question: 'Can I interview candidates before hiring?',
-    answer: 'Yes. ConOps Global presents shortlisted candidates complete with resumes, work samples, and technical portfolios. You conduct your own internal interviews to make the final hiring decision.'
+    question: 'Can I interview candidates before onboarding?',
+    answer: 'Yes. ConOps Global presents shortlisted candidates complete with resumes, work samples, and technical portfolios. You conduct your own internal interviews to make the final selection decision.'
   },
   {
     id: 'pc3',
@@ -163,7 +163,7 @@ export const faqData: FaqItem[] = [
   {
     id: 'w2',
     category: 'workforce',
-    question: 'What English proficiency should we expect from India and Philippines hires?',
+    question: 'What English proficiency should we expect from India and Philippines placements?',
     answer: 'English proficiency is exceptionally strong as English is the primary language of business and higher education in both regions. Every candidate is rigorously screened for written and spoken fluency before placement.'
   }
 ];

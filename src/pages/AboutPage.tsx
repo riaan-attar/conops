@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
     name: 'Amit Gole',
     role: 'Managing Director & Founder',
     category: 'US Infrastructure Lead',
-    image: '/images/team_1.jpg'
+    image: '/images/founder.jpeg'
   },
   {
     id: '2',
@@ -114,7 +114,8 @@ const AboutPage: React.FC = () => {
             scrollTrigger: {
               trigger: heroRef.current,
               start: 'top 92%',
-              toggleActions: 'play reverse play reverse',
+              toggleActions: 'play none none none',
+              once: true,
             },
           }
         );
@@ -141,7 +142,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: card,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -178,7 +180,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: contentItems[0],
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -198,7 +201,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: pillarCards[0],
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -218,7 +222,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: milestonePills[0],
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -242,7 +247,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: missionRef.current,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -260,7 +266,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: text,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -284,7 +291,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: img,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -303,7 +311,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: text,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -327,7 +336,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: statItems[0],
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -351,7 +361,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: teamHeader,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -371,7 +382,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: teamCards[0],
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -394,7 +406,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: credentialsRef.current,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -417,7 +430,8 @@ const AboutPage: React.FC = () => {
               scrollTrigger: {
                 trigger: ctaContainer,
                 start: 'top 92%',
-                toggleActions: 'play reverse play reverse',
+                toggleActions: 'play none none none',
+                once: true,
               },
             }
           );
@@ -457,7 +471,8 @@ const AboutPage: React.FC = () => {
             scrollTrigger: {
               trigger: triggerEl,
               start: 'top 92%',
-              toggleActions: 'play reverse play reverse',
+              toggleActions: 'play none none none',
+              once: true,
             },
             onUpdate: () => {
               const currentInt = Math.round(counterState.val);
@@ -521,9 +536,9 @@ const AboutPage: React.FC = () => {
             <div className="ap-founder-portrait-col">
               <div className="ap-founder-card">
                 <div className="ap-founder-media">
-                  <img 
-                    src="/images/team_1.jpg" 
-                    alt="Amit, Founder & Managing Partner" 
+                  <img
+                    src="/images/founder.jpeg"
+                    alt="Amit, Founder & Managing Partner"
                     className="ap-founder-img"
                   />
                   <div className="ap-founder-scrim"></div>
@@ -691,7 +706,7 @@ const AboutPage: React.FC = () => {
                 ConOps Global was founded with a clear mission: to replace transactional recruitment with deep, strategic talent consultancy.
               </p>
               <p>
-                Too many companies struggle with commoditized hiring processes and automated keyword-matching that overlook cultural alignment, leadership potential, and specialized capability.
+                Too many companies struggle with commoditized recruitment processes and automated keyword-matching that overlook cultural alignment, leadership potential, and specialized capability.
               </p>
               <p>
                 We engineered a consultancy model that puts people and relationship-building back at the core — where qualitative matching, organizational design, and long-term retention take precedence over sheer volume.

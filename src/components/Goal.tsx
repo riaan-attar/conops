@@ -67,7 +67,7 @@ const Goal: React.FC = () => {
             </div>
             <h2 className="goal-title">Connect You with the Right People Quickly and Effectively</h2>
             <p className="goal-desc">
-              Our clients trust us to deliver consistent hiring results, unmatched candidate quality, and a partnership built on integrity.
+              Our clients trust us to deliver consistent recruiting results, unmatched candidate quality, and a partnership built on integrity.
             </p>
           </div>
 
