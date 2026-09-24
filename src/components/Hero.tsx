@@ -6,12 +6,12 @@ const Hero: React.FC = () => {
     <section className="hero-section">
       <div className="hero-bg">
         <video 
-          src="https://framerusercontent.com/assets/9jkPS6V7EtvnQLjWXvlqDvYbkg.mp4" 
+          src="/videos/hero.mp4" 
           autoPlay 
           loop 
           muted 
           playsInline 
-          poster="https://framerusercontent.com/images/5HKsouKC83gVCjVtjwXCIhZyKw.jpg?width=1920&height=1080"
+          preload="auto"
         />
         <div className="hero-overlay"></div>
       </div>
