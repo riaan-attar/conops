@@ -78,6 +78,26 @@
   font-size: 0.95rem;
   color: rgba(247, 245, 239, 0.5); /* Muted Ivory */
   margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-credits {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-developer-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.footer-developer-link:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* Massive text at the very bottom */

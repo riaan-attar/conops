@@ -31,7 +31,18 @@ const Footer: React.FC = () => {
 
         <div className="footer-bottom-row">
           <div className="footer-legal">
-            &copy; {new Date().getFullYear()} ConOps Global
+            &copy; {new Date().getFullYear()} ConOps Global. All rights reserved.
+          </div>
+          <div className="footer-credits">
+            <span>Developed by </span>
+            <a
+              href="https://riaanattar.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-developer-link"
+            >
+              Riaan Attar
+            </a>
           </div>
           <div className="footer-location">
             Based in San Francisco, California
