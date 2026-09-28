@@ -7,6 +7,7 @@ const Hero: React.FC = () => {
       <div className="hero-bg">
         <video 
           src="/videos/hero.mp4" 
+          poster="/videos/hero-poster.webp"
           autoPlay 
           loop 
           muted 
