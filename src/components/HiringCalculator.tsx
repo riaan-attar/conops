@@ -18,14 +18,9 @@ interface SeniorityOption {
 }
 
 const ROLES: RoleOption[] = [
-  { id: 'software-engineer', name: 'Software Engineer', multiplier: 1.0 },
-  { id: 'fullstack-dev', name: 'Full Stack Developer', multiplier: 1.02 },
-  { id: 'devops-cloud', name: 'DevOps & Cloud Engineer', multiplier: 1.08 },
-  { id: 'qa-automation', name: 'QA / Test Automation Engineer', multiplier: 0.88 },
-  { id: 'data-ai', name: 'Data Engineer / AI Specialist', multiplier: 1.12 },
-  { id: 'ui-ux', name: 'UI / UX Designer', multiplier: 0.85 },
-  { id: 'civil-engineer', name: 'Civil / Construction Estimator', multiplier: 0.92 },
-  { id: 'product-pm', name: 'Technical Project Manager', multiplier: 0.95 },
+  { id: 'construction-estimator', name: 'Construction Estimator', multiplier: 1.0 },
+  { id: 'project-engineer-controls', name: 'Project Engineer and Controls', multiplier: 1.05 },
+  { id: 'offshore-project-manager', name: 'Offshore Project Manager', multiplier: 1.15 },
 ];
 
 const SENIORITIES: SeniorityOption[] = [
@@ -82,7 +77,7 @@ const formatCurrency = (val: number): string => {
 };
 
 const HiringCalculator: React.FC = () => {
-  const [selectedRole, setSelectedRole] = useState<string>('software-engineer');
+  const [selectedRole, setSelectedRole] = useState<string>('construction-estimator');
   const [selectedSeniority, setSelectedSeniority] = useState<string>('mid');
   const [numHires, setNumHires] = useState<number>(1);
 
