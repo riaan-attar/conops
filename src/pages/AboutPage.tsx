@@ -653,9 +653,9 @@ const AboutPage: React.FC = () => {
                   </div>
                 </a>
 
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/company/conopsglobal"
+                  target="_blank"
                   rel="noopener noreferrer" 
                   className="ap-founder-social-btn"
                   title="Connect on LinkedIn"

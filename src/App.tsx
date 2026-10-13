@@ -13,6 +13,8 @@ import AboutPage from './pages/AboutPage';
 import ConstructionPage from './pages/ConstructionPage';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
+import CareersPage from './pages/CareersPage';
+import MediaPage from './pages/MediaPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,6 +135,10 @@ function App() {
         return <FaqPage />;
       case '/contact':
         return <ContactPage />;
+      case '/careers':
+        return <CareersPage />;
+      case '/media':
+        return <MediaPage />;
       default:
         return <HomePage />;
     }

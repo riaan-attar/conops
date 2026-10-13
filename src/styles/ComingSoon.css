@@ -1,0 +1,78 @@
+.coming-soon-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 160px 24px 80px 24px;
+  box-sizing: border-box;
+}
+
+.coming-soon-container {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.coming-soon-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-hover);
+  margin-bottom: 24px;
+}
+
+.coming-soon-label {
+  justify-content: center;
+}
+
+.coming-soon-title {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--dark);
+  margin: 8px 0 16px 0;
+}
+
+.coming-soon-desc {
+  font-size: 16px;
+  color: var(--dark-gray);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.coming-soon-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.coming-soon-back-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-gray);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.coming-soon-back-link:hover {
+  color: var(--dark);
+}
+
+@media (max-width: 480px) {
+  .coming-soon-section {
+    padding: 140px 20px 60px 20px;
+  }
+}
