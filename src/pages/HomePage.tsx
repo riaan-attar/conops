@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import HowItWorks from '../components/HowItWorks';
 import HiringCalculator from '../components/HiringCalculator';
 import Intro from '../components/Intro';
 import Comparison from '../components/Comparison';
@@ -12,6 +13,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
+      <HowItWorks />
       <HiringCalculator />
       <Intro />
       <Comparison />

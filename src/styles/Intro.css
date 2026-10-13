@@ -12,11 +12,11 @@
 }
 
 .intro-text {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.35;
   font-weight: 600;
   color: var(--dark);
-  max-width: 900px;
+  max-width: 1040px;
   margin: 0;
 }
 

@@ -6,7 +6,7 @@ const Intro: React.FC = () => {
     <section className="intro-section">
       <div className="container intro-container">
         <h2 className="intro-text">
-          <span className="text-highlight">Empowering</span> companies with the talent they need to move <span className="text-highlight">forward.</span> We simplify <span className="text-highlight">recruiting</span> so you can focus on growth.
+          We become an <span className="text-highlight">extension of your team</span>, providing the expertise and <span className="text-highlight">operational support</span> you need to move forward. We handle the work behind the scenes so you can <span className="text-highlight">focus on growth.</span>
         </h2>
       </div>
     </section>

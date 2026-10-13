@@ -11,6 +11,8 @@ const Navbar: React.FC = () => {
           <a href="/" className="logo-brand">
             <img src="/logo.png" alt="ConOps Global" className="nav-logo-img" />
           </a>
+          <span className="navbar-tagline-divider"></span>
+          <span className="navbar-tagline">OPERATE · SUPPORT · SUCCEED</span>
         </div>
         <nav className={`navbar-nav ${mobileMenuOpen ? 'nav-open' : ''}`}>
           <a href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</a>

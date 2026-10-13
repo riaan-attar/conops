@@ -200,6 +200,46 @@
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
+/* Role Scope Info Banner */
+.calculator-scope-box {
+  background: #f7f5ed;
+  border: 1px solid #e3decb;
+  border-left: 3px solid var(--primary);
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 12px;
+  font-size: 13.5px;
+  color: #3f5451;
+  line-height: 1.5;
+}
+
+.scope-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(196, 154, 90, 0.15);
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.scope-badge-level {
+  color: #059669;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.scope-text {
+  color: var(--dark);
+  font-weight: 500;
+}
+
 /* Results Table */
 .calculator-table-responsive {
   width: 100%;
@@ -345,6 +385,22 @@
 
 .calc-row-conops .val-text {
   font-weight: 700;
+  color: var(--dark);
+}
+
+/* Disclaimer Box */
+.calculator-disclaimer-box {
+  background: #faf9f5;
+  border: 1px dashed #dcd6c5;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: #6a807d;
+  line-height: 1.6;
+}
+
+.calculator-disclaimer-box strong {
   color: var(--dark);
 }
 

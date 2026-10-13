@@ -5,80 +5,206 @@ import '../styles/HiringCalculator.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+type RoleId = 'construction-estimator' | 'project-engineer' | 'procore-admin' | 'project-coordinator';
+type SeniorityId = 'entry' | 'mid' | 'senior';
+type ModelId = 'us-w2' | 'us-1099' | 'freelance' | 'direct-india' | 'conops-managed';
+
 interface RoleOption {
-  id: string;
+  id: RoleId;
   name: string;
-  multiplier: number;
+  scope: string;
 }
 
 interface SeniorityOption {
-  id: string;
+  id: SeniorityId;
   name: string;
-  multiplier: number;
+  label: string;
+  description: string;
 }
 
-const ROLES: RoleOption[] = [
-  { id: 'construction-estimator', name: 'Construction Estimator', multiplier: 1.0 },
-  { id: 'project-engineer-controls', name: 'Project Engineer and Controls', multiplier: 1.05 },
-  { id: 'offshore-project-manager', name: 'Offshore Project Manager', multiplier: 1.15 },
-];
-
-const SENIORITIES: SeniorityOption[] = [
-  { id: 'junior', name: 'Junior (1–3 yrs)', multiplier: 0.75 },
-  { id: 'mid', name: 'Mid-level', multiplier: 1.0 },
-  { id: 'senior', name: 'Senior (5–8 yrs)', multiplier: 1.35 },
-  { id: 'lead', name: 'Lead / Principal (8+ yrs)', multiplier: 1.65 },
-];
-
-interface ModelBenchmark {
-  id: string;
+interface HiringModelMeta {
+  id: ModelId;
   name: string;
   subtitle: string;
-  baseAnnual: number;
   isConOps?: boolean;
 }
 
-const HIRING_MODELS: ModelBenchmark[] = [
+const ROLES: RoleOption[] = [
+  {
+    id: 'construction-estimator',
+    name: 'Construction Estimator',
+    scope: 'Quantity takeoffs, drawing reviews, cost estimation, bid preparation, and estimating support.',
+  },
+  {
+    id: 'project-engineer',
+    name: 'Project Engineer',
+    scope: 'Construction project engineering support, RFIs, submittals, drawing coordination, documentation, reporting, and schedule coordination.',
+  },
+  {
+    id: 'procore-admin',
+    name: 'Procore Administrator',
+    scope: 'Procore project setup, user management, document control, workflow administration, reporting, and platform support.',
+  },
+  {
+    id: 'project-coordinator',
+    name: 'Project Coordinator',
+    scope: 'Meeting minutes, action-item tracking, document management, project reporting, stakeholder follow-ups, and project administration.',
+  },
+];
+
+const SENIORITIES: SeniorityOption[] = [
+  {
+    id: 'entry',
+    name: 'Entry-level (0–2 yrs)',
+    label: 'Entry-level',
+    description: 'Typically 0–2 years of relevant experience',
+  },
+  {
+    id: 'mid',
+    name: 'Mid-level (3–6 yrs)',
+    label: 'Mid-level',
+    description: 'Typically 3–6 years of relevant experience with greater independence',
+  },
+  {
+    id: 'senior',
+    name: 'Senior (7+ yrs)',
+    label: 'Senior',
+    description: 'Typically 7+ years or demonstrated advanced capability',
+  },
+];
+
+const HIRING_MODELS: HiringModelMeta[] = [
   {
     id: 'us-w2',
     name: 'US W-2 Employee',
-    subtitle: 'Full-time US-based hire on W-2 payroll',
-    baseAnnual: 177208,
+    subtitle: 'Estimated employer cost (salary + benefits, payroll taxes, equipment & overhead)',
   },
   {
     id: 'us-1099',
     name: 'US Contractor / 1099',
-    subtitle: 'US-based independent contractor, hourly',
-    baseAnnual: 199240,
+    subtitle: 'US-based independent contractor spend assuming billable utilization',
   },
   {
     id: 'freelance',
-    name: 'Freelance Platform (Upwork/Fiverr)',
-    subtitle: 'Hourly platform freelancer with platform fee + turnover risk',
-    baseAnnual: 246002,
+    name: 'Freelance Platform',
+    subtitle: 'Hourly platform spend (Upwork/Fiverr) incl. platform fees and turnover risk',
   },
   {
     id: 'direct-india',
-    name: 'Direct India Hire (no managed support)',
-    subtitle: 'You source, hire, manage compliance, equipment, replacement yourself',
-    baseAnnual: 38529,
+    name: 'Direct India Hire',
+    subtitle: 'Direct employment cost incl. salary + modest administrative/equipment allowance',
   },
   {
     id: 'conops-managed',
-    name: 'ConOps Managed Remote Workforce',
-    subtitle: 'Weekly all-inclusive — ConOps sources, vets, employs, equips, manages, replaces',
-    baseAnnual: 52000,
+    name: 'ConOps Managed Workforce',
+    subtitle: 'Dedicated professional with full managed delivery, compliance, equipment & replacement',
     isConOps: true,
   },
 ];
+
+// Exact annual benchmark figures from ConOps Global Hiring Cost Comparison document
+const BENCHMARKS: Record<RoleId, Record<SeniorityId, Record<ModelId, number>>> = {
+  'construction-estimator': {
+    entry: {
+      'us-w2': 70000,
+      'us-1099': 78000,
+      freelance: 85000,
+      'direct-india': 15000,
+      'conops-managed': 24000,
+    },
+    mid: {
+      'us-w2': 95000,
+      'us-1099': 110000,
+      freelance: 120000,
+      'direct-india': 23000,
+      'conops-managed': 32000,
+    },
+    senior: {
+      'us-w2': 125000,
+      'us-1099': 145000,
+      freelance: 160000,
+      'direct-india': 35000,
+      'conops-managed': 44000,
+    },
+  },
+  'project-engineer': {
+    entry: {
+      'us-w2': 75000,
+      'us-1099': 83000,
+      freelance: 90000,
+      'direct-india': 16000,
+      'conops-managed': 25000,
+    },
+    mid: {
+      'us-w2': 95000,
+      'us-1099': 108000,
+      freelance: 118000,
+      'direct-india': 24000,
+      'conops-managed': 33000,
+    },
+    senior: {
+      'us-w2': 120000,
+      'us-1099': 138000,
+      freelance: 150000,
+      'direct-india': 36000,
+      'conops-managed': 45000,
+    },
+  },
+  'procore-admin': {
+    entry: {
+      'us-w2': 60000,
+      'us-1099': 68000,
+      freelance: 75000,
+      'direct-india': 12000,
+      'conops-managed': 22000,
+    },
+    mid: {
+      'us-w2': 80000,
+      'us-1099': 92000,
+      freelance: 100000,
+      'direct-india': 20000,
+      'conops-managed': 30000,
+    },
+    senior: {
+      'us-w2': 105000,
+      'us-1099': 120000,
+      freelance: 135000,
+      'direct-india': 32000,
+      'conops-managed': 42000,
+    },
+  },
+  'project-coordinator': {
+    entry: {
+      'us-w2': 55000,
+      'us-1099': 62000,
+      freelance: 70000,
+      'direct-india': 12000,
+      'conops-managed': 21000,
+    },
+    mid: {
+      'us-w2': 75000,
+      'us-1099': 85000,
+      freelance: 95000,
+      'direct-india': 18000,
+      'conops-managed': 28000,
+    },
+    senior: {
+      'us-w2': 95000,
+      'us-1099': 108000,
+      freelance: 120000,
+      'direct-india': 28000,
+      'conops-managed': 38000,
+    },
+  },
+};
 
 const formatCurrency = (val: number): string => {
   return '$' + Math.round(val).toLocaleString('en-US');
 };
 
 const HiringCalculator: React.FC = () => {
-  const [selectedRole, setSelectedRole] = useState<string>('construction-estimator');
-  const [selectedSeniority, setSelectedSeniority] = useState<string>('mid');
+  const [selectedRole, setSelectedRole] = useState<RoleId>('construction-estimator');
+  const [selectedSeniority, setSelectedSeniority] = useState<SeniorityId>('mid');
   const [numHires, setNumHires] = useState<number>(1);
 
   const roleSelectId = useId();
@@ -117,11 +243,10 @@ const HiringCalculator: React.FC = () => {
 
   const roleObj = ROLES.find((r) => r.id === selectedRole) || ROLES[0];
   const seniorityObj = SENIORITIES.find((s) => s.id === selectedSeniority) || SENIORITIES[1];
-  const combinedMultiplier = roleObj.multiplier * seniorityObj.multiplier;
 
-  // Calculate baseline US W-2 for comparisons
-  const usW2BaseAnnual = HIRING_MODELS[0].baseAnnual;
-  const usW2CostPerHire = Math.round(usW2BaseAnnual * combinedMultiplier);
+  // Exact benchmark lookups from document matrix
+  const currentBenchmarks = BENCHMARKS[selectedRole][selectedSeniority];
+  const usW2CostPerHire = currentBenchmarks['us-w2'];
   const usW2TotalAnnual = usW2CostPerHire * numHires;
 
   return (
@@ -150,7 +275,7 @@ const HiringCalculator: React.FC = () => {
 
             <h2 className="calculator-title">Compare 5 Hiring Models for Your Role</h2>
             <p className="calculator-subtitle">
-              Live calculation. Real benchmarks. No email required. ConOps managed remote workforce pricing: <strong>$375–$1,200 per week</strong>, all-inclusive.
+              Live calculation. Real benchmarks. No email required. ConOps managed remote workforce pricing: <strong>$21,000–$45,000 per year</strong>, all-inclusive.
             </p>
           </div>
 
@@ -163,7 +288,7 @@ const HiringCalculator: React.FC = () => {
                   id={roleSelectId}
                   className="calc-select"
                   value={selectedRole}
-                  onChange={(e) => setSelectedRole(e.target.value)}
+                  onChange={(e) => setSelectedRole(e.target.value as RoleId)}
                 >
                   {ROLES.map((role) => (
                     <option key={role.id} value={role.id}>
@@ -186,7 +311,7 @@ const HiringCalculator: React.FC = () => {
                   id={senioritySelectId}
                   className="calc-select"
                   value={selectedSeniority}
-                  onChange={(e) => setSelectedSeniority(e.target.value)}
+                  onChange={(e) => setSelectedSeniority(e.target.value as SeniorityId)}
                 >
                   {SENIORITIES.map((level) => (
                     <option key={level.id} value={level.id}>
@@ -228,6 +353,14 @@ const HiringCalculator: React.FC = () => {
             </div>
           </div>
 
+          {/* Role Scope & Seniority Banner */}
+          <div className="calculator-scope-box">
+            <span className="scope-badge">Scope</span>
+            <span className="scope-text">{roleObj.scope}</span>
+            <span className="scope-badge scope-badge-level">{seniorityObj.label}</span>
+            <span className="scope-text">{seniorityObj.description}</span>
+          </div>
+
           {/* Results Comparison Table */}
           <div className="calculator-table-responsive">
             <table className="calculator-table">
@@ -242,7 +375,7 @@ const HiringCalculator: React.FC = () => {
               </thead>
               <tbody>
                 {HIRING_MODELS.map((model) => {
-                  const costPerHire = Math.round(model.baseAnnual * combinedMultiplier);
+                  const costPerHire = currentBenchmarks[model.id];
                   const totalAnnual = costPerHire * numHires;
                   const threeYearTotal = totalAnnual * 3;
 
@@ -310,6 +443,11 @@ const HiringCalculator: React.FC = () => {
             </table>
           </div>
 
+          {/* Planning Benchmark Disclaimer from Document */}
+          <div className="calculator-disclaimer-box">
+            <strong>Planning Disclaimer:</strong> Figures are illustrative planning benchmarks in USD. US W-2 values represent estimated employer costs including salary, benefits, payroll taxes, and equipment. Direct India hire includes salary plus modest equipment and administrative allowances. ConOps Managed Workforce assumes managed delivery, equipment, supervision, and guaranteed replacement. Three-year costs are calculated as annual cost × 3. Results represent estimated savings versus US W-2 employment and are not guaranteed figures or binding quotes.
+          </div>
+
           {/* Bottom Card Footer Call to Action */}
           <div className="calculator-footer-bar">
             <div className="calc-footer-info">
@@ -323,7 +461,7 @@ const HiringCalculator: React.FC = () => {
               </p>
             </div>
             <a href="/contact" className="btn btn-primary calc-cta-btn">
-              Start Recruiting Now
+              Scale Your Operations
               <div className="icon-box">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>

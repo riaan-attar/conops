@@ -23,12 +23,27 @@
 .navbar-logo {
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
 .nav-logo-img {
-  height: 56px; 
+  height: 56px;
   width: auto;
   object-fit: contain;
+}
+
+.navbar-tagline-divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-tagline {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  white-space: nowrap;
 }
 
 .navbar-nav {
@@ -92,6 +107,11 @@
     height: 46px;
   }
 
+  .navbar-tagline-divider,
+  .navbar-tagline {
+    display: none;
+  }
+
   .navbar-nav {
     gap: 18px;
   }
@@ -119,6 +139,11 @@
 
   .nav-logo-img {
     height: 40px;
+  }
+
+  .navbar-tagline-divider,
+  .navbar-tagline {
+    display: none;
   }
 
   /* Show inline Contact Us button in nav bar on mobile */
