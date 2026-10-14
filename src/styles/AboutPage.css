@@ -18,11 +18,11 @@
    ========================================================================== */
 .ap-hero {
   position: relative;
-  min-height: 520px;
-  height: clamp(520px, 72vh, 680px);
+  min-height: 600px;
+  height: clamp(600px, 78vh, 760px);
   display: flex;
   align-items: center;
-  padding-top: 60px;
+  padding-top: 140px;
   margin: 12px clamp(12px, 2vw, 24px);
   border-radius: 24px;
   overflow: hidden;
@@ -59,12 +59,15 @@
   );
 }
 
-.ap-hero-content {
+.ap-hero-container {
   position: relative;
   z-index: 2;
+  width: 100%;
+}
+
+.ap-hero-content {
   max-width: 640px;
   color: var(--white);
-  padding: 0 clamp(16px, 4vw, 32px);
 }
 
 .ap-hero-content .label {
@@ -954,7 +957,7 @@
   .ap-hero {
     min-height: 460px;
     height: auto;
-    padding: 56px 0 36px 0;
+    padding: 76px 0 36px 0;
     margin: 8px;
     border-radius: 18px;
   }

@@ -18,14 +18,14 @@
    ========================================================================== */
 .sp-hero {
   position: relative;
-  min-height: 520px;
-  height: clamp(520px, 72vh, 680px);
+  min-height: 600px;
+  height: clamp(600px, 78vh, 760px);
   display: flex;
   align-items: center;
   margin: 12px clamp(12px, 2vw, 24px);
   border-radius: 24px;
   overflow: hidden;
-  padding-top: 60px; /* Offset fixed/sticky navbar */
+  padding-top: 140px; /* Offset fixed/sticky navbar */
   box-sizing: border-box;
 }
 
@@ -364,7 +364,7 @@
   .sp-hero {
     min-height: 460px;
     height: auto;
-    padding: 56px 0 36px 0;
+    padding: 76px 0 36px 0;
     margin: 8px;
     border-radius: 18px;
   }

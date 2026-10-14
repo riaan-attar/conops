@@ -118,7 +118,7 @@ const About: React.FC = () => {
               <div className="trust-leader-media">
                 <img
                   src="/images/founder.jpeg"
-                  alt="Amit - Civil Infrastructure Leader"
+                  alt="Amit Gole - Civil Infrastructure Leader"
                   className="trust-leader-img"
                 />
                 <div className="trust-leader-overlay"></div>
@@ -131,14 +131,14 @@ const About: React.FC = () => {
 
               <div className="trust-leader-content">
                 <div className="trust-leader-meta">
-                  <h3 className="trust-leader-name">Amit</h3>
+                  <h3 className="trust-leader-name">Amit Gole</h3>
                   <p className="trust-leader-title">Civil Engineering & Infrastructure Specialist</p>
                 </div>
 
                 <div className="trust-credentials-pill">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <path d="M9 12l2 2 4-4"/>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="M9 12l2 2 4-4" />
                   </svg>
                   <span>US Infrastructure Firm Veteran • Asphalt & Concrete Operations</span>
                 </div>
@@ -170,8 +170,8 @@ const About: React.FC = () => {
             <div className="trust-domain-card">
               <div className="trust-domain-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
-                  <line x1="4" y1="22" x2="4" y2="15"/>
+                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                  <line x1="4" y1="22" x2="4" y2="15" />
                 </svg>
               </div>
               <div className="trust-domain-body">
@@ -186,8 +186,8 @@ const About: React.FC = () => {
             <div className="trust-domain-card">
               <div className="trust-domain-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
               </div>
               <div className="trust-domain-body">
@@ -202,10 +202,10 @@ const About: React.FC = () => {
             <div className="trust-domain-card">
               <div className="trust-domain-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
               </div>
               <div className="trust-domain-body">
@@ -220,10 +220,10 @@ const About: React.FC = () => {
             <div className="trust-domain-card">
               <div className="trust-domain-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
               <div className="trust-domain-body">
@@ -241,13 +241,13 @@ const About: React.FC = () => {
         <div className="trust-quote-banner">
           <div className="trust-quote-content">
             <svg className="quote-mark-icon" width="36" height="36" viewBox="0 0 24 24" fill="var(--primary)" opacity="0.4">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <p className="trust-quote-text">
               "In civil infrastructure and material operations, generic recruiting fails. Having worked inside US-based contracting firms, I built ConOps Global to bridge the gap between technical rigor and strategic human capital."
             </p>
             <div className="trust-quote-author">
-              <strong>Amit</strong>
+              <strong>Amit Gole</strong>
               <span>Founder & Principal Civil Infrastructure Consultant</span>
             </div>
           </div>

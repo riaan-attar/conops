@@ -501,26 +501,28 @@ const AboutPage: React.FC = () => {
       {/* 1. Hero Section: Who We Are */}
       <section ref={heroRef} className="ap-hero">
         <div className="ap-hero-bg">
-          <img 
-            src="/images/about_hero.jpg" 
-            alt="ConOps Global Executive Team" 
+          <img
+            src="/images/about_hero.jpg"
+            alt="ConOps Global Executive Team"
           />
           <div className="ap-hero-overlay"></div>
         </div>
 
-        <div className="container ap-hero-content">
-          <div className="label reveal-hero">
-            <div className="label-square"></div>
-            <span>ABOUT US</span>
+        <div className="container ap-hero-container">
+          <div className="ap-hero-content">
+            <div className="label reveal-hero">
+              <div className="label-square"></div>
+              <span>ABOUT US</span>
+            </div>
+
+            <h1 className="ap-hero-title reveal-hero">
+              Who We Are
+            </h1>
+
+            <p className="ap-hero-desc reveal-hero">
+              ConOps Global is a dedicated People & Talent Consultancy built on one simple belief: extraordinary organizations are powered by exceptional people.
+            </p>
           </div>
-
-          <h1 className="ap-hero-title reveal-hero">
-            Who We Are
-          </h1>
-
-          <p className="ap-hero-desc reveal-hero">
-            ConOps Global is a dedicated People & Talent Consultancy built on one simple belief: extraordinary organizations are powered by exceptional people.
-          </p>
         </div>
       </section>
 
@@ -555,7 +557,7 @@ const AboutPage: React.FC = () => {
                   <div className="ap-founder-monogram-row">
                     <div className="ap-founder-monogram">A</div>
                     <div>
-                      <h4 className="ap-founder-name-tag">Amit</h4>
+                      <h4 className="ap-founder-name-tag">Amit Gole</h4>
                       <p className="ap-founder-subtag">Founder, ConOps Global</p>
                     </div>
                   </div>
@@ -656,12 +658,12 @@ const AboutPage: React.FC = () => {
                 <a
                   href="https://www.linkedin.com/company/conopsglobal"
                   target="_blank"
-                  rel="noopener noreferrer" 
+                  rel="noopener noreferrer"
                   className="ap-founder-social-btn"
                   title="Connect on LinkedIn"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                   </svg>
                   <span>Connect on LinkedIn</span>
                 </a>
@@ -676,7 +678,7 @@ const AboutPage: React.FC = () => {
         <div className="container ap-mission-container">
           <div className="ap-mission-logo">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
-              <path d="M4 19V9M20 19V9M4 9C4 9 7 4 12 4C17 4 20 9 20 9M4 9C4 9 6 12 12 12C18 12 20 9 20 9M4 14H20M9 19V4M15 19V4" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M4 19V9M20 19V9M4 9C4 9 7 4 12 4C17 4 20 9 20 9M4 9C4 9 6 12 12 12C18 12 20 9 20 9M4 14H20M9 19V4M15 19V4" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
           <h2 className="ap-mission-text">
@@ -690,9 +692,9 @@ const AboutPage: React.FC = () => {
         <div className="container ap-story-container">
           <div className="ap-story-content-wrapper">
             <div className="ap-story-img">
-              <img 
-                src="/images/about_story.jpg" 
-                alt="ConOps Global Executive Team" 
+              <img
+                src="/images/about_story.jpg"
+                alt="ConOps Global Executive Team"
                 className="ab-story-img"
               />
             </div>
@@ -729,14 +731,14 @@ const AboutPage: React.FC = () => {
             </div>
             <h2 className="ap-section-title">Results You Can Trust</h2>
           </div>
-          
+
           <div className="ap-stats-grid">
             {statsData.map((stat, idx) => (
               <div key={idx} className="ap-stat-item">
                 <h3>
-                  <span 
-                    className="ap-counter" 
-                    data-target={stat.target} 
+                  <span
+                    className="ap-counter"
+                    data-target={stat.target}
                     data-suffix={stat.suffix}
                     data-prefix={stat.prefix || ''}
                     data-duration={stat.duration || 1.8}
@@ -765,7 +767,7 @@ const AboutPage: React.FC = () => {
               At ConOps Global, our consulting team combines specialized industry depth with human intuition and rigor.
             </p>
           </div>
-          
+
           <div className="ap-team-grid">
             {teamMembers.map((member) => (
               <div key={member.id} className="ap-team-card">
@@ -809,9 +811,9 @@ const AboutPage: React.FC = () => {
       {/* 8. Call to Action Section */}
       <section ref={ctaRef} className="ap-cta-section">
         <div className="ap-cta-bg">
-          <img 
-            src="/images/about_hero.jpg" 
-            alt="ConOps Infrastructure Growth" 
+          <img
+            src="/images/about_hero.jpg"
+            alt="ConOps Infrastructure Growth"
           />
           <div className="ap-cta-overlay"></div>
         </div>
