@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/HowItWorks.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface StepItem {
   id: string;
@@ -66,8 +70,48 @@ const steps: StepItem[] = [
 ];
 
 const HowItWorks: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const fillRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    const fill = fillRef.current;
+    if (!section || !track || !fill) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add('(max-width: 640px)', () => {
+      gsap.set(fill, { scaleY: 0, transformOrigin: 'top center' });
+
+      const tween = gsap.to(fill, {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: track,
+          start: 'top 70%',
+          end: 'bottom 85%',
+          scrub: 0.4,
+        },
+      });
+
+      return () => {
+        tween.scrollTrigger?.kill();
+        tween.kill();
+      };
+    });
+
+    const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 200);
+
+    return () => {
+      clearTimeout(refreshTimer);
+      mm.revert();
+    };
+  }, []);
+
   return (
-    <section className="hiw-section">
+    <section ref={sectionRef} className="hiw-section">
       <div className="container hiw-container">
         <div className="hiw-header">
           <div className="label">
@@ -79,7 +123,10 @@ const HowItWorks: React.FC = () => {
         </div>
 
         <div className="hiw-carousel">
-          <div className="hiw-track">
+          <div ref={trackRef} className="hiw-track">
+            <div className="hiw-timeline-rail"></div>
+            <div ref={fillRef} className="hiw-timeline-fill"></div>
+
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <div className="hiw-step">
@@ -87,8 +134,10 @@ const HowItWorks: React.FC = () => {
                     {step.icon}
                     <span className="hiw-number-badge">{step.number}</span>
                   </div>
-                  <h3 className="hiw-step-title">{step.title}</h3>
-                  <p className="hiw-step-desc">{step.desc}</p>
+                  <div className="hiw-step-body">
+                    <h3 className="hiw-step-title">{step.title}</h3>
+                    <p className="hiw-step-desc">{step.desc}</p>
+                  </div>
                 </div>
                 {index < steps.length - 1 && <div className="hiw-connector"></div>}
               </React.Fragment>
