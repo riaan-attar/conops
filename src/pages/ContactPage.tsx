@@ -15,6 +15,7 @@ const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     service: '',
     heardFrom: '',
@@ -157,6 +158,7 @@ const ContactPage: React.FC = () => {
                       setFormData({
                         name: '',
                         email: '',
+                        phone: '',
                         company: '',
                         service: '',
                         heardFrom: '',
@@ -199,6 +201,21 @@ const ContactPage: React.FC = () => {
                       required
                       placeholder="you@company.com"
                       value={formData.email}
+                      onChange={handleChange}
+                      className="cp-input"
+                    />
+                  </div>
+
+                  <div className="cp-field-group">
+                    <label htmlFor="phone" className="cp-label">
+                      Phone Number
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="+91 952253699"
+                      value={formData.phone}
                       onChange={handleChange}
                       className="cp-input"
                     />
@@ -333,7 +350,7 @@ const ContactPage: React.FC = () => {
               </a>
 
               {/* Phone Card */}
-              <a href="tel:9423644203" className="cp-info-card">
+              <a href="tel:+91952253699" className="cp-info-card">
                 <div className="cp-info-icon">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -341,7 +358,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div className="cp-info-body">
                   <h3>Direct Line</h3>
-                  <p className="cp-info-val">9423644203</p>
+                  <p className="cp-info-val">+91 952253699</p>
                   <p className="cp-info-sub">Mon – Fri: 8:00 AM – 6:00 PM EST</p>
                 </div>
               </a>
@@ -393,7 +410,7 @@ const ContactPage: React.FC = () => {
 
       {/* 3. DIRECT SCHEDULING BANNER */}
       <section className="cp-cta-section" ref={ctaRef}>
-        <div className="container text-center">
+        <div className="container">
           <h2 className="cp-cta-title cp-reveal-cta">
             Prefer to schedule directly?
           </h2>
