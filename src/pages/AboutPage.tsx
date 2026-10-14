@@ -587,18 +587,6 @@ const AboutPage: React.FC = () => {
                 With a proven background working directly inside US-based civil engineering and heavy infrastructure firms, Amit founded ConOps Global to deliver true domain authority in talent consultancy. Specializing in asphalt paving operations, concrete mix engineering, and heavy civil estimating, Amit ensures every engagement is backed by technical rigor.
               </p>
 
-              {/* Founder Handwritten Signature Artifact */}
-              <div className="ap-founder-signature-wrap reveal-founder">
-                <svg className="founder-signature-svg" width="200" height="52" viewBox="0 0 220 60" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M 12 36 C 22 14, 38 10, 42 26 C 45 42, 34 46, 50 34 C 64 22, 75 20, 82 30 C 86 36, 92 40, 102 28 C 112 16, 122 14, 128 24 C 132 32, 138 36, 150 26 C 160 18, 172 14, 178 26 C 182 34, 195 24, 210 20" />
-                  <path d="M 26 30 L 82 28" />
-                  <circle cx="212" cy="20" r="2" fill="var(--primary)" />
-                </svg>
-                <div className="ap-signature-meta">
-                  <strong>Amit</strong>
-                  <span>Founder & Principal Civil Infrastructure Consultant</span>
-                </div>
-              </div>
 
               {/* 3 Interactive Editorial Principles Bento Cards */}
               <div className="ap-founder-pillars-grid">
