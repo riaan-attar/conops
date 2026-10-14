@@ -380,6 +380,39 @@
 }
 
 @media (max-width: 640px) {
+  .trust-leader-card {
+    min-height: 520px;
+    padding: 24px 20px 24px;
+    justify-content: flex-end;
+  }
+
+  .trust-leader-badge {
+    top: 20px;
+    left: 20px;
+    max-width: calc(100% - 40px);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 5px 12px;
+  }
+
+  .trust-leader-content {
+    margin-top: 60px;
+    gap: 14px;
+  }
+
+  .trust-leader-name {
+    font-size: 26px;
+  }
+
+  .trust-leader-title {
+    font-size: 13px;
+  }
+
+  .trust-credentials-pill {
+    font-size: 11.5px;
+    padding: 7px 12px;
+  }
+
   .trust-pillars-col {
     grid-template-columns: 1fr;
   }
@@ -395,3 +428,4 @@
     gap: 2px;
   }
 }
+

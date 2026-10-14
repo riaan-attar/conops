@@ -126,7 +126,7 @@ const About: React.FC = () => {
 
               <div className="trust-leader-badge">
                 <span className="live-status-dot"></span>
-                FOUNDER & MANAGING CONSULTANT
+                <span>FOUNDER & MANAGING CONSULTANT</span>
               </div>
 
               <div className="trust-leader-content">

@@ -117,7 +117,7 @@ const ContactPage: React.FC = () => {
     <div className="contact-page" ref={pageRef}>
       {/* 1. HERO SECTION */}
       <section className="cp-hero" ref={heroRef}>
-        <div className="container text-center">
+        <div className="container">
           <div className="label cp-reveal-hero">
             <span className="label-square"></span>
             GET IN TOUCH

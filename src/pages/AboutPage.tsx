@@ -540,7 +540,7 @@ const AboutPage: React.FC = () => {
                 <div className="ap-founder-media">
                   <img
                     src="/images/founder.jpeg"
-                    alt="Amit, Founder & Managing Partner"
+                    alt="Amit Gole, Founder & Managing Partner"
                     className="ap-founder-img"
                   />
                   <div className="ap-founder-scrim"></div>
@@ -551,20 +551,20 @@ const AboutPage: React.FC = () => {
                   <span className="ap-founder-live-dot"></span>
                   <span>FOUNDER & MANAGING PARTNER</span>
                 </div>
+              </div>
 
-                {/* Floating Bottom Monolith Card */}
-                <div className="ap-founder-bottom-card">
-                  <div className="ap-founder-monogram-row">
-                    <div className="ap-founder-monogram">A</div>
-                    <div>
-                      <h4 className="ap-founder-name-tag">Amit Gole</h4>
-                      <p className="ap-founder-subtag">Founder, ConOps Global</p>
-                    </div>
+              {/* Founder Credential Card Below Image */}
+              <div className="ap-founder-bottom-card">
+                <div className="ap-founder-monogram-row">
+                  <div className="ap-founder-monogram">A</div>
+                  <div>
+                    <h4 className="ap-founder-name-tag">Amit Gole</h4>
+                    <p className="ap-founder-subtag">Founder, ConOps Global</p>
                   </div>
-                  <div className="ap-founder-highlight-line">
-                    <span className="ap-founder-check-icon">✓</span>
-                    <span><strong className="ap-counter" data-target="15" data-suffix="+">15+</strong> Years US Civil Engineering & Material Operations</span>
-                  </div>
+                </div>
+                <div className="ap-founder-highlight-line">
+                  <span className="ap-founder-check-icon">✓</span>
+                  <span><strong className="ap-counter" data-target="15" data-suffix="+">15+</strong> Years US Civil Engineering & Material Operations</span>
                 </div>
               </div>
             </div>
