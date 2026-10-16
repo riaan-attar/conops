@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           </div>
           
           <h1 className="hero-title">
-            Connecting Companies with Exceptional Talent
+            Your Business Deserves Better Support
           </h1>
           
           <p className="hero-subtitle">
