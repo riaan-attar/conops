@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="hero-subtitle">
-            We bridge the gap between top-performing professionals and forward-thinking companies and organizations.
+            From project coordination and controls to business administration, ConOps Global brings the expertise and operational capacity your business needs to move forward.
           </p>
           
           <a href="/contact" className="btn btn-white hero-btn">
