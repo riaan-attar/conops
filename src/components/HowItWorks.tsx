@@ -82,7 +82,7 @@ const HowItWorks: React.FC = () => {
 
     const mm = gsap.matchMedia();
 
-    mm.add('(max-width: 640px)', () => {
+    mm.add('(max-width: 768px)', () => {
       gsap.set(fill, { scaleY: 0, transformOrigin: 'top center' });
 
       const tween = gsap.to(fill, {
