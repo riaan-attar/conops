@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.conopsglobal.com/sitemap.xml
 Sitemap: https://conopsglobal.com/sitemap.xml
+

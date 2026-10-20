@@ -5,11 +5,84 @@ import '../styles/ContactPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface ServiceContent {
+  label: string;
+  dropdownValue?: string;
+  heroLabel: string;
+  heroTitle: string;
+  heroDesc: string;
+}
+
+const SERVICE_CONTENT: Record<string, ServiceContent> = {
+  'operations-optimization': {
+    label: 'Operations & Crew Optimization',
+    dropdownValue: 'Operations & Crew Optimization',
+    heroLabel: 'OPERATIONS & CREW OPTIMIZATION',
+    heroTitle: 'Optimize Your Operations & Crew',
+    heroDesc: 'Tell us about your fleet, crew structure, and jobsite bottlenecks. Our advisory team will build a plan to maximize equipment utilization and crew efficiency.',
+  },
+  'bidding-estimating': {
+    label: 'Bidding & Estimating Consultation',
+    dropdownValue: 'Bidding & Estimating Consultation',
+    heroLabel: 'BIDDING & ESTIMATING',
+    heroTitle: 'Sharpen Your Bidding & Estimating',
+    heroDesc: 'Tell us about your current estimating workflow and margin targets. Our advisory team will get back to you with a plan to win more profitable contracts.',
+  },
+  'leadership-advisory': {
+    label: 'Leadership & Executive Advisory',
+    dropdownValue: 'Leadership & Executive Advisory',
+    heroLabel: 'LEADERSHIP & EXECUTIVE ADVISORY',
+    heroTitle: 'Build Your Leadership Bench',
+    heroDesc: 'Tell us about your succession planning and leadership gaps. Our advisory team will reach out to discuss building resilient leadership for your firm.',
+  },
+  'safety-compliance': {
+    label: 'Safety & Compliance Programs',
+    dropdownValue: 'Safety & Compliance Programs',
+    heroLabel: 'SAFETY & COMPLIANCE',
+    heroTitle: 'Strengthen Your Safety & Compliance',
+    heroDesc: 'Tell us about your current safety program and OSHA compliance needs. Our advisory team will get back to you promptly with next steps.',
+  },
+  'concrete-estimation': {
+    label: 'Concrete Estimation',
+    heroLabel: 'CONCRETE ESTIMATION',
+    heroTitle: 'Scale Your Concrete Estimation',
+    heroDesc: 'Tell us about your quantity takeoff and bid volume needs. Our advisory team for U.S. Concrete & Asphalt contractors will get back to you promptly.',
+  },
+  'project-engineering-controls': {
+    label: 'Project Engineering and Controls',
+    heroLabel: 'PROJECT ENGINEERING & CONTROLS',
+    heroTitle: 'Streamline Engineering & Controls',
+    heroDesc: 'Tell us about your RFI, submittal, and schedule tracking needs. Our advisory team will get back to you promptly with a tailored plan.',
+  },
+  'project-admin': {
+    label: 'Project Admin',
+    heroLabel: 'PROJECT ADMIN',
+    heroTitle: 'Simplify Your Project Admin',
+    heroDesc: 'Tell us about your current back-office and compliance workflows. Our advisory team will get back to you promptly with next steps.',
+  },
+  'offshore-pm': {
+    label: 'Offshore PM (Engineering, Controls & Admin)',
+    heroLabel: 'OFFSHORE PROJECT MANAGER',
+    heroTitle: 'Deploy Your Offshore Project Manager',
+    heroDesc: 'Tell us about your team structure and workload. Our advisory team will get back to you promptly to scope your dedicated offshore PM.',
+  },
+};
+
+const DEFAULT_HERO = {
+  heroLabel: 'GET IN TOUCH',
+  heroTitle: 'Start Optimizing Your Operations',
+  heroDesc: "Tell us about your company and workforce needs. Our specialized advisory team for U.S. Concrete & Asphalt contractors will get back to you promptly.",
+};
+
 const ContactPage: React.FC = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
+
+  const [serviceSlug] = useState(() => new URLSearchParams(window.location.search).get('service') ?? '');
+  const serviceContent = SERVICE_CONTENT[serviceSlug];
+  const hero = serviceContent ?? DEFAULT_HERO;
 
   // Form State
   const [formData, setFormData] = useState({
@@ -17,7 +90,7 @@ const ContactPage: React.FC = () => {
     email: '',
     phone: '',
     company: '',
-    service: '',
+    service: serviceContent?.dropdownValue ?? '',
     heardFrom: '',
     message: '',
     mathInput: '',
@@ -121,13 +194,13 @@ const ContactPage: React.FC = () => {
         <div className="container">
           <div className="label cp-reveal-hero">
             <span className="label-square"></span>
-            GET IN TOUCH
+            {hero.heroLabel}
           </div>
           <h1 className="cp-hero-title cp-reveal-hero">
-            Start Optimizing Your Operations
+            {hero.heroTitle}
           </h1>
           <p className="cp-hero-desc cp-reveal-hero">
-            Tell us about your company and workforce needs. Our specialized advisory team for U.S. Concrete & Asphalt contractors will get back to you promptly.
+            {hero.heroDesc}
           </p>
         </div>
       </section>

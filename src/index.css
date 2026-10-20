@@ -63,6 +63,15 @@ a {
   padding: 0 24px;
 }
 
+/* Escapes a margined/inset ancestor (e.g. a floating-card hero) so a nested
+   .container centers against the true viewport, matching the navbar's own
+   centering math instead of compounding with the ancestor's inset. */
+.hero-breakout {
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

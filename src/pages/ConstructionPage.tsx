@@ -173,35 +173,37 @@ const ConstructionPage: React.FC = () => {
           <div className="csp-hero-overlay"></div>
         </div>
 
-        <div className="container csp-hero-container">
-          <div className="csp-hero-content">
-            <div className="label csp-hero-label reveal-csp">
-              <span className="label-square light"></span>
-              CONSTRUCTION & AEC ADVISORY
-            </div>
-
-            <h1 className="csp-hero-title reveal-csp">
-              Offshore Construction & Engineering Support
-            </h1>
-
-            <p className="csp-hero-desc reveal-csp">
-              Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong className="csp-highlight-price">$375/week</strong>.
-            </p>
-
-            <div className="csp-hero-stats reveal-csp">
-              <div className="csp-stat-box">
-                <strong>85,500+</strong>
-                <span>Candidate Database</span>
+        <div className="hero-breakout">
+          <div className="container csp-hero-container">
+            <div className="csp-hero-content">
+              <div className="label csp-hero-label reveal-csp">
+                <span className="label-square light"></span>
+                CONSTRUCTION & AEC ADVISORY
               </div>
-              <div className="csp-stat-divider"></div>
-              <div className="csp-stat-box">
-                <strong>7-14 Days</strong>
-                <span>Delivery / Time to Fill</span>
-              </div>
-              <div className="csp-stat-divider"></div>
-              <div className="csp-stat-box">
-                <strong>$375/wk</strong>
-                <span>Starting Rate</span>
+
+              <h1 className="csp-hero-title reveal-csp">
+                Offshore Construction & Engineering Support
+              </h1>
+
+              <p className="csp-hero-desc reveal-csp">
+                Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong className="csp-highlight-price">$375/week</strong>.
+              </p>
+
+              <div className="csp-hero-stats reveal-csp">
+                <div className="csp-stat-box">
+                  <strong>85,500+</strong>
+                  <span>Candidate Database</span>
+                </div>
+                <div className="csp-stat-divider"></div>
+                <div className="csp-stat-box">
+                  <strong>7-14 Days</strong>
+                  <span>Delivery / Time to Fill</span>
+                </div>
+                <div className="csp-stat-divider"></div>
+                <div className="csp-stat-box">
+                  <strong>$375/wk</strong>
+                  <span>Starting Rate</span>
+                </div>
               </div>
             </div>
           </div>

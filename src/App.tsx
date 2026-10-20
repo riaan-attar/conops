@@ -16,7 +16,11 @@ import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import MediaPage from './pages/MediaPage';
 
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 gsap.registerPlugin(ScrollTrigger);
+
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -115,11 +119,65 @@ function App() {
   }, []);
 
   useEffect(() => {
+    // Dynamic page title & meta description updater for SPA navigation & search engine scrapers
+    const routeSeo: Record<string, { title: string; desc: string }> = {
+      '/': {
+        title: 'ConOps Global | Managed Remote Workforce, Civil Engineering & Construction Talent',
+        desc: 'Founded by Amit Gole, ConOps Global delivers managed remote workforces and specialized technical talent for US heavy civil, asphalt, concrete, and construction engineering contractors.'
+      },
+      '/services': {
+        title: 'Strategic Industry Services & Talent Solutions | ConOps Global',
+        desc: 'Full-cycle engineering, estimating, safety compliance, and operational optimization consulting for concrete and asphalt contractors led by Amit Gole.'
+      },
+      '/construction': {
+        title: 'Offshore Construction & Engineering Support ($375/wk) | ConOps Global',
+        desc: 'Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers for US contractors starting at $375/week.'
+      },
+      '/services/construction': {
+        title: 'Offshore Construction & Engineering Support ($375/wk) | ConOps Global',
+        desc: 'Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers for US contractors starting at $375/week.'
+      },
+      '/about': {
+        title: 'About Amit Gole & Leadership Team | ConOps Global',
+        desc: 'Meet founder Amit Gole and discover how 15+ years of US civil engineering and heavy infrastructure experience shapes our high-rigor talent consultancy.'
+      },
+      '/faq': {
+        title: 'Frequently Asked Questions | ConOps Global Managed Workforce',
+        desc: 'Answers about pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, NDAs, and Procore software integration.'
+      },
+      '/faqs': {
+        title: 'Frequently Asked Questions | ConOps Global Managed Workforce',
+        desc: 'Answers about pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, NDAs, and Procore software integration.'
+      },
+      '/contact': {
+        title: 'Contact Our Advisory Team | ConOps Global',
+        desc: 'Schedule an executive briefing or consult with Amit Gole and the ConOps Global team on scaling your civil engineering and construction workforce.'
+      },
+      '/careers': {
+        title: 'Careers & Global Opportunities | ConOps Global',
+        desc: 'Explore engineering, estimating, and management career opportunities with ConOps Global across India and the US.'
+      },
+      '/media': {
+        title: 'Press & Media Resources | ConOps Global',
+        desc: 'Media announcements, press kit, and industry insights from ConOps Global and founder Amit Gole.'
+      }
+    };
+
+    const currentSeo = routeSeo[currentPath] || routeSeo['/'];
+    document.title = currentSeo.title;
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute('content', currentSeo.desc);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', currentSeo.title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', currentSeo.desc);
+
     // Refresh ScrollTrigger when path changes and DOM might have updated
     setTimeout(() => {
       ScrollTrigger.refresh();
     }, 100);
   }, [currentPath]);
+
 
   const renderPage = () => {
     switch (currentPath) {
@@ -150,7 +208,10 @@ function App() {
       {renderPage()}
       <Footer />
       <ScrollToTop />
+      <Analytics />
+      <SpeedInsights />
     </>
+
   );
 }
 
