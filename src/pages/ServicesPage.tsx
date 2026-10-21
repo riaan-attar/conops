@@ -239,24 +239,25 @@ const ServicesPage: React.FC = () => {
       {/* Services Hero Section */}
       <section ref={heroRef} className="sp-hero">
         <div className="sp-hero-bg">
-          <img 
-            src="/images/services_hero.jpg" 
-            alt="Consultancy Team" 
+          <img
+            src="/images/services_hero.jpg"
+            alt="Consultancy Team"
           />
           <div className="sp-hero-overlay"></div>
         </div>
-        
+
         <div className="container sp-hero-container">
           <div className="sp-hero-content">
             <div className="label reveal-hero">
               <div className="label-square"></div>
-              <span>CONOPS GLOBAL • LED BY AMIT GOLE</span>
+              <span>INDUSTRY CONSULTANCY
+              </span>
             </div>
-            
+
             <h1 className="sp-hero-title reveal-hero">
               Strategic Civil & Construction Consultancy
             </h1>
-            
+
             <p className="sp-hero-desc reveal-hero">
               Led by founder Amit Gole, ConOps Global delivers specialized consulting and managed technical solutions designed to optimize operations, sharpen estimating, and scale capacity for US paving and concrete contractors.
             </p>
@@ -292,7 +293,7 @@ const ServicesPage: React.FC = () => {
               We provide end-to-end consulting designed to scale your contracting business with speed, safety, and operational excellence.
             </p>
           </div>
-          
+
           <div className="sp-offer-grid">
             {servicesData.map((item) => (
               <div key={item.id} className="sp-offer-card">
@@ -332,9 +333,9 @@ const ServicesPage: React.FC = () => {
       {/* CTA Section */}
       <section ref={ctaRef} className="sp-cta-section">
         <div className="sp-cta-bg">
-          <img 
-            src="/images/services_hero.jpg" 
-            alt="ConOps Services Operations" 
+          <img
+            src="/images/services_hero.jpg"
+            alt="ConOps Services Operations"
           />
           <div className="sp-cta-overlay"></div>
         </div>
