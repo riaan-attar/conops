@@ -1,0 +1,42 @@
+{
+  "/": {
+    "title": "ConOps Global | Founded by Amit Gole — Managed Remote Workforce & Construction Talent",
+    "desc": "Founded by Amit Gole, ConOps Global delivers managed remote civil engineering, concrete estimating, project controls, and Procore administration for US contractors starting at $375/week."
+  },
+  "/services": {
+    "title": "Strategic Industry Services & Talent Solutions | ConOps Global & Amit Gole",
+    "desc": "Full-cycle engineering, estimating, safety compliance, and operational optimization consulting for concrete and asphalt contractors led by Amit Gole."
+  },
+  "/construction": {
+    "title": "Offshore Construction & Engineering Support ($375/wk) | ConOps Global — Amit Gole",
+    "desc": "Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers founded by Amit Gole starting at $375/week."
+  },
+  "/services/construction": {
+    "title": "Offshore Construction & Engineering Support ($375/wk) | ConOps Global — Amit Gole",
+    "desc": "Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers founded by Amit Gole starting at $375/week."
+  },
+  "/about": {
+    "title": "About Amit Gole & ConOps Global | Civil Infrastructure & Leadership",
+    "desc": "Meet founder Amit Gole and discover how 15+ years of US civil engineering, asphalt, and concrete operations experience shapes ConOps Global's talent consultancy."
+  },
+  "/faq": {
+    "title": "Frequently Asked Questions | ConOps Global & Amit Gole Managed Workforce",
+    "desc": "Answers about ConOps Global, founder Amit Gole, pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, and Procore software integration."
+  },
+  "/faqs": {
+    "title": "Frequently Asked Questions | ConOps Global & Amit Gole Managed Workforce",
+    "desc": "Answers about ConOps Global, founder Amit Gole, pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, and Procore software integration."
+  },
+  "/contact": {
+    "title": "Contact Amit Gole & Executive Advisory Team | ConOps Global",
+    "desc": "Schedule an executive briefing or consult with founder Amit Gole and the ConOps Global team on scaling your civil engineering and construction workforce."
+  },
+  "/careers": {
+    "title": "Careers & Global Engineering Opportunities | ConOps Global — Amit Gole",
+    "desc": "Explore engineering, estimating, and management career opportunities with ConOps Global and founder Amit Gole across India and the US."
+  },
+  "/media": {
+    "title": "Press, Media Kit & Executive Bio | Amit Gole & ConOps Global",
+    "desc": "Official press resources, executive bio for Amit Gole, company fact sheet, and media announcements from ConOps Global."
+  }
+}

@@ -21,11 +21,11 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="label">
             <div className="label-square"></div>
-            <span>ConOps Global • Founded by Amit Gole</span>
+            <span>Global Operations & Business Support</span>
           </div>
           
           <h1 className="hero-title">
-            Managed Remote Workforce & Civil Talent
+            Connecting Companies with Exceptional Talent
           </h1>
           
           <p className="hero-subtitle">
