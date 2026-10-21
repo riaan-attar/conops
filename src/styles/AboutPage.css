@@ -269,6 +269,26 @@
   margin-bottom: 12px;
 }
 
+.ap-founder-linkedin-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+}
+
+.ap-founder-linkedin-link:hover {
+  background: var(--primary);
+  color: #0d2c2a;
+  transform: translateY(-2px);
+}
+
 .ap-founder-monogram {
   width: 44px;
   height: 44px;

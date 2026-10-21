@@ -69,9 +69,9 @@ const SERVICE_CONTENT: Record<string, ServiceContent> = {
 };
 
 const DEFAULT_HERO = {
-  heroLabel: 'GET IN TOUCH',
-  heroTitle: 'Start Optimizing Your Operations',
-  heroDesc: "Tell us about your company and workforce needs. Our specialized advisory team for U.S. Concrete & Asphalt contractors will get back to you promptly.",
+  heroLabel: 'CONNECT WITH CONOPS GLOBAL & AMIT GOLE',
+  heroTitle: 'Schedule an Executive Consultation',
+  heroDesc: "Connect directly with founder Amit Gole and the ConOps Global executive advisory team. Tell us about your company and workforce needs to build your high-performance remote engineering bench.",
 };
 
 const ContactPage: React.FC = () => {
@@ -97,8 +97,8 @@ const ContactPage: React.FC = () => {
   });
 
   // Simple math verification check
-  const [num1] = useState(Math.floor(Math.random() * 8) + 2);
-  const [num2] = useState(Math.floor(Math.random() * 8) + 1);
+  const [num1] = useState(() => Math.floor(Math.random() * 8) + 2);
+  const [num2] = useState(() => Math.floor(Math.random() * 8) + 1);
   const [mathError, setMathError] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);

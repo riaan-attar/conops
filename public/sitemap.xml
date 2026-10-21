@@ -1,52 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.conopsglobal.com/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.conopsglobal.com/services</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.conopsglobal.com/construction</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/logo.png</image:loc>
+      <image:title>ConOps Global Logo</image:title>
+      <image:caption>ConOps Global - Managed Remote Workforce Founded by Amit Gole</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/founder.jpeg</image:loc>
+      <image:title>Amit Gole - Founder of ConOps Global</image:title>
+      <image:caption>Amit Gole, Civil Engineering and Infrastructure Specialist, Founder of ConOps Global</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/og-image.png</image:loc>
+      <image:title>ConOps Global Managed Workforce Preview</image:title>
+      <image:caption>Pre-vetted remote estimators and project engineers for US contractors starting at $375/week</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.conopsglobal.com/about</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/founder.jpeg</image:loc>
+      <image:title>Amit Gole - Founder &amp; Managing Consultant at ConOps Global</image:title>
+      <image:caption>Amit Gole leading ConOps Global with 15+ years of US civil engineering operations experience</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/about_hero.jpg</image:loc>
+      <image:title>ConOps Global Executive Leadership Team</image:title>
+      <image:caption>About ConOps Global and Founder Amit Gole</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.conopsglobal.com/construction</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/service_estimating.jpg</image:loc>
+      <image:title>Concrete Estimation &amp; Quantity Takeoffs by ConOps Global</image:title>
+      <image:caption>Remote concrete estimators and takeoffs starting at $375/week founded by Amit Gole</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/service_safety.jpg</image:loc>
+      <image:title>Project Engineering &amp; Controls Support</image:title>
+      <image:caption>Primavera P6 CPM scheduling, RFI tracking, and submittals for US contractors</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.conopsglobal.com/services</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/services_hero.jpg</image:loc>
+      <image:title>ConOps Global Industry Services</image:title>
+      <image:caption>Operational optimization and heavy civil contracting consulting led by Amit Gole</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.conopsglobal.com/faq</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.conopsglobal.com/contact</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.conopsglobal.com/careers</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://www.conopsglobal.com/contact</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.conopsglobal.com/media</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.conopsglobal.com/images/founder.jpeg</image:loc>
+      <image:title>Amit Gole Executive Press Portrait</image:title>
+      <image:caption>Official executive biography and press portrait of Amit Gole, Founder of ConOps Global</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.conopsglobal.com/careers</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
   </url>
 </urlset>
-

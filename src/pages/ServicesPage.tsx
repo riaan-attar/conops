@@ -250,15 +250,15 @@ const ServicesPage: React.FC = () => {
           <div className="sp-hero-content">
             <div className="label reveal-hero">
               <div className="label-square"></div>
-              <span>INDUSTRY CONSULTANCY</span>
+              <span>CONOPS GLOBAL • LED BY AMIT GOLE</span>
             </div>
             
             <h1 className="sp-hero-title reveal-hero">
-              Strategic Consultancy for Concrete & Asphalt Contractors
+              Strategic Civil & Construction Consultancy
             </h1>
             
             <p className="sp-hero-desc reveal-hero">
-              Discover specialized consulting solutions designed to optimize operations, improve estimating, and build resilient leadership for the US paving and concrete industry.
+              Led by founder Amit Gole, ConOps Global delivers specialized consulting and managed technical solutions designed to optimize operations, sharpen estimating, and scale capacity for US paving and concrete contractors.
             </p>
 
             <div className="sp-hero-actions reveal-hero">

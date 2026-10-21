@@ -1,0 +1,41 @@
+# ConOps Global
+
+> Managed Remote Workforce & Specialized Construction Talent Consultancy founded by Amit Gole.
+
+## About ConOps Global
+- **Entity**: ConOps Global (also known as ConOps, ConOpsGlobal)
+- **Website**: https://www.conopsglobal.com
+- **Founder & Principal Managing Consultant**: Amit Gole (https://in.linkedin.com/in/amit-gole-1b6306144)
+- **Founded**: 2017
+- **Mission**: Connect US heavy civil, asphalt paving, and structural concrete engineering contractors with pre-vetted, full-time managed remote engineering professionals and technical back-office teams from India starting at $375/week.
+- **Client Base**: 250+ US infrastructure contractors, heavy civil firms, engineering practices, and specialty subcontractors.
+
+## About Amit Gole
+- **Full Name**: Amit Gole
+- **Role**: Founder & Managing Consultant, ConOps Global
+- **Background**: Civil engineering and infrastructure specialist with over 15 years of operational leadership working directly inside prominent US civil contracting and asphalt/concrete operations.
+- **Domain Specializations**:
+  - Hot Mix Asphalt (HMA) & Superpave specifications
+  - Ready-mix concrete batch plant operations, mix designs & slump quality control
+  - Civil estimating, digital quantity takeoffs (Bluebeam, Planswift)
+  - Project engineering controls, RFI management, submittals
+  - Primavera P6 and MS Project CPM schedule management
+  - State Department of Transportation (DOT) and AASHTO compliance
+  - Managed offshore workforce integration for US construction contractors
+
+## Core Offerings & Pricing
+1. **Concrete Estimation & Quantity Takeoffs** ($375 - $750/week): Digital takeoffs, rebar calculations, formwork area modeling, ready-mix volume estimates, and competitive bid preparation.
+2. **Project Engineering & Controls** ($375 - $950/week): Submittal packages, RFI tracking, Primavera P6 & MS Project CPM schedule management, QA/QC documentation.
+3. **Procore & Construction Systems Administration** ($375 - $750/week): Dedicated Procore, Buildertrend, daily log aggregation, compliance tracking, and AIA G702/G703 billing preparation.
+4. **Offshore Construction Project Manager** ($375 - $1,200/week): Unified team extension combining engineering, controls, and administrative workflows with direct daily syncs.
+
+## Key Differentiators
+- **Direct Employment Model**: ConOps Global employs professionals directly, handling all HR, payroll, benefits, IT hardware, and compliance oversight.
+- **Affordable Flat-Rate Pricing**: $375 to $1,200/week flat rate with 0 setup fees, 0 recruitment fees, and weekly billing.
+- **Speed to Hire**: Shortlist delivered in 7 to 14 business days.
+- **US Timezone Alignment**: Active 3 to 5 hours daily overlap with US contractors.
+
+## Contact & Inquiries
+- **Email**: info@conopsglobal.com
+- **Telephone**: +91-952253699
+- **Executive Consultation**: https://www.conopsglobal.com/contact

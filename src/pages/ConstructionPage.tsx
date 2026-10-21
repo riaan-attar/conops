@@ -178,15 +178,15 @@ const ConstructionPage: React.FC = () => {
             <div className="csp-hero-content">
               <div className="label csp-hero-label reveal-csp">
                 <span className="label-square light"></span>
-                CONSTRUCTION & AEC ADVISORY
+                CONOPS GLOBAL • FOUNDED BY AMIT GOLE
               </div>
 
               <h1 className="csp-hero-title reveal-csp">
-                Offshore Construction & Engineering Support
+                Offshore Civil Engineering & Construction Support
               </h1>
 
               <p className="csp-hero-desc reveal-csp">
-                Scale your construction firm faster and cheaper with pre-vetted estimators, project engineers, Procore admins, and offshore Project Managers from India — starting at <strong className="csp-highlight-price">$375/week</strong>.
+                Curated by US infrastructure veteran Amit Gole, ConOps Global connects heavy civil, asphalt, and concrete contractors with pre-vetted estimators, project engineers, Procore admins, and offshore PMs from India — starting at <strong className="csp-highlight-price">$375/week</strong>.
               </p>
 
               <div className="csp-hero-stats reveal-csp">

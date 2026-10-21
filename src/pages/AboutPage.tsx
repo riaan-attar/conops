@@ -512,15 +512,15 @@ const AboutPage: React.FC = () => {
           <div className="ap-hero-content">
             <div className="label reveal-hero">
               <div className="label-square"></div>
-              <span>ABOUT US</span>
+              <span>ABOUT CONOPS GLOBAL & AMIT GOLE</span>
             </div>
 
             <h1 className="ap-hero-title reveal-hero">
-              Who We Are
+              About Amit Gole & ConOps Global
             </h1>
 
             <p className="ap-hero-desc reveal-hero">
-              ConOps Global is a dedicated People & Talent Consultancy built on one simple belief: extraordinary organizations are powered by exceptional people.
+              Founded by Amit Gole, ConOps Global is an elite managed workforce and technical talent consultancy built to power US civil engineering, asphalt, concrete, and heavy infrastructure contractors.
             </p>
           </div>
         </div>
@@ -534,13 +534,12 @@ const AboutPage: React.FC = () => {
         <div className="container ap-founder-showcase-container">
           <div className="ap-founder-showcase-grid">
             {/* Left: Sculpted Executive Portrait Monolith */}
-            {/* Left: Sculpted Executive Portrait Monolith */}
             <div className="ap-founder-portrait-col">
               <div className="ap-founder-card">
                 <div className="ap-founder-media">
                   <img
                     src="/images/founder.jpeg"
-                    alt="Amit Gole, Founder & Managing Partner"
+                    alt="Amit Gole - Founder & Managing Partner at ConOps Global"
                     className="ap-founder-img"
                   />
                   <div className="ap-founder-scrim"></div>
@@ -561,6 +560,18 @@ const AboutPage: React.FC = () => {
                     <h4 className="ap-founder-name-tag">Amit Gole</h4>
                     <p className="ap-founder-subtag">Founder, ConOps Global</p>
                   </div>
+                  <a
+                    href="https://in.linkedin.com/in/amit-gole-1b6306144"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ap-founder-linkedin-link"
+                    title="Amit Gole LinkedIn Profile"
+                    aria-label="Connect with Amit Gole on LinkedIn"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
                 </div>
                 <div className="ap-founder-highlight-line">
                   <span className="ap-founder-check-icon">✓</span>

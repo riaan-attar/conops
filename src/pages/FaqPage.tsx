@@ -13,18 +13,30 @@ export interface FaqItem {
 }
 
 export const faqData: FaqItem[] = [
-  // General (5)
+  // General (7)
   {
     id: 'g1',
     category: 'general',
     question: 'What is ConOps Global?',
-    answer: 'ConOps Global is a managed workforce partner that places full-time, exclusively assigned remote professionals (engineers, estimators, project coordinators, superintendents, and support staff) from India and the Philippines for US companies. ConOps Global employs them directly and handles all HR, payroll, compliance, equipment, onboarding, and performance monitoring.'
+    answer: 'ConOps Global is a managed workforce partner founded by Amit Gole that places full-time, exclusively assigned remote civil engineers, estimators, project coordinators, and support staff from India for US companies. ConOps Global employs them directly and handles all HR, payroll, compliance, equipment, onboarding, and performance monitoring.'
+  },
+  {
+    id: 'g-founder',
+    category: 'general',
+    question: 'Who founded ConOps Global?',
+    answer: 'ConOps Global was founded by Amit Gole, a civil engineering and US infrastructure veteran with over 15 years of hands-on operational leadership in US heavy civil contracting, asphalt paving, and concrete operations.'
+  },
+  {
+    id: 'g-amit-bio',
+    category: 'general',
+    question: 'What is Amit Gole’s background and role at ConOps Global?',
+    answer: 'Amit Gole is the Founder and Principal Managing Consultant of ConOps Global. Having managed complex asphalt paving projects, ready-mix concrete batch plants, and structural engineering operations in the US, Amit founded ConOps Global to provide US contractors with pre-vetted remote estimators, project engineers, and Procore administrators starting at $375/week.'
   },
   {
     id: 'g2',
     category: 'general',
     question: 'How is ConOps Global different from a staffing agency?',
-    answer: 'ConOps Global is not a staffing agency. We employ all remote professionals directly as their legal employer. We manage ongoing HR, payroll, benefits, IT equipment, and performance oversight—traditional staffing agencies merely place candidates and walk away.'
+    answer: 'ConOps Global is not a staffing agency. Under Amit Gole\'s direct leadership, we employ all remote professionals directly as their legal employer. We manage ongoing HR, payroll, benefits, IT equipment, and performance oversight—traditional staffing agencies merely place candidates and walk away.'
   },
   {
     id: 'g3',
@@ -36,13 +48,13 @@ export const faqData: FaqItem[] = [
     id: 'g4',
     category: 'general',
     question: 'How long has ConOps Global been operating?',
-    answer: 'Founded in 2017, ConOps Global has over 9 years of operational excellence, serving over 250+ US companies across civil engineering, heavy contracting, technology, and professional services.'
+    answer: 'Founded in 2017 by Amit Gole, ConOps Global has over 9 years of operational excellence, serving over 250+ US companies across civil engineering, heavy contracting, technology, and professional services.'
   },
   {
     id: 'g5',
     category: 'general',
     question: 'What is our specialized civil engineering & technical division?',
-    answer: 'Our specialized civil engineering division—led by US firm veterans—places estimators, CAD drafters, project engineers, Procore admins, and material quality control leads specifically tailored for heavy civil, concrete, and asphalt contractors.'
+    answer: 'Our specialized civil engineering division—led by founder Amit Gole—places estimators, CAD drafters, project engineers, Procore admins, and material quality control leads specifically tailored for heavy civil, concrete, and asphalt contractors.'
   },
 
   // Pricing (4)
@@ -170,6 +182,23 @@ export const faqData: FaqItem[] = [
 
 type CategoryFilter = 'all' | 'general' | 'pricing' | 'process' | 'management' | 'workforce';
 
+const categoriesList: { id: CategoryFilter; label: string }[] = [
+  { id: 'all', label: 'All' },
+  { id: 'general', label: 'General' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'process', label: 'Process' },
+  { id: 'management', label: 'Management' },
+  { id: 'workforce', label: 'Workforce' }
+];
+
+const categoriesOrder: { id: FaqItem['category']; label: string }[] = [
+  { id: 'general', label: 'General' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'process', label: 'Process' },
+  { id: 'management', label: 'Management' },
+  { id: 'workforce', label: 'Workforce' }
+];
+
 const FaqPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('all');
@@ -239,23 +268,6 @@ const FaqPage: React.FC = () => {
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery]);
-
-  const categoriesList: { id: CategoryFilter; label: string }[] = [
-    { id: 'all', label: 'All' },
-    { id: 'general', label: 'General' },
-    { id: 'pricing', label: 'Pricing' },
-    { id: 'process', label: 'Process' },
-    { id: 'management', label: 'Management' },
-    { id: 'workforce', label: 'Workforce' }
-  ];
-
-  const categoriesOrder: { id: FaqItem['category']; label: string }[] = [
-    { id: 'general', label: 'General' },
-    { id: 'pricing', label: 'Pricing' },
-    { id: 'process', label: 'Process' },
-    { id: 'management', label: 'Management' },
-    { id: 'workforce', label: 'Workforce' }
-  ];
 
   const groupedFaqs = useMemo(() => {
     const groups: { category: FaqItem['category']; label: string; items: FaqItem[] }[] = [];

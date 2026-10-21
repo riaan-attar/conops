@@ -21,15 +21,15 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="label">
             <div className="label-square"></div>
-            <span>Managed Remote Workforce</span>
+            <span>ConOps Global • Founded by Amit Gole</span>
           </div>
           
           <h1 className="hero-title">
-            Your Business Deserves Better Support
+            Managed Remote Workforce & Civil Talent
           </h1>
           
           <p className="hero-subtitle">
-            From project coordination and controls to business administration, ConOps Global brings the expertise and operational capacity your business needs to move forward.
+            Founded by US civil infrastructure veteran Amit Gole, ConOps Global delivers pre-vetted remote estimators, project engineers, and Procore administrators for US heavy civil, concrete, and asphalt contractors starting at $375/week.
           </p>
           
           <a href="/contact" className="btn btn-white hero-btn">

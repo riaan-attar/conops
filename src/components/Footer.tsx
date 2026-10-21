@@ -31,7 +31,16 @@ const Footer: React.FC = () => {
 
         <div className="footer-bottom-row">
           <div className="footer-legal">
-            &copy; {new Date().getFullYear()} ConOps Global. All rights reserved.
+            &copy; {new Date().getFullYear()} ConOps Global. Founded by{' '}
+            <a
+              href="https://in.linkedin.com/in/amit-gole-1b6306144"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit', textDecoration: 'underline' }}
+            >
+              Amit Gole
+            </a>
+            . All rights reserved.
           </div>
           <div className="footer-credits">
             <span>Developed by </span>
@@ -45,7 +54,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <div className="footer-location">
-            Based in San Francisco, California
+            Managed Remote Workforce & Civil Engineering Talent
           </div>
         </div>
 

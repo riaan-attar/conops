@@ -122,55 +122,75 @@ function App() {
     // Dynamic page title & meta description updater for SPA navigation & search engine scrapers
     const routeSeo: Record<string, { title: string; desc: string }> = {
       '/': {
-        title: 'ConOps Global | Managed Remote Workforce, Civil Engineering & Construction Talent',
-        desc: 'Founded by Amit Gole, ConOps Global delivers managed remote workforces and specialized technical talent for US heavy civil, asphalt, concrete, and construction engineering contractors.'
+        title: 'ConOps Global | Founded by Amit Gole — Managed Remote Workforce & Construction Talent',
+        desc: 'Founded by Amit Gole, ConOps Global delivers managed remote civil engineering, concrete estimating, project controls, and Procore administration for US contractors starting at $375/week.'
       },
       '/services': {
-        title: 'Strategic Industry Services & Talent Solutions | ConOps Global',
+        title: 'Strategic Industry Services & Talent Solutions | ConOps Global & Amit Gole',
         desc: 'Full-cycle engineering, estimating, safety compliance, and operational optimization consulting for concrete and asphalt contractors led by Amit Gole.'
       },
       '/construction': {
-        title: 'Offshore Construction & Engineering Support ($375/wk) | ConOps Global',
-        desc: 'Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers for US contractors starting at $375/week.'
+        title: 'Offshore Construction & Engineering Support ($375/wk) | ConOps Global — Amit Gole',
+        desc: 'Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers founded by Amit Gole starting at $375/week.'
       },
       '/services/construction': {
-        title: 'Offshore Construction & Engineering Support ($375/wk) | ConOps Global',
-        desc: 'Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers for US contractors starting at $375/week.'
+        title: 'Offshore Construction & Engineering Support ($375/wk) | ConOps Global — Amit Gole',
+        desc: 'Pre-vetted concrete estimators, project engineering controls, Procore admins, and offshore Project Managers founded by Amit Gole starting at $375/week.'
       },
       '/about': {
-        title: 'About Amit Gole & Leadership Team | ConOps Global',
-        desc: 'Meet founder Amit Gole and discover how 15+ years of US civil engineering and heavy infrastructure experience shapes our high-rigor talent consultancy.'
+        title: 'About Amit Gole & ConOps Global | Civil Infrastructure & Leadership',
+        desc: 'Meet founder Amit Gole and discover how 15+ years of US civil engineering, asphalt, and concrete operations experience shapes ConOps Global\'s talent consultancy.'
       },
       '/faq': {
-        title: 'Frequently Asked Questions | ConOps Global Managed Workforce',
-        desc: 'Answers about pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, NDAs, and Procore software integration.'
+        title: 'Frequently Asked Questions | ConOps Global & Amit Gole Managed Workforce',
+        desc: 'Answers about ConOps Global, founder Amit Gole, pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, and Procore software integration.'
       },
       '/faqs': {
-        title: 'Frequently Asked Questions | ConOps Global Managed Workforce',
-        desc: 'Answers about pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, NDAs, and Procore software integration.'
+        title: 'Frequently Asked Questions | ConOps Global & Amit Gole Managed Workforce',
+        desc: 'Answers about ConOps Global, founder Amit Gole, pricing ($375-$1,200/wk), candidate vetting, US time zone overlap, IP protection, and Procore software integration.'
       },
       '/contact': {
-        title: 'Contact Our Advisory Team | ConOps Global',
-        desc: 'Schedule an executive briefing or consult with Amit Gole and the ConOps Global team on scaling your civil engineering and construction workforce.'
+        title: 'Contact Amit Gole & Executive Advisory Team | ConOps Global',
+        desc: 'Schedule an executive briefing or consult with founder Amit Gole and the ConOps Global team on scaling your civil engineering and construction workforce.'
       },
       '/careers': {
-        title: 'Careers & Global Opportunities | ConOps Global',
-        desc: 'Explore engineering, estimating, and management career opportunities with ConOps Global across India and the US.'
+        title: 'Careers & Global Engineering Opportunities | ConOps Global — Amit Gole',
+        desc: 'Explore engineering, estimating, and management career opportunities with ConOps Global and founder Amit Gole across India and the US.'
       },
       '/media': {
-        title: 'Press & Media Resources | ConOps Global',
-        desc: 'Media announcements, press kit, and industry insights from ConOps Global and founder Amit Gole.'
+        title: 'Press, Media Kit & Executive Bio | Amit Gole & ConOps Global',
+        desc: 'Official press resources, executive bio for Amit Gole, company fact sheet, and media announcements from ConOps Global.'
       }
     };
 
     const currentSeo = routeSeo[currentPath] || routeSeo['/'];
     document.title = currentSeo.title;
+
     const descMeta = document.querySelector('meta[name="description"]');
     if (descMeta) descMeta.setAttribute('content', currentSeo.desc);
+
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute('content', currentSeo.title);
+
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', currentSeo.desc);
+
+    const fullUrl = `https://www.conopsglobal.com${currentPath === '/' ? '/' : currentPath}`;
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', fullUrl);
+
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', currentSeo.title);
+
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDesc) twitterDesc.setAttribute('content', currentSeo.desc);
+
+    const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) twitterUrl.setAttribute('content', fullUrl);
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', fullUrl);
 
     // Refresh ScrollTrigger when path changes and DOM might have updated
     setTimeout(() => {
