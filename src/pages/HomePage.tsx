@@ -13,11 +13,11 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <HowItWorks />
-      <HiringCalculator />
-      <Intro />
-      <Comparison />
       <ServiceSectors />
+      <Intro />
+      <HiringCalculator />
+      <Comparison />
+      <HowItWorks />
       <WhyChooseUs />
       <Goal />
       <About />
