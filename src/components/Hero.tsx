@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="hero-subtitle">
-            Founded by US civil infrastructure veteran Amit Gole, ConOps Global delivers pre-vetted remote estimators, project engineers, and Procore administrators for US heavy civil, concrete, and asphalt contractors starting at $375/week.
+            From project coordination and controls to business administration, ConOps Global brings the expertise and operational capacity your business needs to move forward.
           </p>
           
           <a href="/contact" className="btn btn-white hero-btn">

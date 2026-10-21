@@ -5,58 +5,6 @@ import '../styles/AboutPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  category: string;
-  image: string;
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    id: '1',
-    name: 'Amit Gole',
-    role: 'Managing Director & Founder',
-    category: 'US Infrastructure Lead',
-    image: '/images/founder.jpeg'
-  },
-  {
-    id: '2',
-    name: 'Sarah J. Thompson',
-    role: 'VP of Operations Advisory',
-    category: 'Asphalt & Civil Ops',
-    image: '/images/team_2.jpg'
-  },
-  {
-    id: '3',
-    name: 'David Mitchell',
-    role: 'Chief Safety & Compliance Officer',
-    category: 'OSHA & DOT Safety',
-    image: '/images/team_3.jpg'
-  },
-  {
-    id: '4',
-    name: 'Elena Rostova',
-    role: 'Director of Talent Acquisition',
-    category: 'Technical Recruiting',
-    image: '/images/team_4.jpg'
-  },
-  {
-    id: '5',
-    name: 'Marcus Vance',
-    role: 'Fleet & Asset Optimization Lead',
-    category: 'Heavy Equipment',
-    image: '/images/service_equipment.jpg'
-  },
-  {
-    id: '6',
-    name: 'Rachel Chen',
-    role: 'Strategic Technology Lead',
-    category: 'BIM & Field Tech',
-    image: '/images/service_tech.jpg'
-  }
-];
 
 interface StatItem {
   target: number;
@@ -88,7 +36,6 @@ const AboutPage: React.FC = () => {
   const missionRef = useRef<HTMLElement>(null);
   const storyRef = useRef<HTMLElement>(null);
   const statsRef = useRef<HTMLElement>(null);
-  const teamRef = useRef<HTMLElement>(null);
   const credentialsRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
 
@@ -344,53 +291,7 @@ const AboutPage: React.FC = () => {
         }
       }
 
-      // 6. Team Section Reveal
-      if (teamRef.current) {
-        const teamHeader = teamRef.current.querySelector('.ap-section-header');
-        const teamCards = teamRef.current.querySelectorAll('.ap-team-card');
-
-        if (teamHeader) {
-          gsap.fromTo(
-            teamHeader,
-            { y: 30, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.8,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: teamHeader,
-                start: 'top 92%',
-                toggleActions: 'play none none none',
-                once: true,
-              },
-            }
-          );
-        }
-
-        if (teamCards.length > 0) {
-          gsap.fromTo(
-            teamCards,
-            { y: 40, opacity: 0, scale: 0.96 },
-            {
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 0.85,
-              stagger: 0.1,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: teamCards[0],
-                start: 'top 92%',
-                toggleActions: 'play none none none',
-                once: true,
-              },
-            }
-          );
-        }
-      }
-
-      // 7. Credentials Section Reveal
+      // 6. Credentials Section Reveal
       if (credentialsRef.current) {
         const credBoxes = credentialsRef.current.querySelectorAll('.ap-credential-box');
         if (credBoxes.length > 0) {
@@ -503,7 +404,7 @@ const AboutPage: React.FC = () => {
         <div className="ap-hero-bg">
           <img
             src="/images/about_hero.jpg"
-            alt="ConOps Global Executive Team"
+            alt="ConOps Global Operations"
           />
           <div className="ap-hero-overlay"></div>
         </div>
@@ -693,7 +594,7 @@ const AboutPage: React.FC = () => {
             <div className="ap-story-img">
               <img
                 src="/images/about_story.jpg"
-                alt="ConOps Global Executive Team"
+                alt="ConOps Global Story"
                 className="ab-story-img"
               />
             </div>
@@ -753,36 +654,6 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Leadership Team Section */}
-      <section ref={teamRef} className="ap-team-section">
-        <div className="container">
-          <div className="ap-section-header">
-            <div className="label center-label">
-              <div className="label-square"></div>
-              <span>OUR LEADERSHIP TEAM</span>
-            </div>
-            <h2 className="ap-section-title">Consulting Partners You Can Rely On</h2>
-            <p className="ap-team-desc">
-              At ConOps Global, our consulting team combines specialized industry depth with human intuition and rigor.
-            </p>
-          </div>
-
-          <div className="ap-team-grid">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="ap-team-card">
-                <div className="ap-team-img-wrapper">
-                  <img src={member.image} alt={member.name} loading="lazy" />
-                  <span className="ap-team-category-badge">{member.category}</span>
-                </div>
-                <div className="ap-team-card-info">
-                  <h4>{member.name}</h4>
-                  <p>{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 7. Recognized Credentials Section */}
       <section ref={credentialsRef} className="ap-credentials-section">
@@ -829,7 +700,7 @@ const AboutPage: React.FC = () => {
               Whether you're scaling fast, filling a critical leadership vacancy, or restructuring your human capital strategy, we're here to deliver with precision.
             </p>
             <a href="/contact" className="btn btn-primary ap-cta-btn">
-              Consult with Our Team
+              Schedule a Consultation
               <div className="icon-box">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>

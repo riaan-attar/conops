@@ -8,6 +8,7 @@ const Footer: React.FC = () => {
         <div className="footer-top-row">
           <div className="footer-logo">
             <img src="/logo.png" alt="ConOps Global Logo" className="footer-logo-img" />
+            <div className="footer-venture-badge">A Venture of Gayatri Enterprises</div>
           </div>
 
           <div className="footer-links-grid">
@@ -31,7 +32,7 @@ const Footer: React.FC = () => {
 
         <div className="footer-bottom-row">
           <div className="footer-legal">
-            &copy; {new Date().getFullYear()} ConOps Global. Founded by{' '}
+            &copy; {new Date().getFullYear()} ConOps Global • A Venture of Gayatri Enterprises. Founded by{' '}
             <a
               href="https://in.linkedin.com/in/amit-gole-1b6306144"
               target="_blank"

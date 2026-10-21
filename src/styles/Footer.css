@@ -31,6 +31,20 @@
   object-fit: contain;
 }
 
+.footer-venture-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary);
+  padding: 0.35rem 0.85rem;
+  background: rgba(196, 154, 90, 0.1);
+  border: 1px solid rgba(196, 154, 90, 0.25);
+  border-radius: 999px;
+}
+
 .footer-links-grid {
   display: flex;
   gap: 6rem;
