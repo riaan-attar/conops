@@ -19,12 +19,16 @@
       "source": "/wp-login.php",
       "destination": "/",
       "permanent": true
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/faqs",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/services/construction",
+      "destination": "/construction",
+      "permanent": true
     }
   ]
 }

@@ -113,7 +113,7 @@ const servicesData: ServiceOfferItem[] = [
     desc: 'Deploying GPS machine control, 3D modeling, and real-time field tracking to eliminate jobsite rework.',
     features: ['3D machine control setup', 'Drone site surveying', 'Real-time job cost tracking'],
     cta: 'Deploy Field Technology',
-    link: '/services/tech',
+    link: '/contact',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"></polyline>

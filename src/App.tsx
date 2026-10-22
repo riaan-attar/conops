@@ -22,13 +22,15 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const normalizePath = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
+
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(normalizePath(window.location.pathname));
 
   useEffect(() => {
     // Handle location changes (e.g. back button)
-    const handlePopState = () => setCurrentPath(window.location.pathname);
+    const handlePopState = () => setCurrentPath(normalizePath(window.location.pathname));
     window.addEventListener('popstate', handlePopState);
     
     // Intercept link clicks for client-side routing
@@ -56,7 +58,7 @@ function App() {
         e.preventDefault();
         const path = url.pathname;
         window.history.pushState({}, '', path + url.search + url.hash);
-        setCurrentPath(path);
+        setCurrentPath(normalizePath(path));
 
         if (url.hash) {
           setTimeout(() => {

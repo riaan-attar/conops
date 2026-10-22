@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.conopsglobal.com/sitemap.xml
-Host: https://www.conopsglobal.com
