@@ -320,9 +320,8 @@
     </script>
   </head>
   <body>
-    <!-- SEO Crawler Semantic Pre-rendered Fallback (Ensures 100% crawlability for Googlebot, Bingbot, and AI search engines before JS hydration) -->
-    <div id="root">
-      <div style="opacity:0.001;position:absolute;pointer-events:none;z-index:-1" aria-hidden="true">
+    <div id="root"></div>
+    <noscript data-seo-fallback>
         <header>
           <img src="/logo.png" alt="ConOps Global Logo - Founded by Amit Gole" />
           <nav>
@@ -358,8 +357,7 @@
             </ul>
           </section>
         </main>
-      </div>
-    </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
