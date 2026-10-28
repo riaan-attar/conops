@@ -191,9 +191,9 @@ const About: React.FC = () => {
               </div>
               <div className="trust-domain-body">
                 <span className="trust-domain-tag">CORE COMPETENCY</span>
-                <h4 className="trust-domain-title">Asphalt Paving & Plant Operations</h4>
+                <h4 className="trust-domain-title">Concrete Construction Project Management</h4>
                 <p className="trust-domain-desc">
-                  Deep technical familiarity with Hot Mix Asphalt (HMA), Superpave & Marshall mix specs, batch plant operations, asphalt milling, resurfacing, and paving crew optimization across US highway projects.
+                  Experienced in managing U.S. concrete construction projects, with a focus on project execution, scheduling, cost control, resource coordination, and quality assurance.
                 </p>
               </div>
             </div>
@@ -207,9 +207,9 @@ const About: React.FC = () => {
               </div>
               <div className="trust-domain-body">
                 <span className="trust-domain-tag">MATERIAL EXCELLENCE</span>
-                <h4 className="trust-domain-title">Concrete & Heavy Structural Engineering</h4>
+                <h4 className="trust-domain-title">Asphalt Paving Projects</h4>
                 <p className="trust-domain-desc">
-                  Firsthand experience in ready-mix batching, high-performance concrete placement, slump testing, structural pours for bridges & foundations, and ASTM/AASHTO quality compliance.
+                  Experienced in managing asphalt paving projects, with a focus on project execution, scheduling, quality control, resource coordination, and compliance with project specifications and safety standards.
                 </p>
               </div>
             </div>

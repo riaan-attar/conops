@@ -13,8 +13,8 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <ServiceSectors />
       <Intro />
+      <ServiceSectors />
       <HiringCalculator />
       <Comparison />
       <HowItWorks />
